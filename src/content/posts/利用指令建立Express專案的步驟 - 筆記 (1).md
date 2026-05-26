@@ -1,0 +1,20 @@
+---
+title: "利用指令建立Express專案的步驟 - 筆記"
+pubDatetime: 2026-05-25T11:17:37.193Z
+tags: ["Express.js","Node.js","cheatsheet"]
+description: " Table of contents 在上一篇文章中，設計了Prisma schema以及signup/login的AP..."
+---
+
+## Table of contents
+
+
+在上一篇文章中，設計了Prisma schema以及signup/login的API，完成了簡單的登入流程；但是這個登入流程沒有cookie/session/JWT，因此，這篇就來用Next Auth整合cookie/session/JWT進行完整的驗證！
+
+## 什麼是Next Auth?
+
+## 為什麼要用Next Auth?
+
+
+::: success
+:crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
+:::
