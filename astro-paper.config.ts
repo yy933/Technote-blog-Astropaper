@@ -2,7 +2,7 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    url: "https://astro-paper.pages.dev/",
+    url: "https://simplydevs-blog.vercel.app/",
     title: "Simply Devs 開發者學習筆記",
     description: "開發者的學習筆記，涵蓋程式語言、框架、工具和最佳實踐，幫助開發者提升技能和效率。",
     author: "Emily",
@@ -11,6 +11,7 @@ export default defineAstroPaperConfig({
     lang: "zh-TW",
     timezone: "Asia/Taipei",
     dir: "ltr",
+    googleVerification:"hKKSQEIQIldMfCb4JLw2Mvy0ruDk37bgUgZiCF-dyp4",
   },
   posts: {
     perPage: 8,
