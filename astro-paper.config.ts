@@ -26,7 +26,7 @@ export default defineAstroPaperConfig({
     editPost: {
       enabled: false,
     },
-    search: false,
+    search: "pagefind",
   },
   socials: [
     { name: "mail",     url: "mailto:yourmail@gmail.com" },
