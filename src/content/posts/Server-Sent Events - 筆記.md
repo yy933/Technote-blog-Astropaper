@@ -53,9 +53,8 @@ app.get('/api/stream', (req, res) => {
 app.listen(3000, () => console.log('SSE 伺服器已啟動：http://localhost:3000'));
 ```
 
-<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 ### Tips:
-
 ```javascript
 req.on('close', () => {
         clearInterval(intervalId);
@@ -74,7 +73,7 @@ req.on('close', () => {
 req.emit('close');
 ```
 5. 觸發監聽器：因為底層執行了 `.emit('close')`，寫在 Express 裡的 `.on('close', ...) `就會立刻被通知，開始執行清空計時器（`clearInterval`）的工作。
-</blockquote>
+</div>
 
 ### 2. 前端（瀏覽器 JavaScript）
 前端非常簡單，瀏覽器內建了一個叫 `EventSource` 的物件，專門用來處理 SSE。

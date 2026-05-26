@@ -1,8 +1,8 @@
 ---
 title: "連線資料庫及建立Model的步驟(MongoDB) - 筆記"
 pubDatetime: 2023-09-25T01:32:26.000Z
-tags: ["Express.js","Node.js","MongoDB","Mongoose","cheatsheet","database"]
-description: " Table of contents <mark 新增資料庫</mark 先到[MongoDB Atlas](https..."
+tags: ["MongoDB","Mongoose","Express.js","Node.js","cheatsheet","database"]
+description: " Table of contents 新增資料庫 先到[MongoDB Atlas](https://www.mongo..."
 ---
 
 ## Table of contents
@@ -10,18 +10,18 @@ description: " Table of contents <mark 新增資料庫</mark 先到[MongoDB Atla
 
  
 
-### <mark>  新增資料庫</mark>
+## 新增資料庫
 * 先到[MongoDB Atlas](https://www.mongodb.com/atlas/database)建一個雲端資料庫，或是建立一個本地資料庫([這裡](https://www.mongodb.com/try/download/community)下載)
 
-### <mark> 連線專案伺服器與資料庫 </mark>
+## 連線專案伺服器與資料庫 
 * 在專案中安裝MongoDB的ODM-Mongoose:`npm i mongoose`
 * 設定專案與資料庫的連線: 
- #### 在`app.js`中載入`mongoose`並設定連線
+ ### 在`app.js`中載入`mongoose`並設定連線
 ```javascript
   const mongoose = require('mongoose') 
   mongoose.connect(process.env.MONGODB_URI) 
   ```
-#### 設定環境變數
+### 設定環境變數
   連線字串裡包含了「帳號」與「密碼」等敏感資訊，因此，藉由設定環境變數的方式，來將這些敏感資訊傳入程式碼，避免敏感資訊直接暴露在程式碼中。
   <div class="alert info">
 
@@ -61,7 +61,7 @@ if (process.env.NODE_ENV !== 'production') {
 const app = express()
 mongoose.connect(process.env.MONGODB_URI) // 連線到 mongoDB
 ```
-####  取得連線狀態：設定db
+###  取得連線狀態：設定db
   執行了 `mongoose.connect` 之後會得到一個**連線狀態**，我們需要設定一個參數，把連線狀態暫存下來，才能繼續使用。
  ```javascript=1
      // 取得資料庫連線狀態
@@ -86,7 +86,7 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
   
 ```
 回到終端機看到 `mongodb connected！`並且警告訊息消失代表調整完成。
-### <mark> 建立Model
+## 建立Model
   * 在專案中建立models資料夾，並且新增存放model結構的js檔案(如:data.js)
   * 定義資料結構：設定data.js中的schema(資料庫綱要)。
 例如：
