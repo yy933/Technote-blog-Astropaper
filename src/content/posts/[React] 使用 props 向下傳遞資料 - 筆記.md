@@ -1,6 +1,6 @@
 ---
 title: "[React] 使用 props 向下傳遞資料 - 筆記"
-pubDatetime: 2026-05-26T03:01:46.982Z
+pubDatetime: 2026-05-26T03:29:26.526Z
 tags: ["JavaScript","React.js"]
 description: " Table of contents 什麼是 props？ props（properties）是元件間傳遞資料的方式。 ..."
 ---
@@ -41,11 +41,13 @@ function Welcome({ name }) {
 | **函數（Function）** | `onClick={handleClick}` | 事件處理、回呼函數等 |
 | **JSX 元素** | `children={<p>Hello</p>}` | 用於組合元件、Slot 概念 |
 | **null / undefined** | `value={null}` | 可作為控制元件的清空狀態等 |
-:::success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :bulb: **除了字串，其他型別的props都要用 `{}` 包住**
 JSX 裡 props 只接受「JS 表達式」的話，要用 `{}`，
 而「字串常值」可以直接寫成 HTML 字串格式。
-:::
+
+</blockquote>
 
 ## 如何傳遞與讀取 props？
 例如有一個沒有傳遞任何props給子元件的元件Profile:
@@ -182,9 +184,11 @@ function Profile(props) {
   );
 }
 ```
-:::danger
+<blockquote class="my-6 p-4 bg-red-50 dark:bg-red-950/30 border-l-4 border-red-500 rounded-r-md text-red-900 dark:text-red-200 blocknoted-fix">
+
 ⚠️ 展開語法(spread syntax)須小心使用，多用反而會降低可讀性，除非元件只是單純傳遞而不使用 props。
-:::
+
+</blockquote>
 
 ## 將JSX作為子元件(children)傳遞
 這樣寫的時候:
@@ -217,7 +221,7 @@ function Card({ children }) {
 ```jsx
 <Card>這裡放什麼都可以</Card>
 ```
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 **也就是說!**
 例如這樣定義 Card 元件：
 ```jsx
@@ -246,7 +250,7 @@ function Card({ children }) {
 </div>
 
 ```
-:::
+</div>
 
 
 ### 不定量或大量 props 要傳給子元件
@@ -296,7 +300,7 @@ function Navbar(props) {
     props.logoIcon = "some-other-icon.png"
 }
 ```
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 :arrow_right: 這行程式碼**違反了 React 的設計原則。** 在 React 中，props 是從父元件傳進來的資料，應該是 **唯讀的（read-only）並且不可變（immutable）。** 
 
 可以「使用」它們，但不能「修改」它們。如果修改props，會讓程式變得難以預測與除錯。若父元件重新 render，傳入的 props 會被覆蓋，改動會瞬間消失。
@@ -310,7 +314,7 @@ function Navbar(props) {
     setLogoIcon("some-other-icon.png")
 }
 ```
-:::
+</div>
 
 ##  比較兩種 props 結構設計的寫法
 ### 寫法一

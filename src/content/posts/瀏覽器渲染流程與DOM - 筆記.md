@@ -1,6 +1,6 @@
 ---
 title: "瀏覽器渲染流程與DOM - 筆記"
-pubDatetime: 2026-05-26T03:01:47.028Z
+pubDatetime: 2026-05-26T03:29:26.595Z
 tags: ["Interview Preparation","HTML","browser","DOM","CSS"]
 description: " Table of contents :memo: 瀏覽器渲染流程 當我們在瀏覽器輸入網址並請求網頁時，瀏覽器會經歷以下..."
 ---
@@ -95,9 +95,11 @@ Document
 ```
 瀏覽器載入 HTML 以後，會進一步把 HTML 的語法結構，解析為物件模型，所謂的「物件」擁有屬性與方法，object model 和 HTML 文件的結構、階層關係是一致的。任何在網頁裡出現的內容，無論看得到或看不到的，都會被解析成為 DOM 的一部分，包含註解。
 
-:::danger
+<blockquote class="my-6 p-4 bg-red-50 dark:bg-red-950/30 border-l-4 border-red-500 rounded-r-md text-red-900 dark:text-red-200 blocknoted-fix">
+
 📌 DOM 是瀏覽器開放給程式語言操作網頁元素的一種介面。
-:::
+
+</blockquote>
 
 #### (2) DOM 節點
 DOM tree的樹狀裡每一個部分叫做「節點 (node)」，節點有四種類型：
@@ -148,6 +150,8 @@ window 之下還有其他的子物件包括 screen、navigator、location、hist
 * ALPHA CAMP Material
 
 
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

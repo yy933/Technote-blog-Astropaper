@@ -1,6 +1,6 @@
 ---
 title: "[Issues] Prisma migration卻找不到.env中的DATABASE_URL? - 筆記"
-pubDatetime: 2026-05-26T03:01:46.944Z
+pubDatetime: 2026-05-26T03:29:26.470Z
 tags: ["database","Prisma","PostgreSQL","Issue"]
 description: " Table of contents 問題簡述 更改Prisma schema後，要進行資料庫migration，執行了..."
 ---
@@ -62,7 +62,8 @@ a6482392b756   postgres:15   "docker-entrypoint.s…"   9 days ago   Up 5 second
 ```
 看起來也沒問題。
 
-:::success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 * 如果還沒建立資料庫，可以在docker建一個:
 參考[利用Docker建立本地PostgreSQL - cheatsheet](https://hackmd.io/fX8YKgdmQsmpNt2FWGRVVQ)
 * 或是在本地建一個:
@@ -73,7 +74,8 @@ CREATE DATABASE nextauthdb;
 CREATE USER username WITH PASSWORD 'password';
 GRANT ALL PRIVILEGES ON DATABASE nextauthdb TO username;
 ```
-:::
+
+</blockquote>
 
 ### 3. 測試資料庫連線
 寫一個簡單的文件測試資料庫是否正確連線:
@@ -200,6 +202,8 @@ ALTER TABLE "public"."User" ALTER COLUMN "name" DROP NOT NULL;
 ![螢幕擷取畫面 2025-09-19 130218](https://hackmd.io/_uploads/ryf1XP9ole.png)
 
 這樣就成功migrate了!
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

@@ -1,6 +1,6 @@
 ---
 title: "[React - Next.js] Next.js 中的動態路由（Dynamic Routes） - 筆記"
-pubDatetime: 2026-05-26T03:01:46.958Z
+pubDatetime: 2026-05-26T03:29:26.499Z
 tags: ["React.js","Node.js","Next.js"]
 description: " Table of contents 什麼是動態路由（Dynamic Routes）？ Dynamic Route 指的..."
 ---
@@ -92,9 +92,9 @@ params.slug 是陣列：`["anything", "goes", "here"]`
 * /docs/a/b/c 也會對應
 * params.slug 是 undefined 或陣列
 
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 詳細說明，參考[Next.js文件](https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes)
-:::
+</div>
 
 ## 注意事項 & 限制
 | 項目                                    | 說明                                    |

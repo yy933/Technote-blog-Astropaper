@@ -1,6 +1,6 @@
 ---
 title: "JavaScript的柯里化(Currying in JavaScript)"
-pubDatetime: 2026-05-26T03:01:46.876Z
+pubDatetime: 2026-05-26T03:29:26.421Z
 tags: ["JavaScript","Interview Preparation"]
 description: " Table of contents <img src=\"https://images.unsplash.com/pho..."
 ---
@@ -19,12 +19,14 @@ description: " Table of contents <img src=\"https://images.unsplash.com/pho..."
 ## :memo: 前言
 柯里化(Currying)是functional programming的一種技術 ，透過currying可以編寫模組化、易於測試和高度可重複使用的程式碼。
 Functional programming(FP)是一種宣告式規範( declarative paradigm)，強調不變性(immutability)和純函式(Pure Functions)—代表該函式對於任何給定的輸入(input)，永遠會回傳相同的輸出(output)。這些特性可以使程式碼更易讀並且更容易維護，而Currying只是其中的一種技術。
-:::info
+<blockquote class="my-6 p-4 bg-sky-50 dark:bg-sky-950/30 border-l-4 border-sky-500 rounded-r-md text-sky-900 dark:text-sky-200 blocknoted-fix">
+
 更多關於Functional Programming，可以閱讀以下文章:
 1. [為什麼要學 Functional Programming?](https://ithelp.ithome.com.tw/articles/10233399)
 2. [JavaScript: Functional Programming 函式編程概念](https://totoroliu.medium.com/javascript-functional-programming-%E5%87%BD%E5%BC%8F%E7%B7%A8%E7%A8%8B%E6%A6%82%E5%BF%B5-e8f4e778fc08)
 3. [Buzz Word 1 : Declarative vs. Imperative](https://ithelp.ithome.com.tw/articles/10233761)
-:::
+
+</blockquote>
 
 ## :memo: 柯里化(Currying)
 ### 原理
@@ -78,7 +80,8 @@ foo(2)
 ```
 `x`被綁定在外部函式`foo()`中，當執行內部函式`bar()`時，`bar()`可以取用`x`，因為`bar()`是在`foo()`的作用域中建立的，父函式`foo()`執行完後，變數`x`被儲存於閉包中，根據JS的[Garbage Collection機制](https://www.geeksforgeeks.org/relation-of-garbage-collector-and-closure-in-javascript/)，執行`bar()`時找到其中有參照變數`a`，因此`a`不會被清除掉。另一方面，`bar()`可以取用其父函式及全域的變數，但是如果`bar()`中宣告其它函式、或`foo()`中其他函式的作用域(也就是平行於`bar()`函式)的變數，則`bar()`不可取用這些函式的變數。
 
-:::info
+<blockquote class="my-6 p-4 bg-sky-50 dark:bg-sky-950/30 border-l-4 border-sky-500 rounded-r-md text-sky-900 dark:text-sky-200 blocknoted-fix">
+
 Q: 函式中的函式一定代表閉包的存在?
 A: 不一定。如果內部的函式(子函式)並沒有參照該函式作用域外(如父函式作用域)的變數，則閉包不存在。例如:
 ```javascript
@@ -92,7 +95,8 @@ foo(5)()
 //output: true
 ```
 以上例子中，不管傳入任何值到`foo()`，回傳的永遠是true，因為內部的函式並沒有參照到`foo()`作用域的變數`x`，這種狀況下閉包不存在。
-:::
+
+</blockquote>
 
 巢狀函式根據定義函式的位置，保留父函式的作用域；亦即，內層函式的區塊也可以取用外層函式的變數，例如前述[範例](###範例)中，`function nested(b) {return a * b}`，`nested()`函式可以取用父函式、也就是`curried_multiply()`函式的參數`a`，當我們執行`const one = curried_multiply(5)`時，`one()`保留了`curried_multiply()`的作用域，因此可以取用該作用域的變數`5`；也可以理解成在此巢狀函式中，第一個傳入的參數`a`，會成為閉包中的變數被記憶/儲存，並傳入巢狀函式鏈中的下一個函式執行。
 ### 箭頭函式
@@ -126,16 +130,16 @@ const curry =(fn) =>{
 以上code做了什麼?
 1. `curry`作為外層函式，接受`fn`函式作為參數傳入，並回傳另一個函式`curried`
 2. `curried`接受另一參數`args`傳入，並用[其餘參數（rest parameters）](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters)將參數集合成陣列，並且比較`fn`和`args`的長度
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 :bulb: 函式的長度(function length)是function的一種屬性(property)，**表示該 function 預期被傳入的參數數量**，這個數量並不包含其餘參數(rest parameter)且只包含第一個預設參數(Default Parameters)前的參數。
 *Ref: [MDN doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/length)*
-:::
+</div>
 3. `if`判斷式中的邏輯: 若`fn`和`args`的長度(也就是參數的數量)不同，則呼叫[`bind()`](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)方法，建立一個新的函式並傳入參數`...args`；若`fn`和`args`的長度(也就是預期傳入的參數數量)相同，則回傳傳入`args`參數的`fn`
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 :bulb: `bind()`是函式的一種方法(method)，它的基本語法如下:
 `fun.bind(thisArg[, arg1[, arg2[, ...]]])`
 第一個參數是`this`要指向的物件，第二個與其後的參數則是要傳入該函式的參數。`bind()`會建立一個新的函式，必須調用該函式才會執行。
-:::
+</div>
 實際應用這個函式:
 ```javascript
 const totalNum=(x,y,z) => {
@@ -209,18 +213,20 @@ function curry(fn) {
 }
 ```
 與`bind()`方法的不同之處在於，`apply()`方法接受的第二個參數是一個**陣列**，因此無須再展開。
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 :bulb: [`apply()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)方法的基本語法:
 `fun.apply(thisArg, [argsArray])`
 第一個參數一樣是`this`指向的對象，第二個參數則是參數陣列或是array-like 物件；和`bind()`方法不一樣，`apply()`是直接執行該函式，而非建立新函式(或是說拷貝原函式物件)。
-:::
-:::info
+</div>
+<blockquote class="my-6 p-4 bg-sky-50 dark:bg-sky-950/30 border-l-4 border-sky-500 rounded-r-md text-sky-900 dark:text-sky-200 blocknoted-fix">
+
 :bookmark: 更多關於`apply()`、`bind()`、`call()`方法，可以閱讀以下文章:
 
 - [使用 bind、call、apply 改變 this 指向的對象](https://b-l-u-e-b-e-r-r-y.github.io/post/BindCallApply/)
 - [JavaScript 中 call()、apply()、bind() 的用法](https://www.runoob.com/w3cnote/js-call-apply-bind.html)
 - [[JavaScript] 函數原型最實用的 3 個方法 — call、apply、bind](https://realdennis.medium.com/javascript-%E8%81%8A%E8%81%8Acall-apply-bind%E7%9A%84%E5%B7%AE%E7%95%B0%E8%88%87%E7%9B%B8%E4%BC%BC%E4%B9%8B%E8%99%95-2f82a4b4dd66)
-:::
+
+</blockquote>
 ## :memo: Currying的優點
 Currying可以**使函式具有單一用途，使程式碼更加模組化，從而更易於測試、debug、維護和閱讀。** 以下直接用範例說明:
 
@@ -355,9 +361,11 @@ const dairyPromotion = startDate => {
 
 ### 高階函式 (High Order Function)
 高階函式意指一個函式可以接收另一函式作為參數、或者回傳一個函式。
-:::info
+<blockquote class="my-6 p-4 bg-sky-50 dark:bg-sky-950/30 border-l-4 border-sky-500 rounded-r-md text-sky-900 dark:text-sky-200 blocknoted-fix">
+
 Ref: [高階函式 (Higher Order Function) 是什麼？](https://www.explainthis.io/zh-hant/swe/what-is-hof)
-:::
+
+</blockquote>
 上述的範例如果應用高階函式改寫:
 ```javascript
 const partial = (fn, ...argsToApply) => {
@@ -400,6 +408,8 @@ dauryPromotion() // The dairy products price is 20% off from 2020/01/23
 * [Good Morning, Functional JS (Day 10, Partial Application 偏函數應用)](https://ithelp.ithome.com.tw/articles/10194837)
 * Codecademy 教材
 
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

@@ -1,6 +1,6 @@
 ---
 title: "[TypeScript] 函式（Function） - 筆記"
-pubDatetime: 2026-05-26T03:01:47.004Z
+pubDatetime: 2026-05-26T03:29:26.556Z
 tags: ["TypeScript","cheatsheet"]
 description: "Tags: TypeScript cheatsheet Table of contents 1. 參數類型註解 (Par..."
 ---
@@ -91,7 +91,7 @@ function fetchUserDetails(username: string): User {
     return user
 }
 ```
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 ### `ReturnType<T>`
 `ReturnType<T>` 是 TypeScript 提供的一個工具型別（Utility Types），可以幫你「推斷某個函式的回傳型別」。
 ```ts
@@ -144,4 +144,4 @@ type R = ReturnType<NotAFunction>; // ❌ Error: Type 'number' does not satisfy 
 | `ConstructorParameters<T>` | 取得建構子參數型別           |
 | `InstanceType<T>`          | 取得建構子函式所產生的實例型別     |
 
-:::
+</div>

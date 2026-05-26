@@ -1,6 +1,6 @@
 ---
 title: "[Node.js]利用Google Sheets API操作Google試算表"
-pubDatetime: 2026-05-26T03:01:46.952Z
+pubDatetime: 2026-05-26T03:29:26.485Z
 tags: ["Node.js","API","Express.js"]
 description: " Table of contents :memo: 前言 當我們想要把資料放在Google Sheets上方便閱讀、計算..."
 ---
@@ -309,6 +309,8 @@ Spreadsheet ID: <Your spreadsheet Id>
 * [How to use Google sheet as your database with Node.js](https://medium.com/@sakkeerhussainp/google-sheet-as-your-database-for-node-js-backend-a79fc5a6edd9)
 
 
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

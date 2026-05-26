@@ -1,6 +1,6 @@
 ---
 title: "JWT 驗證機制 - 筆記"
-pubDatetime: 2026-05-26T03:01:46.880Z
+pubDatetime: 2026-05-26T03:29:26.426Z
 tags: ["authentication","HTTP","web security","JWT","token"]
 description: " Table of contents :memo: HTTP 的無狀態 (Stateless) 特性 HTTP通訊協定(..."
 ---
@@ -83,6 +83,8 @@ HMACSHA256(
 * [JWT(JSON Web Token) — 原理介紹](https://medium.com/%E4%BC%81%E9%B5%9D%E4%B9%9F%E6%87%82%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/jwt-json-web-token-%E5%8E%9F%E7%90%86%E4%BB%8B%E7%B4%B9-74abfafad7ba)
 * [一文帶你搞懂JWT 常見概念& 優缺點](https://tw511.com/a/01/45019.html)
 
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

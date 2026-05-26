@@ -1,6 +1,6 @@
 ---
 title: "建立 Node.js 伺服器 - 筆記"
-pubDatetime: 2026-05-26T03:01:47.024Z
+pubDatetime: 2026-05-26T03:29:26.591Z
 tags: ["Node.js","cheatsheet"]
 description: " Table of contents 建立 Node.js 本機伺服器 1. 載入 Node.js HTTP 模組 1...."
 ---
@@ -108,7 +108,7 @@ server.listen(port, hostname, () => {
   console.log(`The server is listening on http://${hostname}:${port}`)
 })
 ```
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 補充一下，如果在 `res.end()` 裡的字串有換行的話，就要以樣板字面值（template literals）來處理，不能用一般的單引號，而是要用「反引號」(back-tick)，當字串中想要**帶入變數或 HTML 時也是一樣**。例如，伺服器回傳HTML檔案：
 ```javascript
 // Handle request and response here
@@ -118,7 +118,7 @@ const server = http.createServer((req, res) => {
   res.end(`<h1>This is my first server created in Node.js</h1>`)
 })
 ```
-:::
+</div>
 
 ## 執行 JavaScript 檔案
 
@@ -135,10 +135,10 @@ $ cd [Your path]
 順利的話，就會看到「The server is listening on http://localhost:3000」，這時候就可以打開瀏覽器，輸入 localhost:3000 ，就可以看到剛剛在 Node.js 的伺服器中透過 `res.end()` 所設定的回應文字。
 如果想要中斷伺服器，可以回到終端機上，按下「Ctrl + C」即可。
 
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 注意：如果在這裡發現程式碼有問題，需要修改，每次在修改完檔案後，都必須要
 
 1）存檔
 2）在終端機透過「Ctrl + C」先把伺服器停掉
 3）再透過 node 這個指令，重新啟動
-:::
+</div>

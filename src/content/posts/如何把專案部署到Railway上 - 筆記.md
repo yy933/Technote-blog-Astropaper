@@ -1,15 +1,15 @@
 ---
 title: "如何把專案部署到Railway上 - 筆記"
-pubDatetime: 2026-05-26T03:01:47.023Z
+pubDatetime: 2026-05-26T03:29:26.588Z
 tags: ["Node.js","database","MySQL","deployment"]
-description: " Table of contents :::warning :bangbang: 2023/08 更新：Railway自..."
+description: " Table of contents <div class=\"my6 p4 bgorange50 dark:bgoran..."
 ---
 
 ## Table of contents
 
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 :bangbang: 2023/08 更新：Railway自2023年8月1日起[取消免費方案](https://blog.railway.app/p/pricing-and-plans-migration-guide-2023)，最低收費Hobby Plan每個月5美元，各方案詳細收費標準可參考[官網](https://railway.app/pricing)。
-:::
+</div>
 
 ## 專案簡介
 
@@ -76,10 +76,12 @@ railway run npm start
 出現了錯誤，呼叫Google大神，找到了[這篇文章](https://stackoverflow.com/questions/52815608/er-not-supported-auth-mode-client-does-not-support-authentication-protocol-requ)
 在MySQL Workbench或MySQL CLI執行以下SQL query：
 `ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'password'`
-:::danger
+<blockquote class="my-6 p-4 bg-red-50 dark:bg-red-950/30 border-l-4 border-red-500 rounded-r-md text-red-900 dark:text-red-200 blocknoted-fix">
+
 :warning: 注意！這裡的`root`和`password`要改成Railway雲端資料庫的user和password，才有權限操作資料庫，不然會出現另一個錯誤`ERROR: Access denied for user '<wrong_username>'@'<your_ip>' (using password: YES)` (密碼或使用者名稱不對都無法操作資料庫，可以參考[這篇文](https://stackoverflow.com/questions/17975120/access-denied-for-user-rootlocalhost-using-password-yes-no-privileges))
 ![](https://i.imgur.com/FV08cSm.png)
-:::
+
+</blockquote>
 - 再執行一次資料migration，這次就成功了；同理寫入種子資料：`railway run npx sequelize db:seed:all`
 - 回到Railway確認資料是否正確寫入：
 ![](https://i.imgur.com/xhCy1zf.png)
@@ -103,6 +105,8 @@ railway run npm start
 沒有了Heroku這個方便~~免費~~的服務只好尋找替代品，本來試著部署在[Render](https://render.com/)，雖然Render操作起來也非常之簡單易懂，無奈目前免費服務不提供MySQL資料庫部署(PostgreSQL是可以的，但90天到期後自動刪除資料庫)，所以選擇了Railway，雖然功能或許沒有GCP或AWS強大，但對於個人小專案已經足夠，目前免費方案提供每月500小時或5美元的額度。**(2023/08 更新：Railway自2023年8月1日起[取消免費方案](https://blog.railway.app/p/pricing-and-plans-migration-guide-2023)，最低收費Hobby Plan每個月5美元，各方案詳細收費標準可參考[官網](https://railway.app/pricing)。)**
 Railway的服務相對新，部署的時候遇到問題參考資料也不是很多，只能靠官方文件和自己摸索，希望這篇文能幫助到需要使用Railway服務的人！
 
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

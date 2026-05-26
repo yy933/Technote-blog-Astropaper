@@ -1,6 +1,6 @@
 ---
 title: "動態路由 (Route Params) 和 查詢字串 (Query String) - 筆記"
-pubDatetime: 2026-05-26T03:01:47.019Z
+pubDatetime: 2026-05-26T03:29:26.578Z
 tags: ["Express.js","Node.js","cheatsheet"]
 description: " Table of contents 動態路由 (Route Params) params 是在 URL 中設定的「變數..."
 ---

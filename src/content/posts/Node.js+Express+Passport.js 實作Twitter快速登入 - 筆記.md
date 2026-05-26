@@ -1,6 +1,6 @@
 ---
 title: "Node.js+Express+Passport.js 實作Twitter快速登入 - 筆記"
-pubDatetime: 2026-05-26T03:01:46.888Z
+pubDatetime: 2026-05-26T03:29:26.437Z
 tags: ["Node.js","Express.js","npm","Passport.js","Authentication"]
 description: " Table of contents :memo: 串接Twitter API 基本設置與Token取得 首先先到[Tw..."
 ---
@@ -63,6 +63,8 @@ TWITTER_CONSUMER_SECRET=your_secret
 
 
 
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

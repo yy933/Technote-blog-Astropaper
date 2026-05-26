@@ -1,6 +1,6 @@
 ---
 title: "在Express專案中使用樣板引擎Handlebars - 筆記"
-pubDatetime: 2026-05-26T03:01:47.022Z
+pubDatetime: 2026-05-26T03:29:26.583Z
 tags: ["Express.js","Node.js","cheatsheet","browser"]
 description: " Table of contents [建立Express專案](https://hackmd.io/7L4TYmU9R..."
 ---
@@ -25,12 +25,12 @@ const exphbs = require('express-handlebars')
 app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 ```
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 `app.engine`：透過這個方法來定義要使用的樣板引擎，其中
 * 第一個參數是這個樣板引擎的名稱，也就是handlebars
 * 第二個參數是放入和此樣板引擎相關的設定。這裡設定了預設的佈局（default layout）需使用名為 main 的檔案。稍後再來建立這支 main 檔案。
 * `app.set`：透過這個方法告訴 Express 要設定的 view engine 是 handlebars。
-:::
+</div>
 ### 3. 定義佈局（layout）和局部樣板（partial template）
 在同一個網站內，幾乎每一個頁面都會套用的版型，就稱作佈局（layout）；
 在不同頁面會有不同內容的地方，就稱作「局部樣板 (partial template)」
@@ -46,11 +46,11 @@ app.set('view engine', 'handlebars')
 #### 建立 layout
 在 layouts 這個資料夾中，先建立一支名為 main.handlebars 的檔案
 
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 之前在`app.js`中設定：
 `app.engine('handlebars', exphbs({ defaultLayout: 'main' }))`
 宣告預設用名為 `main.handlebars` 這支檔案當作佈局。
-:::
+</div>
 
 ```html
 <!-- ./views/layouts/main.handlebars -->
@@ -216,10 +216,12 @@ app.listen(3000, () => {
 })
 ```
 這樣子更方便管理與擴充，`app.js`看起來也更乾淨！
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 * 在npm上面搜尋"express handlebars helpers"也有很多現成的package可以使用，例如這個[@budibase/handlebars-helpers](https://www.npmjs.com/package/@budibase/handlebars-helpers)有超過130種helpers，可再依需求安裝。
 * express-handlebars 內建的 helpers : [Built-in Helpers](https://handlebarsjs.com/guide/builtin-helpers.html)
-:::
-::: success
+</div>
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

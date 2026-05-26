@@ -1,6 +1,6 @@
 ---
 title: "JavaScript的原型繼承(Prototypal Inheritance)"
-pubDatetime: 2026-05-26T03:01:46.873Z
+pubDatetime: 2026-05-26T03:29:26.415Z
 tags: ["Interview Preparation","JavaScript"]
 description: " Table of contents :memo: 前言 在[MDN文件](https://developer.mozi..."
 ---
@@ -87,9 +87,9 @@ class Student : extends Person
 > **某些人認為 JavaScript 並非真正的物件導向 (Object-oriented, OO) 語言。** 在「典型 OO」中，你必須定義特定的類別物件，才能定義哪些類別所要繼承的類別。**JavaScript 則使用不同的系統 —「繼承」的物件並不會一併複製功能過來，而是透過原型鍊連接其所繼承的功能，亦即所謂的原型繼承 (Prototypal inheritance)。**
  From [MDN文件](https://developer.mozilla.org/zh-TW/docs/Learn/JavaScript/Objects/Classes_in_JavaScript)
 
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 關於物件導向程式設計，可以參考[這篇文章](https://www.educative.io/blog/object-oriented-programming)
-::: 
+</div> 
  
 #### 原型鏈的頂端是物件
 > JavaScript 就只有一個建構子：物件。每個物件都有一個連著其他原型（prototype）的私有屬性（private property）物件。**原型物件也有著自己的原型，於是原型物件就這樣鏈結，直到撞見 null 為止：null 在定義裡沒有原型、也是原型鏈（prototype chain）的最後一個鏈結。 幾乎所有 JavaScript 的物件，都是在原型鏈最頂端的物件實例。**
@@ -186,7 +186,8 @@ class Coffee extends Drink {
 - `super`關鍵字**呼叫父類別中的建構式，並可以取用父類別的屬性與方法**。在以上範例中，`super(name, cost)`將`name`和`cost`兩個argument傳入父類別`Drink`中的建構式，並執行產生新的`Coffee`物件實例。
 - 值得注意的是，**當使用建構式時，`super`關鍵字必須在`this`關鍵字之前使用，確保新的物件已經在父類別的建構式中建立，此時`this`會指向這個新建立的物件**；如果沒有在`this`之前呼叫`super`，則會出現`reference error`，好的做法是**在子類別建構式的第一行使用`super`關鍵字**。
 - `origin`是`Coffee`中的新屬性，所以在此處的建構式中定義它。
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 `class`語法糖中，我們可以直接把共用的方法(method)寫在class裡面；如果是用ES6以前的建構式，寫法相當於:
 ```javascript
 // amountAdded function
@@ -205,7 +206,8 @@ Object.assign(Drink.prototype, amountAdded);
 ```
 另外，在繼承父類別時，`class`語法糖使用`extends`關鍵字；ES6以前則可以使用[`call()`](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Function/call) 函式，getter、setter則可以使用[`Object.defineProperty()`函式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)。
 Reference: [MDN docs - Object prototypes](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
-:::
+
+</blockquote>
 接著，用子類別`Coffee`創造一個新的實例看看：
 ```javascript
 const latte = new Coffee('latte', 5, 'Brazil')
@@ -323,6 +325,8 @@ console.log(Math.log(1))
 * [[教學] JavaScript ES6 Class：深入淺出類別概念與應用](https://www.shubo.io/javascript-class/#%E7%B9%BC%E6%89%BF%E9%9D%9C%E6%85%8B%E6%96%B9%E6%B3%95-static-method)
 * Codecademy 教材
 
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

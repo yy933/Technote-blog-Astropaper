@@ -1,6 +1,6 @@
 ---
 title: "Sass 核心語法 - 筆記"
-pubDatetime: 2026-05-26T03:01:46.907Z
+pubDatetime: 2026-05-26T03:29:26.454Z
 tags: ["cheatsheet","CSS","Sass"]
 description: " Table of contents 變數 (variable) 與運算子 (operator) 變數可以使 css 代..."
 ---
@@ -329,6 +329,8 @@ $i: 1;
 > `@mixin` 是模組、`@extend` 是共用、`@function` 是算式。
 
 
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

@@ -1,6 +1,6 @@
 ---
 title: "[TypeScript] Narrowing - 筆記"
-pubDatetime: 2026-05-26T03:01:47.001Z
+pubDatetime: 2026-05-26T03:29:26.549Z
 tags: ["TypeScript","cheatsheet"]
 description: "Tags: TypeScript cheatsheet Table of contents 為什麼需要 Type Nar..."
 ---
@@ -52,7 +52,7 @@ function roughAge(age: number | string) {
 > 「function」不是一個 type，而是 JS 的一種 object 實體。
 雖然 `typeof fn === "function"` 是可以的，但 function 不是 TypeScript 中的型別，而是語言層級的概念。
 
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 💡 注意：`typeof null === "object"` 是 JavaScript 歷史的奇怪特例！
 ```ts
 function printAll(strs: string | string[] | null) {
@@ -73,7 +73,7 @@ if (Array.isArray(strs)) {
   // 是 null
 }
 ```
-:::
+</div>
 
 ## 2. `if-else` 形式的 Type Guard
 當 if 判斷某一型別後，else 區塊會自動推斷為剩餘的型別。
@@ -110,7 +110,7 @@ function move(pet: Fish | Bird) {
   return pet.fly(); // pet 是 Bird
 }
 ```
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 `swim: () => void` 表示`swim` 是一個「不接受參數」且「不回傳任何東西」的函式。
 :bulb: 延伸範例：有參數、有回傳值
 ```ts
@@ -131,7 +131,7 @@ onClick: () => void
 ```
 表示這是一個點擊事件的 handler，不接受參數，也沒有回傳值。
 
-:::
+</div>
 ## Truthiness 檢查
 ```ts
 if (value) { ... }

@@ -1,6 +1,6 @@
 ---
 title: "快取(Cache)機制 - 筆記"
-pubDatetime: 2026-05-26T03:01:47.025Z
+pubDatetime: 2026-05-26T03:29:26.592Z
 tags: ["database","cache","Interview Preparation"]
 description: " Table of contents :memo: 什麼是快取(Cache) 當web app規模越來越大、使用者越來越..."
 ---
@@ -76,6 +76,8 @@ FIFO策略會**按照項目被放入快取中的順序移除**，也就是最先
 * [提升程式存取資料速度的必殺技](https://www.ithome.com.tw/voice/67234)
 
 
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

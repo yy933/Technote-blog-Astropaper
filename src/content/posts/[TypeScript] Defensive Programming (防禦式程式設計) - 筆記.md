@@ -1,6 +1,6 @@
 ---
 title: "[TypeScript] Defensive Programming (防禦式程式設計) - 筆記"
-pubDatetime: 2026-05-26T03:01:46.998Z
+pubDatetime: 2026-05-26T03:29:26.546Z
 tags: ["TypeScript"]
 description: " Table of contents Defensive Programming 是什麼？ 相信大家都聽過防禦式駕駛，其..."
 ---
@@ -55,9 +55,9 @@ function greet(name: string): string {
   return `Hello, ${name}!`;
 }
 ```
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 提醒：即使 TS 已指定 name 為 string，但仍可能傳入空白或無意義的內容，這就是 runtime 防禦的重要性。
-:::
+</div>
 
 ### 2. Error Handling（錯誤處理）
 遇到例外情況時，適當處理錯誤並提供有意義的訊息或備案。

@@ -1,6 +1,6 @@
 ---
 title: "在Express專案中載入靜態檔案 - 筆記"
-pubDatetime: 2026-05-26T03:01:47.023Z
+pubDatetime: 2026-05-26T03:29:26.586Z
 tags: ["Express.js","Node.js","cheatsheet","browser"]
 description: " Table of contents 什麼是靜態檔案 靜態檔案（static files）指的是不需要再經過伺服器額外處..."
 ---
@@ -68,6 +68,8 @@ app.use(express.static('public'))
 
 
 
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

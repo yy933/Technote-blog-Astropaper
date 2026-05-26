@@ -1,6 +1,6 @@
 ---
 title: "[React - Next.js] 在本地環境建立 Next.js 開發環境 - 筆記"
-pubDatetime: 2026-05-26T03:01:46.971Z
+pubDatetime: 2026-05-26T03:29:26.510Z
 tags: ["React.js","Node.js","cheatsheet","Next.js"]
 description: " Table of contents 從頭開始建立 Next.js 專案（使用 App Router） 1. 新增一個專..."
 ---
@@ -57,9 +57,9 @@ export default function Page() {
   return <h1>Hey Next.js!</h1>;
 }
 ```
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 📌 注意：使用的是 Next.js 13+ 的 App Router 架構，資料夾名稱必須是 `app/`，不能用 `pages/`。而且要有 `layout.jsx` 才能跑起來。
-:::
+</div>
 
 3. 啟動開發伺服器
 ```
@@ -81,6 +81,8 @@ npx create-next-app@latest my-next-app
 
 這樣會自動產生 `app/` 架構並配置好。
 
-:::success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :moon: TypeScript + Tailwind CSS + App Router專案建立cheatsheet看[這篇](https://hackmd.io/5RO8eGeHT0qCT54qgdH5CQ)
-:::
+
+</blockquote>

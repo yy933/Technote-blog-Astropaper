@@ -1,16 +1,18 @@
 ---
 title: "[React] 到底什麼時候需要 useEffect ? - 筆記"
-pubDatetime: 2026-05-26T03:01:46.983Z
+pubDatetime: 2026-05-26T03:29:26.528Z
 tags: ["JavaScript","React.js","React Hook"]
-description: " Table of contents :::success :bulb: 一句話判斷：如果要做的事是 「跟畫面渲染以外的..."
+description: " Table of contents <blockquote class=\"my6 p4 bggreen50 dark:..."
 ---
 
 ## Table of contents
 
-:::success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :bulb: 一句話判斷：如果要做的事是 **「跟畫面渲染以外的東西溝通」** ，才需要`useEffect`。
 如果不是為了「做 React 無法自行處理的事情」，就不要急著用 useEffect。
-:::
+
+</blockquote>
 
 
 ## 什麼時候該用 useEffect？

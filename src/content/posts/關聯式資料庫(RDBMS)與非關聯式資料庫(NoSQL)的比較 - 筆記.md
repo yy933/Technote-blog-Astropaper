@@ -1,6 +1,6 @@
 ---
 title: "關聯式資料庫(RDBMS)與非關聯式資料庫(NoSQL)的比較 - 筆記"
-pubDatetime: 2026-05-26T03:01:47.034Z
+pubDatetime: 2026-05-26T03:29:26.606Z
 tags: ["Interview Preparation","database"]
 description: " Table of contents :memo: 關聯式資料庫(RDBMS, Relational Database ..."
 ---
@@ -141,6 +141,8 @@ RDBMS與NoSQL並沒有絕對的好壞，端看使用的時機與需求
 * [[筆記] RDBMS v.s. NoSQL](https://shininglionking.blogspot.com/2018/04/rdbms-vs-nosql.html)
 
 
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

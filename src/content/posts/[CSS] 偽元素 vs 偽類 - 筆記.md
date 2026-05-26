@@ -1,6 +1,6 @@
 ---
 title: "[CSS] 偽元素 vs 偽類 - 筆記"
-pubDatetime: 2026-05-26T03:01:46.920Z
+pubDatetime: 2026-05-26T03:29:26.468Z
 tags: ["cheatsheet","CSS"]
 description: " Table of contents 在 CSS 中，「偽元素」與「偽類」都能幫助我們選取、操作一些 原本無法直接選取的..."
 ---
@@ -63,10 +63,10 @@ a:hover {
 | `:not(selector)` | 選取不是某個條件的元素               |
 
 
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 * 單數的子元素 `p:nth-child(odd)` 也可以寫作 `p:nth-child(2n+1)`
 * 雙數的子元素 `p:nth-child(even)` 也可以寫作 `p:nth-child(2n)` 
-:::
+</div>
 
 範例：
 ```css
@@ -86,6 +86,8 @@ li:nth-child(odd) {
 
 
 
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

@@ -1,6 +1,6 @@
 ---
 title: "[Node.js] 使用webpack建立Sass本地編譯環境"
-pubDatetime: 2026-05-26T03:01:46.948Z
+pubDatetime: 2026-05-26T03:29:26.480Z
 tags: ["Node.js","Sass","CSS","cheatsheet","Webpack","npm"]
 description: " Table of contents 前言 在實務上，多半不會從零開始建立編譯環境。 實務上由於需要整合各式各樣的開發流..."
 ---
@@ -181,7 +181,7 @@ module.exports = {
 
 這次是使用 Node.js v16.16.0版本才成功編譯，如果Node.js版本太高可能會出現error，可以退回v16試試看。詳細情形如下：
 
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 ### `Error: error:0308010C:digital envelope routines::unsupported`
 在 Node.js 17 或以上的版本執行 Webpack 4 或 5，但這些版本的 Webpack **在 Node.js 17 開始，預設的 OpenSSL 加密方式不再相容**。**Node.js 17 開始，OpenSSL 3.0 被納入，而某些加密演算法（如 Webpack 使用的 MD4）不再被支援**，因此需要額外加 `--openssl-legacy-provider` 來讓它啟用舊版的加密方式。
 ### 除錯：
@@ -207,4 +207,4 @@ Windows 系統:
 
 ✅ 方法三：降級 Node.js 到 16
 如果不希望加參數，可以選擇安裝 Node.js 16.x（長期支援版 LTS），因為這版本不會有這個錯誤。
-:::
+</div>

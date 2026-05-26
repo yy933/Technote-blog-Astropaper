@@ -1,6 +1,6 @@
 ---
 title: "[React/Next.js]  常見小技巧清單"
-pubDatetime: 2026-05-26T03:01:46.996Z
+pubDatetime: 2026-05-26T03:29:26.544Z
 tags: ["JavaScript","cheatsheet","TypeScript","Next.js","React.js"]
 description: " Table of contents 陣列處理 移除空值 / 假值 ts const arr = [\"a\", \"\", n..."
 ---
@@ -131,6 +131,8 @@ const active = true;
 
 `{messages.length > 0 && <MessageList />}`
 
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

@@ -1,6 +1,6 @@
 ---
 title: "HTTP Headers - 筆記"
-pubDatetime: 2026-05-26T03:01:46.863Z
+pubDatetime: 2026-05-26T03:29:26.402Z
 tags: ["HTTP","session","authentication","web security","headers"]
 description: " Table of contents :memo: 什麼是HTTP Headers 無論是瀏覽器發送的request或伺..."
 ---
@@ -65,6 +65,8 @@ Google Translate的Response Headers
 * [How to Implement Security HTTP Headers to Prevent Vulnerabilities?](https://geekflare.com/http-header-implementation/)
 
 
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

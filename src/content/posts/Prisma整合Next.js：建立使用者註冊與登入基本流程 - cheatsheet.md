@@ -1,6 +1,6 @@
 ---
 title: "Prisma整合Next.js：建立使用者註冊與登入基本流程 - cheatsheet"
-pubDatetime: 2026-05-26T03:01:46.892Z
+pubDatetime: 2026-05-26T03:29:26.441Z
 tags: ["Next.js","React.js","database","authentication","Docker","PostgreSQL","Prisma"]
 description: " Table of contents 在[上一篇](https://hackmd.io/fX8YKgdmQsmpNt2F..."
 ---
@@ -137,7 +137,7 @@ npx prisma migrate dev --name init
 * 檢查 pgAdmin → 應該會看到 User 等表格。
 
 ## 管理Prisma Client
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 Prisma Client的功能:
 * **型別安全 (Type-Safe)**  
   會根據 `schema.prisma` 自動產生 TypeScript 型別，避免寫錯欄位或傳錯資料型別。
@@ -158,7 +158,7 @@ await prisma.$transaction([
   prisma.session.create(...),
 ])
 ```
-:::
+</div>
 
 
 在 `src/lib/` 底下新增一個 `prisma.ts`:
@@ -342,6 +342,8 @@ SELECT * FROM public."User";
 
 Email註冊登入基本流程就完成了，但目前還沒有真正建立 session / cookie，只是確認帳號密碼正確。下一篇會整合 NextAuth 來完成真正的驗證流程。
 
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

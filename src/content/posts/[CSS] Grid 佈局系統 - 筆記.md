@@ -1,6 +1,6 @@
 ---
 title: "[CSS] Grid 佈局系統 - 筆記"
-pubDatetime: 2026-05-26T03:01:46.916Z
+pubDatetime: 2026-05-26T03:29:26.463Z
 tags: ["CSS","Interview Preparation"]
 description: " Table of contents CSS Grid 是一套強大的二維布局系統，可以同時處理 行（row）與列（col..."
 ---
@@ -61,7 +61,7 @@ item1 「從第 1 條線橫跨到第 4 條線」：
   grid-column: 1 / -1; /* 跨整列 */
 }
 ```
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 在 Grid 裡，每條欄線（grid line）都有編號：
 
 * 正數是從 左到右 編號（1、2、3...）
@@ -69,7 +69,7 @@ item1 「從第 1 條線橫跨到第 4 條線」：
 
 所以 grid-column: 1 / -1 就等於：
 👉「從第一條線開始，到最右邊的那條線結束」
-:::
+</div>
 
 
 第 3 列的高度改變了，這是因為` .item1 `佔據了整個第一列，把 `.item5` 和 `.item6` 推向第三列。因此，需要在 `'grid-template-rows'` 屬性內給新的這行指定高度 75px 。
@@ -199,6 +199,8 @@ CSS:
 
 
 
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

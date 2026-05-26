@@ -1,6 +1,6 @@
 ---
 title: "[React] 在本地環境用Vite建立 React.js 開發環境 - 筆記"
-pubDatetime: 2026-05-26T03:01:46.984Z
+pubDatetime: 2026-05-26T03:29:26.530Z
 tags: ["Node.js","cheatsheet","React.js"]
 description: " Table of contents 1. 準備 Node.js 環境 用nvm安裝Node.js，確認Node版本:n..."
 ---
@@ -86,6 +86,8 @@ export default App;
 
 
 
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

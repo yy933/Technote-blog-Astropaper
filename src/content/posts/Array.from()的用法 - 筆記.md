@@ -1,6 +1,6 @@
 ---
 title: "Array.from()的用法 - 筆記"
-pubDatetime: 2026-05-26T03:01:46.837Z
+pubDatetime: 2026-05-26T03:29:26.360Z
 tags: ["JavaScript","Interview Preparation"]
 description: " Table of contents Array.from() 是 JavaScript 中非常多功能且強大的方法，主要..."
 ---
@@ -46,7 +46,8 @@ console.log(arr); // [0, 1, 2, 3, 4]
 const arr = Array.from([1, 2, 3], x => x * 2);
 console.log(arr); // [2, 4, 6]
 ```
-:::success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 `Array.from()` vs `.map()`
 對於純陣列，`.map() `通常效能更好。
 
@@ -55,7 +56,8 @@ console.log(arr); // [2, 4, 6]
 但如果來源是**類陣列或可迭代對象（如 NodeList、Set、arguments）**，`Array.from()` 更方便且高效。
 
 用 `.map()` 之前還要先轉換為真正的陣列。
-:::
+
+</blockquote>
 
 ### 將 `Set` 轉為陣列
 `Set`是可迭代的，但不是陣列，使用` Array.from()` 可以輕鬆轉換。

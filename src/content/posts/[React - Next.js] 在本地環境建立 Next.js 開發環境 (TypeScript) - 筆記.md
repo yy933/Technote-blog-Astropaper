@@ -1,6 +1,6 @@
 ---
 title: "[React - Next.js] 在本地環境建立 Next.js 開發環境 (TypeScript) - 筆記"
-pubDatetime: 2026-05-26T03:01:46.970Z
+pubDatetime: 2026-05-26T03:29:26.507Z
 tags: ["cheatsheet","TypeScript","Next.js","Node.js","React.js"]
 description: " Table of contents 建立專案 bash npx createnextapp@latest myapp ..."
 ---

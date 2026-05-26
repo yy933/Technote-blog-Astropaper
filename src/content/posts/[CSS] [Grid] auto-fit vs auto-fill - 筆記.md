@@ -1,6 +1,6 @@
 ---
 title: "[CSS] [Grid] auto-fit vs auto-fill - 筆記"
-pubDatetime: 2026-05-26T03:01:46.918Z
+pubDatetime: 2026-05-26T03:29:26.465Z
 tags: ["CSS","Interview Preparation"]
 description: " Table of contents 語法 都是搭配 repeat() 使用： gridtemplatecolumns:..."
 ---
@@ -87,6 +87,8 @@ grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
 
 
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

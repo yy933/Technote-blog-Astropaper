@@ -1,6 +1,6 @@
 ---
 title: "[React - Next.js] Next.js 圖片處理 - 筆記"
-pubDatetime: 2026-05-26T03:01:46.968Z
+pubDatetime: 2026-05-26T03:29:26.502Z
 tags: ["React.js","Node.js","Next.js"]
 description: " Table of contents Next.js 中的圖片處理 <Image /有什麼好處？ 1. 圖片延遲載入（l..."
 ---
@@ -40,7 +40,7 @@ import MyImage from '/public/example.jpg'
   height={300}
 />
 ```
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 如果要使用遠端圖片(Remote image):
 例如：
 ```jsx
@@ -74,7 +74,7 @@ module.exports = {
   },
 }
 ```
-:::
+</div>
 
 * width 和 height 是必填！
 * 若用 Tailwind 的 `w-[]` 也要提供實際尺寸（因為 Next 要預估空間）

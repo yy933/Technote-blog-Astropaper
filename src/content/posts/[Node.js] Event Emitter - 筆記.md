@@ -1,6 +1,6 @@
 ---
 title: "[Node.js] Event Emitter - 筆記"
-pubDatetime: 2026-05-26T03:01:46.948Z
+pubDatetime: 2026-05-26T03:29:26.478Z
 tags: ["Node.js"]
 description: " Table of contents :memo: 什麼是Event Emitter 簡單來說，Event Emitte..."
 ---
@@ -21,9 +21,9 @@ Event Emitter 的運作主要圍繞在以下三個動作：
 * **Listen（監聽 / 訂閱）**：**告訴 Event Emitter，如果某個事件發生了，請通知我，並執行我指定的函式**（這個函式通常稱為 Callback 或是 Listener）。
 * **Emit（觸發 / 廣播）**：當某件事情真的發生時，**負責把事件送出去，並把相關的資料一起傳給所有正在監聽的人**。
 * **Event Name（事件名稱）**：用來**區分不同事件的「標籤」**（通常是字串），例如 `click`、`data_received`、`error`。
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 💡 重要特性：在 Node.js 中，事件名稱（如 `'emailRequest'`）本質上只是字串，不需要事先宣告或定義。它在第一次被 `.on()` 或 `.emit()` 使用的瞬間，就會在記憶體中自動建立。
-:::
+</div>
 
 
 
@@ -68,11 +68,11 @@ setTimeout(()=> {
 
 ### 說明
 這段程式碼展示了 Event Emitter 的核心價值：**一對多（One-to-Many）的廣播機制**。**當觸發一次事件時，多個不同的獨立任務會被依序（同步地）觸發並執行。**
-:::warning
+<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
 雖然我們常常把 Event Emitter 拿來處理背景的非同步任務（例如上面範例放在 `setTimeout` 裡面），**但 `.emit()`觸發監聽器的過程本身是「同步依序」執行的。**
 
 **意即，當 `emit` 被呼叫時，它會按照 `.on()` 註冊的順序，執行完第一個 Function，才執行第二個，再執行第三個。**
-:::
+</div>
 
 
 逐段拆解這段程式碼在記憶體與執行時（Runtime）實際上做了什麼：
@@ -172,6 +172,8 @@ async function handleUserRegistration(req, res) {
 
 
 
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

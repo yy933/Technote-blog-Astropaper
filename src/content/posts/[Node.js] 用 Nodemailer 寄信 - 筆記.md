@@ -1,6 +1,6 @@
 ---
 title: "[Node.js] 用 Nodemailer 寄信 - 筆記"
-pubDatetime: 2026-05-26T03:01:46.950Z
+pubDatetime: 2026-05-26T03:29:26.482Z
 tags: ["Node.js","Express.js","npm"]
 description: " Table of contents :memo: Nodemailer安裝與設定 首先參閱[Nodemailer的文件..."
 ---
@@ -40,7 +40,8 @@ description: " Table of contents :memo: Nodemailer安裝與設定 首先參閱[N
     },
   });
 ```
-:::success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 #### 如果使用Gmail做為transporter
 nodemailer已經知道知名的信件服務提供者的SMTP連線資訊，所以若使用[這些信件服務](https://community.nodemailer.com/2-0-0-beta/setup-smtp/well-known-services/)做為transporter，不需提供host、port等資訊，以下以gmail為例：
 ```nodejs
@@ -62,7 +63,8 @@ let transporter = nodemailer.createTransport({
 如果不想使用App password，又想利用gmail做為transporter，可以使用**Gmail API + OAuth2**的方式驗證，詳細作法參考:
 * [Node.js - SEND Emails Using Nodemailer | Gmail | OAuth2](https://youtu.be/18qA61bpfUs)
 * [How to Use Nodemailer to Send Emails from Your Node.js Server](https://www.freecodecamp.org/news/use-nodemailer-to-send-emails-from-your-node-js-server/)
-:::
+
+</blockquote>
 ### 設定mail options
 接著設定寄件內容，直接看範例：
 ```nodejs
@@ -214,6 +216,8 @@ app.listen(port, () => {
 * [Node.js 系列學習日誌 #21 - 使用 nodemailer 套件透過 gmail 發送電子信箱](https://ithelp.ithome.com.tw/articles/10160766)
 
 
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

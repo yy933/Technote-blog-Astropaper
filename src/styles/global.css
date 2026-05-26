@@ -35,3 +35,15 @@
 :target {
   scroll-margin-block: 1rem;
 }
+
+/* --- 修正自訂提示框的引言預設樣式 --- */
+blockquote.blocknoted-fix {
+  @apply my-6 border-y-0 border-r-0 not-italic;
+}
+blockquote.blocknoted-fix p {
+  @apply my-2;
+}
+
+blockquote.blocknoted-fix code {
+  @apply bg-neutral-500/20 dark:bg-neutral-400/20;
+}

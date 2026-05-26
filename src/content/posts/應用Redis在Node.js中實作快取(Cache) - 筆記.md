@@ -1,6 +1,6 @@
 ---
 title: "應用Redis在Node.js中實作快取(Cache) - 筆記"
-pubDatetime: 2026-05-26T03:01:47.026Z
+pubDatetime: 2026-05-26T03:29:26.593Z
 tags: ["cache","database","Node.js","Redis","Express.js"]
 description: " Table of contents :memo: 簡介 當網站有些常常需要存取的資料、或是要依賴第三方API回傳資料時..."
 ---
@@ -257,6 +257,8 @@ app.listen(port, () => {
 * [Caching like a boss in NodeJS](https://medium.com/@danielsternlicht/caching-like-a-boss-in-nodejs-9bccbbc71b9b)
 
 
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

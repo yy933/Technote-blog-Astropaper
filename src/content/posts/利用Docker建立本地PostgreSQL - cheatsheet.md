@@ -1,6 +1,6 @@
 ---
 title: "利用Docker建立本地PostgreSQL - cheatsheet"
-pubDatetime: 2026-05-26T03:01:47.013Z
+pubDatetime: 2026-05-26T03:29:26.569Z
 tags: ["database","cheatsheet","PostgreSQL","Docker"]
 description: " Table of contents Prerequisite 安裝Docker: [Docker Desktop](h..."
 ---
@@ -145,6 +145,8 @@ docker exec -it nextauth-postgres psql -U admin -d nextauthdb
 
 建立完資料庫之後，就可以利用Prisma在JS/TS中操作資料庫了!
 [下一篇](https://hackmd.io/A4memsR6Tcy5KPAwlz053g)來詳細說明Prisma schema的設計與建立table，可以將使用者資料寫入，方便後續操作登入驗證。
-::: success
+<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
+
 :crescent_moon: 　本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
-:::
+
+</blockquote>

@@ -1,6 +1,6 @@
 ---
 title: "關於 RESTful API - 筆記"
-pubDatetime: 2026-05-26T03:01:47.033Z
+pubDatetime: 2026-05-26T03:29:26.603Z
 tags: ["HTTP","headers","Interview Preparation","API"]
 description: " Table of contents ![](https://i.imgur.com/kcWp75M.png) <div..."
 ---
@@ -28,10 +28,12 @@ REST為Representational State Transfer的簡寫，意思是「表現層狀態轉
 ### 無狀態 (Statelessness)
 遵循 REST 規範的系統是無狀態的，客戶端不需要知道伺服器端所處的狀態，反之亦然。客戶端發送的每個請求都是獨立的，而伺服器端不會保留客戶端的狀態。這種無狀態的特性，可以透過使用資源(resource)來執行，針對 REST 服務，伺服器通常使用[統一資源定位器](https://zh.wikipedia.org/zh-tw/%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E5%AE%9A%E4%BD%8D%E7%AC%A6)（Uniform Resource Locator，縮寫：URL，或稱統一資源定位器、定位位址、URL位址，**俗稱網址**） 來執行資源識別。
 
-:::info
+<blockquote class="my-6 p-4 bg-sky-50 dark:bg-sky-950/30 border-l-4 border-sky-500 rounded-r-md text-sky-900 dark:text-sky-200 blocknoted-fix">
+
 :bulb: 關於**資源**，[AWS](https://aws.amazon.com/tw/what-is/restful-api/)做了清楚的解釋:
 > 資源是指不同應用程式向其用戶端提供的資訊。資源可以是影像、影片、文字、數字或任何類型的資料。將資源提供給用戶端的機器也稱為伺服器。組織使用 API 共用資源並提供 Web 服務，同時維護安全、控制和身分驗證。此外，API 協助他們確定哪些用戶端可以存取特定的內部資源。
-:::
+
+</blockquote>
 
 這種特性的優點是RESTful應用程式更為可靠、高效能和可擴展，因為元件可以被管理、更新和重複使用，而不會影響整個系統。
 
