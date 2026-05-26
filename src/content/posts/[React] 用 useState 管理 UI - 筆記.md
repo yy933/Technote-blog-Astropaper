@@ -1,6 +1,6 @@
 ---
 title: "[React] 用 useState 管理 UI - 筆記"
-pubDatetime: 2026-05-26T03:29:26.537Z
+pubDatetime: 2025-05-15T03:55:28.000Z
 tags: ["JavaScript","React.js","React Hook"]
 description: " Table of contents Declarative vs. Imperative UI Imperative（..."
 ---

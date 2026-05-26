@@ -1,6 +1,6 @@
 ---
 title: "[Node.js] 連線資料庫及建立Model的步驟(MySQL) - 筆記"
-pubDatetime: 2026-05-26T03:29:26.483Z
+pubDatetime: 2023-09-25T01:28:52.000Z
 tags: ["Express.js","Node.js","cheatsheet","MySQL","Sequelize"]
 description: " Table of contents <mark 1. 新增資料庫</mark 在MySQL Workbench中的Qu..."
 ---

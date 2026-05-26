@@ -1,6 +1,6 @@
 ---
 title: "在Express專案中使用樣板引擎Handlebars - 筆記"
-pubDatetime: 2026-05-26T03:29:26.583Z
+pubDatetime: 2025-04-23T00:15:06.000Z
 tags: ["Express.js","Node.js","cheatsheet","browser"]
 description: " Table of contents [建立Express專案](https://hackmd.io/7L4TYmU9R..."
 ---

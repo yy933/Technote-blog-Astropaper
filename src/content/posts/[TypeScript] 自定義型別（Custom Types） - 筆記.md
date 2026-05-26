@@ -1,6 +1,6 @@
 ---
 title: "[TypeScript] 自定義型別（Custom Types） - 筆記"
-pubDatetime: 2026-05-26T03:29:26.559Z
+pubDatetime: 2025-05-27T21:50:40.000Z
 tags: ["TypeScript","cheatsheet"]
 description: " Table of contents 在 TypeScript 中，當基本型別（如 string, number, bo..."
 ---

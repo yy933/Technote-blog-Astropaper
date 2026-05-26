@@ -1,6 +1,6 @@
 ---
 title: "Prisma整合Next.js：建立使用者註冊與登入基本流程 - cheatsheet"
-pubDatetime: 2026-05-26T03:29:26.441Z
+pubDatetime: 2025-09-09T23:35:28.000Z
 tags: ["Next.js","React.js","database","authentication","Docker","PostgreSQL","Prisma"]
 description: " Table of contents 在[上一篇](https://hackmd.io/fX8YKgdmQsmpNt2F..."
 ---

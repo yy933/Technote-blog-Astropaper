@@ -1,6 +1,6 @@
 ---
 title: "Async/Await 語法糖 - 筆記"
-pubDatetime: 2026-05-26T03:29:26.362Z
+pubDatetime: 2025-04-28T01:25:10.000Z
 tags: ["JavaScript","asynchronous","Interview Preparation"]
 description: " Table of contents Prerequisite ✨ Async/await 的底層仍然是 Promise..."
 ---

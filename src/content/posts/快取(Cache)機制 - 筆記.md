@@ -1,6 +1,6 @@
 ---
 title: "快取(Cache)機制 - 筆記"
-pubDatetime: 2026-05-26T03:29:26.592Z
+pubDatetime: 2023-09-25T01:24:02.000Z
 tags: ["database","cache","Interview Preparation"]
 description: " Table of contents :memo: 什麼是快取(Cache) 當web app規模越來越大、使用者越來越..."
 ---

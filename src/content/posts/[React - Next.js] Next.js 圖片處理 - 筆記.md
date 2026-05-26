@@ -1,6 +1,6 @@
 ---
 title: "[React - Next.js] Next.js 圖片處理 - 筆記"
-pubDatetime: 2026-05-26T03:29:26.502Z
+pubDatetime: 2025-05-25T19:29:28.000Z
 tags: ["React.js","Node.js","Next.js"]
 description: " Table of contents Next.js 中的圖片處理 <Image /有什麼好處？ 1. 圖片延遲載入（l..."
 ---

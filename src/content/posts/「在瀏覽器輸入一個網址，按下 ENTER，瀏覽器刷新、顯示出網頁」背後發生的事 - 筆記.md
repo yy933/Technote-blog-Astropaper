@@ -1,6 +1,6 @@
 ---
 title: "「在瀏覽器輸入一個網址，按下 ENTER，瀏覽器刷新、顯示出網頁」背後發生的事 - 筆記"
-pubDatetime: 2026-05-26T03:29:26.563Z
+pubDatetime: 2023-02-16T23:56:28.000Z
 tags: ["others"]
 description: "1. 瀏覽器解析使用者輸入內容，解析網址URL( Uniform Resource Locator )， 依序處理 ： ..."
 ---

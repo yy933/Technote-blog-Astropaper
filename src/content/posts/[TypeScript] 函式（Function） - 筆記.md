@@ -1,6 +1,6 @@
 ---
 title: "[TypeScript] 函式（Function） - 筆記"
-pubDatetime: 2026-05-26T03:29:26.556Z
+pubDatetime: 2025-05-29T01:15:30.000Z
 tags: ["TypeScript","cheatsheet"]
 description: "Tags: TypeScript cheatsheet Table of contents 1. 參數類型註解 (Par..."
 ---

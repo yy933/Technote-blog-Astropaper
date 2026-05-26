@@ -1,6 +1,6 @@
 ---
 title: "[TypeScript] 陣列型別（Array Type） - 筆記"
-pubDatetime: 2026-05-26T03:29:26.560Z
+pubDatetime: 2025-05-28T00:54:56.000Z
 tags: ["TypeScript"]
 description: " Table of contents 基本語法 寫法 範例 說明 T[] string[], number[] 常見、簡..."
 ---

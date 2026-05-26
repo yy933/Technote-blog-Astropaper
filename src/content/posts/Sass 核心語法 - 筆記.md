@@ -1,6 +1,6 @@
 ---
 title: "Sass 核心語法 - 筆記"
-pubDatetime: 2026-05-26T03:29:26.454Z
+pubDatetime: 2025-04-17T01:46:18.000Z
 tags: ["cheatsheet","CSS","Sass"]
 description: " Table of contents 變數 (variable) 與運算子 (operator) 變數可以使 css 代..."
 ---

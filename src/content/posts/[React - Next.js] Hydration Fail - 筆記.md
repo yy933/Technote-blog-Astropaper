@@ -1,6 +1,6 @@
 ---
 title: "[React - Next.js] Hydration Fail - 筆記"
-pubDatetime: 2026-05-26T03:29:26.491Z
+pubDatetime: 2025-06-09T00:10:18.000Z
 tags: ["React.js","Node.js","Next.js","project","Debuggung"]
 description: " Table of contents 問題 利用Next.js做Memory Game專案時，有翻牌配對的環節，相關的程..."
 ---

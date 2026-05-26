@@ -1,6 +1,6 @@
 ---
 title: "[CSS] 偽元素 vs 偽類 - 筆記"
-pubDatetime: 2026-05-26T03:29:26.468Z
+pubDatetime: 2025-04-10T23:11:10.000Z
 tags: ["cheatsheet","CSS"]
 description: " Table of contents 在 CSS 中，「偽元素」與「偽類」都能幫助我們選取、操作一些 原本無法直接選取的..."
 ---

@@ -1,6 +1,6 @@
 ---
 title: "連線資料庫及建立Model的步驟(MongoDB) - 筆記"
-pubDatetime: 2026-05-26T03:29:26.598Z
+pubDatetime: 2023-09-25T01:32:26.000Z
 tags: ["Express.js","Node.js","MongoDB","Mongoose","cheatsheet","database"]
 description: " Table of contents <mark 新增資料庫</mark 先到[MongoDB Atlas](https..."
 ---

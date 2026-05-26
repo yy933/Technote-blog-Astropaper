@@ -1,6 +1,6 @@
 ---
 title: "React 語法糖：JSX - 筆記"
-pubDatetime: 2026-05-26T03:29:26.452Z
+pubDatetime: 2025-05-05T20:16:02.000Z
 tags: ["JavaScript","React.js"]
 description: " Table of contents JSX 是什麼？ 🧠 JSX: 把 Markup 寫進 JavaScript！ ..."
 ---

@@ -1,6 +1,6 @@
 ---
 title: "[TypeScript] Optional Chaining & Nullish Coalescing  - 筆記"
-pubDatetime: 2026-05-26T03:29:26.553Z
+pubDatetime: 2025-06-04T02:43:18.000Z
 tags: ["TypeScript","cheatsheet"]
 description: "Tags: TypeScript cheatsheet Table of contents 什麼是 Optional C..."
 ---

@@ -1,6 +1,6 @@
 ---
 title: "關於 RESTful API - 筆記"
-pubDatetime: 2026-05-26T03:29:26.603Z
+pubDatetime: 2023-09-25T01:20:32.000Z
 tags: ["HTTP","headers","Interview Preparation","API"]
 description: " Table of contents ![](https://i.imgur.com/kcWp75M.png) <div..."
 ---

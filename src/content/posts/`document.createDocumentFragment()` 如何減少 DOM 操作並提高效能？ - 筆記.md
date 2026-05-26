@@ -1,6 +1,6 @@
 ---
 title: "`document.createDocumentFragment()` 如何減少 DOM 操作並提高效能？ - 筆記"
-pubDatetime: 2026-05-26T03:29:26.561Z
+pubDatetime: 2025-03-13T01:07:22.000Z
 tags: ["others"]
 description: " Table of contents document.createDocumentFragment() 在 JavaS..."
 ---

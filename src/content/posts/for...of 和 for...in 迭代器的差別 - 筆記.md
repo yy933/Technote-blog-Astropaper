@@ -1,6 +1,6 @@
 ---
 title: "for...of 和 for...in 迭代器的差別 - 筆記"
-pubDatetime: 2026-05-26T03:29:26.398Z
+pubDatetime: 2025-02-21T00:35:50.000Z
 tags: ["others"]
 description: " Table of contents for...of 和 for...in 在 JavaScript 中都是用來遍歷（..."
 ---
