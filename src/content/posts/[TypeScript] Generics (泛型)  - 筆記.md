@@ -1,6 +1,6 @@
 ---
 title: "[TypeScript] Generics (泛型)  - 筆記"
-pubDatetime: 2026-05-25T11:17:36.899Z
+pubDatetime: 2026-05-26T03:01:46.999Z
 tags: ["cheatsheet","TypeScript"]
 description: "Tags: TypeScript cheatsheet Table of contents 什麼是Generics? G..."
 ---

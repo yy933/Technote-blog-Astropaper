@@ -1,6 +1,6 @@
 ---
 title: "Promise 封裝 - 筆記"
-pubDatetime: 2026-05-25T11:17:36.156Z
+pubDatetime: 2026-05-26T03:01:46.896Z
 tags: ["JavaScript","Interview Preparation","asynchronous"]
 description: " Table of contents 什麼是 Promise Promise 是一個物件建構子 (constructor..."
 ---

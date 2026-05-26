@@ -1,6 +1,6 @@
 ---
 title: "JavaScript 資料型別檢查表 (錯誤處理) - 筆記"
-pubDatetime: 2026-05-25T11:17:35.995Z
+pubDatetime: 2026-05-26T03:01:46.867Z
 tags: ["cheatsheet","JavaScript","Interview Preparation","Data type"]
 description: " Table of contents 給 JS 開發者的 「資料型別檢查表」，適合在寫 if 判斷時或做錯誤處理(err..."
 ---

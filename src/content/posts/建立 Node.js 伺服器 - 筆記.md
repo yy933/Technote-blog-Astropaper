@@ -1,6 +1,6 @@
 ---
 title: "建立 Node.js 伺服器 - 筆記"
-pubDatetime: 2026-05-25T11:17:37.288Z
+pubDatetime: 2026-05-26T03:01:47.024Z
 tags: ["Node.js","cheatsheet"]
 description: " Table of contents 建立 Node.js 本機伺服器 1. 載入 Node.js HTTP 模組 1...."
 ---

@@ -1,6 +1,6 @@
 ---
 title: "[React - Next.js] 在本地環境建立 Next.js 開發環境 - 筆記"
-pubDatetime: 2026-05-25T11:17:36.443Z
+pubDatetime: 2026-05-26T03:01:46.971Z
 tags: ["React.js","Node.js","cheatsheet","Next.js"]
 description: " Table of contents 從頭開始建立 Next.js 專案（使用 App Router） 1. 新增一個專..."
 ---

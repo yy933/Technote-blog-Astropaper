@@ -1,6 +1,6 @@
 ---
 title: "[TypeScript] Narrowing - 筆記"
-pubDatetime: 2026-05-25T11:17:36.920Z
+pubDatetime: 2026-05-26T03:01:47.001Z
 tags: ["TypeScript","cheatsheet"]
 description: "Tags: TypeScript cheatsheet Table of contents 為什麼需要 Type Nar..."
 ---

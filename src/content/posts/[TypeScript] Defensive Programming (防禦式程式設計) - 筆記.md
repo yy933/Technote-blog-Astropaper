@@ -1,6 +1,6 @@
 ---
 title: "[TypeScript] Defensive Programming (防禦式程式設計) - 筆記"
-pubDatetime: 2026-05-25T11:17:36.875Z
+pubDatetime: 2026-05-26T03:01:46.998Z
 tags: ["TypeScript"]
 description: " Table of contents Defensive Programming 是什麼？ 相信大家都聽過防禦式駕駛，其..."
 ---

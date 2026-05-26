@@ -1,6 +1,6 @@
 ---
 title: "[Node.js] Event Emitter - 筆記"
-pubDatetime: 2026-05-25T11:17:36.311Z
+pubDatetime: 2026-05-26T03:01:46.948Z
 tags: ["Node.js"]
 description: " Table of contents :memo: 什麼是Event Emitter 簡單來說，Event Emitte..."
 ---

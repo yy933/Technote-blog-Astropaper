@@ -1,6 +1,6 @@
 ---
 title: "[Node.js]利用Google Sheets API操作Google試算表"
-pubDatetime: 2026-05-25T11:17:36.352Z
+pubDatetime: 2026-05-26T03:01:46.952Z
 tags: ["Node.js","API","Express.js"]
 description: " Table of contents :memo: 前言 當我們想要把資料放在Google Sheets上方便閱讀、計算..."
 ---

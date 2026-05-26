@@ -1,6 +1,6 @@
 ---
 title: "JavaScript的原型繼承(Prototypal Inheritance)"
-pubDatetime: 2026-05-25T11:17:36.014Z
+pubDatetime: 2026-05-26T03:01:46.873Z
 tags: ["Interview Preparation","JavaScript"]
 description: " Table of contents :memo: 前言 在[MDN文件](https://developer.mozi..."
 ---

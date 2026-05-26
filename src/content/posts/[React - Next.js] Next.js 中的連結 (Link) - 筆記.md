@@ -1,6 +1,6 @@
 ---
 title: "[React - Next.js] Next.js 中的連結 (Link) - 筆記"
-pubDatetime: 2026-05-25T11:17:36.406Z
+pubDatetime: 2026-05-26T03:01:46.966Z
 tags: ["React.js","Node.js","Next.js"]
 description: " Table of contents 什麼是 <Link？為什麼不用 <a？ 在 Next.js 中，<Link 是用來..."
 ---

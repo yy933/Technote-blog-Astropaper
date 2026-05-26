@@ -1,6 +1,6 @@
 ---
 title: "軟體設計模式：Model-View-Controller  - 筆記"
-pubDatetime: 2026-05-25T11:17:37.332Z
+pubDatetime: 2026-05-26T03:01:47.031Z
 tags: ["Interview Preparation"]
 description: " Table of contents 什麼是「關注點分離」？ 在應用程式開發的領域裡，相當重視 「關注點分離 (sepa..."
 ---

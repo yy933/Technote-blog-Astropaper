@@ -1,6 +1,6 @@
 ---
 title: "[React] 使用 props 向下傳遞資料 - 筆記"
-pubDatetime: 2026-05-25T11:17:36.599Z
+pubDatetime: 2026-05-26T03:01:46.982Z
 tags: ["JavaScript","React.js"]
 description: " Table of contents 什麼是 props？ props（properties）是元件間傳遞資料的方式。 ..."
 ---

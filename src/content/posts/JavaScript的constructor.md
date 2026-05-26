@@ -1,6 +1,6 @@
 ---
 title: "JavaScript的constructor"
-pubDatetime: 2026-05-25T11:17:36.004Z
+pubDatetime: 2026-05-26T03:01:46.870Z
 tags: ["JavaScript","Interview Preparation"]
 description: " Table of contents :memo: 什麼是建構式(Constructor) 建構式(Constructo..."
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Cookie & Session - 筆記"
-pubDatetime: 2026-05-25T11:17:35.901Z
+pubDatetime: 2026-05-26T03:01:46.840Z
 tags: ["HTTP","cookie","session","authentication","web security"]
 description: " Table of contents :memo: HTTP 的無狀態 (Stateless) 特性 HTTP通訊協定(..."
 ---

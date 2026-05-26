@@ -1,6 +1,6 @@
 ---
 title: "JWT 驗證機制 - 筆記"
-pubDatetime: 2026-05-25T11:17:36.039Z
+pubDatetime: 2026-05-26T03:01:46.880Z
 tags: ["authentication","HTTP","web security","JWT","token"]
 description: " Table of contents :memo: HTTP 的無狀態 (Stateless) 特性 HTTP通訊協定(..."
 ---

@@ -1,6 +1,6 @@
 ---
 title: "如何把專案部署到Railway上 - 筆記"
-pubDatetime: 2026-05-25T11:17:37.280Z
+pubDatetime: 2026-05-26T03:01:47.023Z
 tags: ["Node.js","database","MySQL","deployment"]
 description: " Table of contents :::warning :bangbang: 2023/08 更新：Railway自..."
 ---

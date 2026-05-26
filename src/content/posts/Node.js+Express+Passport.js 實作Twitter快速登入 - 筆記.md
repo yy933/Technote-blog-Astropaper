@@ -1,6 +1,6 @@
 ---
 title: "Node.js+Express+Passport.js 實作Twitter快速登入 - 筆記"
-pubDatetime: 2026-05-25T11:17:36.092Z
+pubDatetime: 2026-05-26T03:01:46.888Z
 tags: ["Node.js","Express.js","npm","Passport.js","Authentication"]
 description: " Table of contents :memo: 串接Twitter API 基本設置與Token取得 首先先到[Tw..."
 ---

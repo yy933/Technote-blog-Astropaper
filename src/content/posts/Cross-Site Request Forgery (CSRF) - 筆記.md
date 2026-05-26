@@ -1,6 +1,6 @@
 ---
 title: "Cross-Site Request Forgery (CSRF) - 筆記"
-pubDatetime: 2026-05-25T11:17:35.917Z
+pubDatetime: 2026-05-26T03:01:46.842Z
 tags: ["web security","web attacks"]
 description: " Table of contents :memo: 什麼是CrossSite Request Forgery (CSRF..."
 ---

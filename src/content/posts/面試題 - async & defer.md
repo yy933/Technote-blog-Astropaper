@@ -1,6 +1,6 @@
 ---
 title: "面試題 - async & defer"
-pubDatetime: 2026-05-25T11:17:37.387Z
+pubDatetime: 2026-05-26T03:01:47.036Z
 tags: ["Interview Preparation","browser","DOM","HTML"]
 description: " Q1. <script 在HTML中的位置放在<body最底部，請問：在瀏覽器渲染流程中，會在什麼時機點載入JavaS..."
 ---

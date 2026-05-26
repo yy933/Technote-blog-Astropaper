@@ -1,6 +1,6 @@
 ---
 title: "HTTP Headers - 筆記"
-pubDatetime: 2026-05-25T11:17:35.975Z
+pubDatetime: 2026-05-26T03:01:46.863Z
 tags: ["HTTP","session","authentication","web security","headers"]
 description: " Table of contents :memo: 什麼是HTTP Headers 無論是瀏覽器發送的request或伺..."
 ---

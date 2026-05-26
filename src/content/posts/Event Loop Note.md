@@ -1,6 +1,6 @@
 ---
 title: "Event Loop Note"
-pubDatetime: 2026-05-25T11:17:35.953Z
+pubDatetime: 2026-05-26T03:01:46.853Z
 tags: ["Event Loop"," JavaScript","Interview Preparation","JavaScript"]
 description: " title: Event Loop Note tags: Event Loop, JavaScript descrip..."
 ---

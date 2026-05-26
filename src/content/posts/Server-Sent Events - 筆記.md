@@ -1,6 +1,6 @@
 ---
 title: "Server-Sent Events - 筆記"
-pubDatetime: 2026-05-25T11:17:36.225Z
+pubDatetime: 2026-05-26T03:01:46.911Z
 tags: ["Node.js","Backend","Express.js"]
 description: " Table of contents :memo: 什麼是ServerSent Events ServerSent Ev..."
 ---
