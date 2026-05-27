@@ -2,7 +2,8 @@
 title: "Prisma整合Next.js：建立使用者註冊與登入基本流程 - cheatsheet"
 pubDatetime: 2025-09-09T23:35:28.000Z
 tags: ["Next.js","React.js","database","authentication","Docker","PostgreSQL","Prisma"]
-description: " Table of contents 在[上一篇](https://hackmd.io/fX8YKgdmQsmpNt2F..."
+description: "Table of contents 在[上一篇](https://hackmd.io/fX8YKgdmQsmpNt2F..."
+hackmd_id: "BkNo5PR5ge"
 ---
 
 ## Table of contents
@@ -137,7 +138,8 @@ npx prisma migrate dev --name init
 * 檢查 pgAdmin → 應該會看到 User 等表格。
 
 ## 管理Prisma Client
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 Prisma Client的功能:
 * **型別安全 (Type-Safe)**  
   會根據 `schema.prisma` 自動產生 TypeScript 型別，避免寫錯欄位或傳錯資料型別。
@@ -158,7 +160,8 @@ await prisma.$transaction([
   prisma.session.create(...),
 ])
 ```
-</div>
+
+</blockquote>
 
 
 在 `src/lib/` 底下新增一個 `prisma.ts`:

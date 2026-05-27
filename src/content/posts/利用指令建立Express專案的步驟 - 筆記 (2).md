@@ -2,7 +2,7 @@
 title: "利用指令建立Express專案的步驟 - 筆記 (2)"
 pubDatetime: 2025-04-08T21:25:10.000Z
 tags: ["others"]
-description: " Table of contents 1. 新增專案資料夾 mkdir project cd project 2. 設定..."
+description: "Table of contents 1. 新增專案資料夾 mkdir project cd project 2. 設定..."
 ---
 
 ## Table of contents

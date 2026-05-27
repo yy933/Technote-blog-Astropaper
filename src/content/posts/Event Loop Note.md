@@ -2,7 +2,8 @@
 title: "Event Loop Note"
 pubDatetime: 2025-03-26T02:57:32.000Z
 tags: ["Event Loop"," JavaScript","Interview Preparation","JavaScript"]
-description: " title: Event Loop Note tags: Event Loop, JavaScript descrip..."
+description: "title: Event Loop Note tags: Event Loop, JavaScript descrip..."
+hackmd_id: "Sk2ETu_Di"
 ---
 
 ---

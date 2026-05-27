@@ -2,14 +2,17 @@
 title: "如何把專案部署到Railway上 - 筆記"
 pubDatetime: 2023-09-25T01:25:38.000Z
 tags: ["Node.js","database","MySQL","deployment"]
-description: " Table of contents <div class=\"my6 p4 bgorange50 dark:bgoran..."
+description: "Table of contents <blockquote class=\"my6 p4 bgorange50 dark..."
+hackmd_id: "HyuwNxYXh"
 ---
 
 ## Table of contents
 
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 :bangbang: 2023/08 更新：Railway自2023年8月1日起[取消免費方案](https://blog.railway.app/p/pricing-and-plans-migration-guide-2023)，最低收費Hobby Plan每個月5美元，各方案詳細收費標準可參考[官網](https://railway.app/pricing)。
-</div>
+
+</blockquote>
 
 ## 專案簡介
 

@@ -2,7 +2,8 @@
 title: "JavaScript的原型繼承(Prototypal Inheritance)"
 pubDatetime: 2023-09-25T01:22:00.000Z
 tags: ["Interview Preparation","JavaScript"]
-description: " Table of contents :memo: 前言 在[MDN文件](https://developer.mozi..."
+description: "Table of contents :memo: 前言 在[MDN文件](https://developer.mozi..."
+hackmd_id: "HkcySOHCn"
 ---
 
 ## Table of contents
@@ -87,9 +88,11 @@ class Student : extends Person
 > **某些人認為 JavaScript 並非真正的物件導向 (Object-oriented, OO) 語言。** 在「典型 OO」中，你必須定義特定的類別物件，才能定義哪些類別所要繼承的類別。**JavaScript 則使用不同的系統 —「繼承」的物件並不會一併複製功能過來，而是透過原型鍊連接其所繼承的功能，亦即所謂的原型繼承 (Prototypal inheritance)。**
  From [MDN文件](https://developer.mozilla.org/zh-TW/docs/Learn/JavaScript/Objects/Classes_in_JavaScript)
 
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 關於物件導向程式設計，可以參考[這篇文章](https://www.educative.io/blog/object-oriented-programming)
-</div> 
+
+</blockquote> 
  
 #### 原型鏈的頂端是物件
 > JavaScript 就只有一個建構子：物件。每個物件都有一個連著其他原型（prototype）的私有屬性（private property）物件。**原型物件也有著自己的原型，於是原型物件就這樣鏈結，直到撞見 null 為止：null 在定義裡沒有原型、也是原型鏈（prototype chain）的最後一個鏈結。 幾乎所有 JavaScript 的物件，都是在原型鏈最頂端的物件實例。**
@@ -122,7 +125,7 @@ console.log(milkProtoProtoProto)
 
 ## :memo: 範例
 說了那麼多，直接用程式碼操作:
-> Note: 以下例子使用[`class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)語法糖撰寫，和傳統的建構函式會略有不同，關於兩者的比較也可以參考[另一篇文章](https://hackmd.io/@yy933/B1MGs4Tni)。
+> Note: 以下例子使用[`class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)語法糖撰寫，和傳統的建構函式會略有不同，關於兩者的比較也可以參考[另一篇文章](/posts/javascript的constructor/)。
 ### `extends`和`super`
 ```javascript
 class Drink {

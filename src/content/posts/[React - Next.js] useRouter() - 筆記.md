@@ -2,7 +2,8 @@
 title: "[React - Next.js] useRouter() - 筆記"
 pubDatetime: 2025-06-04T07:58:10.000Z
 tags: ["React.js","Node.js","Next.js","React Hook"]
-description: " Table of contents useRouter() 是什麼？ useRouter 是 Next.js 提供的 ..."
+description: "Table of contents useRouter() 是什麼？ useRouter 是 Next.js 提供的..."
+hackmd_id: "S1g4o1CMxl"
 ---
 
 ## Table of contents

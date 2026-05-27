@@ -2,7 +2,8 @@
 title: "動態路由 (Route Params) 和 查詢字串 (Query String) - 筆記"
 pubDatetime: 2025-04-09T01:22:12.000Z
 tags: ["Express.js","Node.js","cheatsheet"]
-description: " Table of contents 動態路由 (Route Params) params 是在 URL 中設定的「變數..."
+description: "Table of contents 動態路由 (Route Params) params 是在 URL 中設定的「變數..."
+hackmd_id: "rkyaSdcTkl"
 ---
 
 ## Table of contents

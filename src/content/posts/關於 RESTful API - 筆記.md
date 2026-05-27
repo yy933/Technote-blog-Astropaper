@@ -2,7 +2,8 @@
 title: "關於 RESTful API - 筆記"
 pubDatetime: 2023-09-25T01:20:32.000Z
 tags: ["HTTP","headers","Interview Preparation","API"]
-description: " Table of contents ![](https://i.imgur.com/kcWp75M.png) <div..."
+description: "Table of contents ![](https://i.imgur.com/kcWp75M.png) <div..."
+hackmd_id: "Hk66q7c3j"
 ---
 
 ## Table of contents

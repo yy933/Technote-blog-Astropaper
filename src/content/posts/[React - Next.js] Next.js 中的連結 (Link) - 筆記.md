@@ -2,7 +2,8 @@
 title: "[React - Next.js] Next.js 中的連結 (Link) - 筆記"
 pubDatetime: 2025-05-25T20:30:30.000Z
 tags: ["React.js","Node.js","Next.js"]
-description: " Table of contents 什麼是 <Link？為什麼不用 <a？ 在 Next.js 中，<Link 是用來..."
+description: "Table of contents 什麼是 <Link？為什麼不用 <a？ 在 Next.js 中，<Link 是用來..."
+hackmd_id: "BkP5Ew-zxx"
 ---
 
 ## Table of contents
@@ -90,7 +91,8 @@ export default function Navbar() {
 <Link href="/terms" prefetch={false}>Terms</Link>
 ```
 
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 ## 什麼是SPA？
 SPA 是 Single Page Application（單頁式應用程式）的縮寫
 SPA 是一種網頁開發方式，整個web app只有一個 HTML 頁面，使用 JavaScript（通常是 React、Vue、Angular 等）在瀏覽器上動態更新內容，而不是每次都向伺服器請求一個新的頁面。
@@ -128,4 +130,5 @@ export default function Home() {
 
 * 使用者點擊 <Link> 時，仍然享有 SPA 的快速跳頁體驗
 * 搜尋引擎抓取的則是伺服器預先渲染好的 HTML（完整的內容！）
-</div>
+
+</blockquote>

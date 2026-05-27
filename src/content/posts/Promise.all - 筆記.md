@@ -2,7 +2,8 @@
 title: "Promise.all - 筆記"
 pubDatetime: 2025-04-28T01:08:00.000Z
 tags: ["JavaScript","asynchronous","Interview Preparation"]
-description: " Table of contents ✨ 關於Promise，先參考[這篇筆記](https://hackmd.io/l..."
+description: "Table of contents ✨ 關於Promise，先參考[這篇筆記](https://hackmd.io/l..."
+hackmd_id: "r1zU-ankxe"
 ---
 
 ## Table of contents
@@ -62,9 +63,11 @@ Promise.all(
       return UserModel.create({ ...user }).then(...)
   )
 ```
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 注意在 `UserModel.create` 之前要加 `return`，才會將 `UserModel.create` 這個 `Promise` 物件向上回傳給 `Promise.all`。
-</div>
+
+</blockquote>
 
 ### 不需要再用條件式來檢查終止條件
 如果改成 `Promise.all` 的語法，則會直接將兩次的 `UserModel.create` 放進陣列參數，`Promise.all` 會確保陣列中所有的項目都執行完以後，才進入 `then`。因此就不需要原本的條件式了。

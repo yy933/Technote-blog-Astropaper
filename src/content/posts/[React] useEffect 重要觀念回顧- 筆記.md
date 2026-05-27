@@ -2,7 +2,8 @@
 title: "[React] useEffect 重要觀念回顧- 筆記"
 pubDatetime: 2025-05-14T21:44:42.000Z
 tags: ["JavaScript","React.js"]
-description: " Table of contents React 元件為何被視為「純函式（pure function）」？ 給定相同的 ..."
+description: "Table of contents React 元件為何被視為「純函式（pure function）」？ 給定相同的..."
+hackmd_id: "ryjVTe7Wgl"
 ---
 
 ## Table of contents

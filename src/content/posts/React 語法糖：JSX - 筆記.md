@@ -2,7 +2,8 @@
 title: "React 語法糖：JSX - 筆記"
 pubDatetime: 2025-05-05T20:16:02.000Z
 tags: ["JavaScript","React.js"]
-description: " Table of contents JSX 是什麼？ 🧠 JSX: 把 Markup 寫進 JavaScript！ ..."
+description: "Table of contents JSX 是什麼？ 🧠 JSX: 把 Markup 寫進 JavaScript！..."
+hackmd_id: "rJgW2XJC1ll"
 ---
 
 ## Table of contents
@@ -57,7 +58,8 @@ const element = React.createElement('h1', null, 'Hello, world!');
 ```nginx
 Adjacent JSX elements must be wrapped in an enclosing tag.
 ```
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 :bulb: JSX 中不能直接回傳多個並列的元素，必須**用一個「包裹元素」把它們包起來**。
 **JSX 其實會被轉換成純 JavaScript 物件，而 JavaScript 函式不能直接回傳兩個物件**，必須用一個集合（像陣列或容器）包起來。
 
@@ -94,7 +96,8 @@ return (
 );
 ```
 :pencil: `<>...</>`叫做Fragment，它不會在 HTML 結果裡產生額外的標籤，很輕量。
-</div>
+
+</blockquote>
 
 ## JSX三個使用規則
 ### 1. 必須有一個單一根元素（Single Root Element）
@@ -129,7 +132,8 @@ return (
 />
 ```
 > :bulb: `aria-*` 和 `data-*` 例外，仍然用中線命名。
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 :bulb: 在 JSX 中，class 不是一個有效的屬性名稱，因為：
 * `class` 是 JavaScript 的 保留字（例如：`class MyComponent {}`），會造成語法解析問題。
 * JSX 其實是被 轉譯成 `React.createElement()` 的 JavaScript 函式，那個函式期待的屬性名稱是對應 DOM 的 property name，而不是 HTML attribute。
@@ -159,7 +163,8 @@ return (
 <div data-user-id="123" aria-label="close button"></div>
 ```
 
-</div>
+
+</blockquote>
 
 ## 工具推薦：JSX 轉換器
 大量 HTML 要轉成 JSX？

@@ -2,7 +2,8 @@
 title: "利用Docker建立本地PostgreSQL - cheatsheet"
 pubDatetime: 2025-09-09T23:35:48.000Z
 tags: ["database","cheatsheet","PostgreSQL","Docker"]
-description: " Table of contents Prerequisite 安裝Docker: [Docker Desktop](h..."
+description: "Table of contents Prerequisite 安裝Docker: [Docker Desktop](h..."
+hackmd_id: "BJuBMT6qlx"
 ---
 
 ## Table of contents

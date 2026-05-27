@@ -2,7 +2,8 @@
 title: "[Node.js] 用 Nodemailer 寄信 - 筆記"
 pubDatetime: 2023-09-25T01:25:54.000Z
 tags: ["Node.js","Express.js","npm"]
-description: " Table of contents :memo: Nodemailer安裝與設定 首先參閱[Nodemailer的文件..."
+description: "Table of contents :memo: Nodemailer安裝與設定 首先參閱[Nodemailer的文件..."
+hackmd_id: "Hy9rKyAE3"
 ---
 
 ## Table of contents
@@ -163,7 +164,7 @@ EMAIL=XXXX@gmail.com
 APP_PASSWORD=your_password
 ```
 ### Route - POST /contact
-* 首先利用Express架一個伺服器，專案入口設定為`app.js`(詳細步驟[點我](https://hackmd.io/@yy933/BJR_v_K_j))，接著到`app.js`引入email-helpers
+* 首先利用Express架一個伺服器，專案入口設定為`app.js`(詳細步驟[點我](/posts/利用指令建立express專案的步驟---筆記/))，接著到`app.js`引入email-helpers
 `const contactFormSend = require('./helpers/email-helpers')`
 * 傳送表單資料的路由
 ```nodejs

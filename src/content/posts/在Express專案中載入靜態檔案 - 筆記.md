@@ -2,7 +2,8 @@
 title: "在Express專案中載入靜態檔案 - 筆記"
 pubDatetime: 2025-04-22T07:42:18.000Z
 tags: ["Express.js","Node.js","cheatsheet","browser"]
-description: " Table of contents 什麼是靜態檔案 靜態檔案（static files）指的是不需要再經過伺服器額外處..."
+description: "Table of contents 什麼是靜態檔案 靜態檔案（static files）指的是不需要再經過伺服器額外處..."
+hackmd_id: "rJ7pr4Sygl"
 ---
 
 ## Table of contents

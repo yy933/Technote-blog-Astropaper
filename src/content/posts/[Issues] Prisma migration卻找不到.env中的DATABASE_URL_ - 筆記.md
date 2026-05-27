@@ -2,7 +2,7 @@
 title: "[Issues] Prisma migration卻找不到.env中的DATABASE_URL? - 筆記"
 pubDatetime: 2025-09-18T20:58:02.000Z
 tags: ["database","Prisma","PostgreSQL","Issue"]
-description: " Table of contents 問題簡述 更改Prisma schema後，要進行資料庫migration，執行了..."
+description: "Table of contents 問題簡述 更改Prisma schema後，要進行資料庫migration，執行了..."
 ---
 
 ## Table of contents

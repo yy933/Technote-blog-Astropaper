@@ -2,7 +2,8 @@
 title: "JavaScript的柯里化(Currying in JavaScript)"
 pubDatetime: 2023-09-25T01:21:30.000Z
 tags: ["JavaScript","Interview Preparation"]
-description: " Table of contents <img src=\"https://images.unsplash.com/pho..."
+description: "Table of contents <img src=\"https://images.unsplash.com/pho..."
+hackmd_id: "B1Dc1MAAn"
 ---
 
 ## Table of contents
@@ -130,16 +131,20 @@ const curry =(fn) =>{
 以上code做了什麼?
 1. `curry`作為外層函式，接受`fn`函式作為參數傳入，並回傳另一個函式`curried`
 2. `curried`接受另一參數`args`傳入，並用[其餘參數（rest parameters）](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters)將參數集合成陣列，並且比較`fn`和`args`的長度
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 :bulb: 函式的長度(function length)是function的一種屬性(property)，**表示該 function 預期被傳入的參數數量**，這個數量並不包含其餘參數(rest parameter)且只包含第一個預設參數(Default Parameters)前的參數。
 *Ref: [MDN doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/length)*
-</div>
+
+</blockquote>
 3. `if`判斷式中的邏輯: 若`fn`和`args`的長度(也就是參數的數量)不同，則呼叫[`bind()`](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)方法，建立一個新的函式並傳入參數`...args`；若`fn`和`args`的長度(也就是預期傳入的參數數量)相同，則回傳傳入`args`參數的`fn`
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 :bulb: `bind()`是函式的一種方法(method)，它的基本語法如下:
 `fun.bind(thisArg[, arg1[, arg2[, ...]]])`
 第一個參數是`this`要指向的物件，第二個與其後的參數則是要傳入該函式的參數。`bind()`會建立一個新的函式，必須調用該函式才會執行。
-</div>
+
+</blockquote>
 實際應用這個函式:
 ```javascript
 const totalNum=(x,y,z) => {
@@ -213,11 +218,13 @@ function curry(fn) {
 }
 ```
 與`bind()`方法的不同之處在於，`apply()`方法接受的第二個參數是一個**陣列**，因此無須再展開。
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 :bulb: [`apply()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)方法的基本語法:
 `fun.apply(thisArg, [argsArray])`
 第一個參數一樣是`this`指向的對象，第二個參數則是參數陣列或是array-like 物件；和`bind()`方法不一樣，`apply()`是直接執行該函式，而非建立新函式(或是說拷貝原函式物件)。
-</div>
+
+</blockquote>
 <blockquote class="my-6 p-4 bg-sky-50 dark:bg-sky-950/30 border-l-4 border-sky-500 rounded-r-md text-sky-900 dark:text-sky-200 blocknoted-fix">
 
 :bookmark: 更多關於`apply()`、`bind()`、`call()`方法，可以閱讀以下文章:

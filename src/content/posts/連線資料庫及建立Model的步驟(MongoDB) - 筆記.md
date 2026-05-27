@@ -2,7 +2,8 @@
 title: "連線資料庫及建立Model的步驟(MongoDB) - 筆記"
 pubDatetime: 2023-09-25T01:32:26.000Z
 tags: ["MongoDB","Mongoose","Express.js","Node.js","cheatsheet","database"]
-description: " Table of contents 新增資料庫 先到[MongoDB Atlas](https://www.mongo..."
+description: "Table of contents 新增資料庫 先到[MongoDB Atlas](https://www.mongo..."
+hackmd_id: "HJu5lkwYo"
 ---
 
 ## Table of contents

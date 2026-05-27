@@ -2,7 +2,8 @@
 title: "Alpha Camp 2-2課程心得"
 pubDatetime: 2023-04-10T23:25:24.000Z
 tags: ["Learning reflection"]
-description: " OBJECTIVE 在學期22中，課程難度相較於21又上升了不少，也有更多實作專案的機會。舉例來說，本學期先從串接AP..."
+description: "OBJECTIVE 在學期22中，課程難度相較於21又上升了不少，也有更多實作專案的機會。舉例來說，本學期先從串接AP..."
+hackmd_id: "SJv72RODi"
 ---
 
 #### OBJECTIVE

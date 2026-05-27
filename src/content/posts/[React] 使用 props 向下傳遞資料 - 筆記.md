@@ -2,7 +2,8 @@
 title: "[React] 使用 props 向下傳遞資料 - 筆記"
 pubDatetime: 2025-05-07T20:45:08.000Z
 tags: ["JavaScript","React.js"]
-description: " Table of contents 什麼是 props？ props（properties）是元件間傳遞資料的方式。 ..."
+description: "Table of contents 什麼是 props？ props（properties）是元件間傳遞資料的方式。..."
+hackmd_id: "Bk-iRZ0Jlg"
 ---
 
 ## Table of contents
@@ -221,7 +222,8 @@ function Card({ children }) {
 ```jsx
 <Card>這裡放什麼都可以</Card>
 ```
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 **也就是說!**
 例如這樣定義 Card 元件：
 ```jsx
@@ -250,7 +252,8 @@ function Card({ children }) {
 </div>
 
 ```
-</div>
+
+</blockquote>
 
 
 ### 不定量或大量 props 要傳給子元件
@@ -300,7 +303,8 @@ function Navbar(props) {
     props.logoIcon = "some-other-icon.png"
 }
 ```
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 :arrow_right: 這行程式碼**違反了 React 的設計原則。** 在 React 中，props 是從父元件傳進來的資料，應該是 **唯讀的（read-only）並且不可變（immutable）。** 
 
 可以「使用」它們，但不能「修改」它們。如果修改props，會讓程式變得難以預測與除錯。若父元件重新 render，傳入的 props 會被覆蓋，改動會瞬間消失。
@@ -314,7 +318,8 @@ function Navbar(props) {
     setLogoIcon("some-other-icon.png")
 }
 ```
-</div>
+
+</blockquote>
 
 ##  比較兩種 props 結構設計的寫法
 ### 寫法一

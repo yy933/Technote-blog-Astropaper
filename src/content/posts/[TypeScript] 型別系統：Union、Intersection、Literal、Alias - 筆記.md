@@ -2,7 +2,8 @@
 title: "[TypeScript] 型別系統：Union、Intersection、Literal、Alias - 筆記"
 pubDatetime: 2025-05-29T00:04:36.000Z
 tags: ["TypeScript"]
-description: " Table of contents 1. Union Type（聯集型別） 讓一個變數同時接受多種型別，只要符合其中之..."
+description: "Table of contents 1. Union Type（聯集型別） 讓一個變數同時接受多種型別，只要符合其中之..."
+hackmd_id: "SJCzMcrfxg"
 ---
 
 ## Table of contents

@@ -2,7 +2,8 @@
 title: "[TypeScript] 自定義型別（Custom Types） - 筆記"
 pubDatetime: 2025-05-27T21:50:40.000Z
 tags: ["TypeScript","cheatsheet"]
-description: " Table of contents 在 TypeScript 中，當基本型別（如 string, number, bo..."
+description: "Table of contents 在 TypeScript 中，當基本型別（如 string, number, bo..."
+hackmd_id: "rkn7F-4fgg"
 ---
 
 ## Table of contents
@@ -104,10 +105,12 @@ const info: Data = {
   isAlive: false
 };
 ```
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 * `key`: string 表示：這個物件可以用任何字串當 key（例如 name, age, foo, abc123...）
 * `any` 表示：每個 key 的值是什麼型別都可以（可以是字串、數字、布林、物件等等）
-</div>
+
+</blockquote>
 也可以可以加上固定屬性，指定某些屬性是「必備」的，同時保留其餘屬性的彈性：：
 
 ```typescript
@@ -179,11 +182,13 @@ type UserData = {
 </blockquote>
 
 
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 ⚠️ 注意事項
 * 當使用` [key: string]: any`，就等於開放了「任何欄位都可以進來」，這會讓 TypeScript 的型別檢查變弱。建議搭配明確的型別限制，例如：`[key: string]: string | number`。
 * 如果只接受有限的幾個動態 key，也可以使用「Mapped Type」來處理（進階）。
-</div>
+
+</blockquote>
 
 ## 陣列中至少包含幾個元素（Rest Tuple）
 保證陣列最少包含兩個字串：

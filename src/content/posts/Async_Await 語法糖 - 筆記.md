@@ -2,7 +2,7 @@
 title: "Async/Await 語法糖 - 筆記"
 pubDatetime: 2025-04-28T01:25:10.000Z
 tags: ["JavaScript","asynchronous","Interview Preparation"]
-description: " Table of contents Prerequisite ✨ Async/await 的底層仍然是 Promise..."
+description: "Table of contents Prerequisite ✨ Async/await 的底層仍然是 Promise..."
 ---
 
 ## Table of contents
@@ -26,13 +26,15 @@ description: " Table of contents Prerequisite ✨ Async/await 的底層仍然是
 ### 範例一:await 等待多個 Promise
 ![ExportedContentImage_01 (6)](https://hackmd.io/_uploads/SkZiD6h1xl.png)
 
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 改寫重點:
 * 插入 async 關鍵字時，不需要更動原有結構，只要是「函式」就可以插在前面
 * async/await 改寫掉的是 then 的串鏈，Promise 物件本身要保留下來
 * 經過 async/await 後，沒有留下任何的 then
 * 原本的 return 會拿掉，因為在原本寫法中，return 的意思是回傳 Promise 物件，讓 then 的串鏈可以運作下去
-</div>
+
+</blockquote>
 
 ### 範例二
 ```javascript

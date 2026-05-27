@@ -2,7 +2,8 @@
 title: "Promise 封裝 - 筆記"
 pubDatetime: 2025-04-28T00:50:46.000Z
 tags: ["JavaScript","Interview Preparation","asynchronous"]
-description: " Table of contents 什麼是 Promise Promise 是一個物件建構子 (constructor..."
+description: "Table of contents 什麼是 Promise Promise 是一個物件建構子 (constructor..."
+hackmd_id: "SyQHrn31ee"
 ---
 
 ## Table of contents
@@ -37,14 +38,16 @@ myPromise
   });
 
 ```
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 ### 解析：
 * `new Promise()` 創建了一個 `Promise` 物件，並接受一個函式，該函式有兩個參數：
   - `resolve(value)`：當操作成功時，調用此方法來傳遞結果。
   - `reject(error)`：當操作失敗時，調用此方法來傳遞錯誤訊息。
 * `then()`：當 `Promise` 被 `resolve`，即操作成功時，執行 `then()` 中的callback。
 * `catch()`：當 `Promise` 被 `reject`，即操作失敗時，執行 `catch()` 中的callback。
-</div>
+
+</blockquote>
 
 
 `Promise` 是用於進行流程控制的物件 (容器)，它具備了 callback 的優點，但透過 `.then()` 來標明流程，而 `.then() `之間可以互相鏈結 (chaining)，把之前「一層包一層的 callback」，轉換成 `.then()` 的串接。
@@ -135,14 +138,16 @@ http.createServer((req, res) => {
 
 console.log('Server start: http://127.0.0.1:3000')
 ```
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 改寫重點：
 * **`requestData` 函式包裝成 `Promise`：**
 **將 `requestData` 包裝成一個回傳 `Promise` 的函式**，並在 `https.get` 的回調函式中處理數據。當資料獲取並成功解析後，使用 `resolve(imgData.message)` 返回圖片路徑；若發生錯誤則使用 `reject` 返回錯誤訊息。
  
 * 使用 `.then()` 和 `.catch()` 處理 `Promise`：
 在 `http.createServer` 中，當接收到請求時，使用 `requestData().then().catch()` 來處理非同步操作的結果，**確保只有在資料請求成功後才會回應圖片路徑。如果請求過程中有錯誤，則會進入 `catch`，並顯示錯誤訊息**。
-</div>
+
+</blockquote>
  #### 簡單流程說明：
 1. `requestData()` 被呼叫時，它會回傳一個 `Promise`。
 1. 當 `https.get()` 成功獲取並解析 JSON 資料後，`Promise` 被` resolve`，並將 `imgData.message`（圖片 URL）傳遞給 `then()` 方法。

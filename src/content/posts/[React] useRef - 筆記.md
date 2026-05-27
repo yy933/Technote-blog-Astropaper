@@ -2,7 +2,8 @@
 title: "[React] useRef - 筆記"
 pubDatetime: 2025-05-15T19:09:24.000Z
 tags: ["JavaScript","React.js","React Hook"]
-description: " Table of contents useRef 是什麼？ useRef 是一個可以保存資料，但不會觸發重新渲染的 H..."
+description: "Table of contents useRef 是什麼？ useRef 是一個可以保存資料，但不會觸發重新渲染的 H..."
+hackmd_id: "ryfmizX-gl"
 ---
 
 ## Table of contents
@@ -27,10 +28,12 @@ const myRef = React.useRef(initialValue)
 | 是否會 re-render | ❌ 不會                      | ✅ 會                  |
 | 常見用途          | 存 DOM、記錄值、避免 re-render    | 控制 UI、畫面需更新的資料       |
 
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 * 雖然可以直接修改 `ref.current`，但不應該用來取代 `state` 控制畫面。
 * ref 適合拿來**保存「不影響畫面但需要記住的值」或「DOM 元素」**。
-</div>
+
+</blockquote>
 
 ## 範例一：點擊按鈕，自動聚焦到輸入框
 ```jsx

@@ -2,7 +2,8 @@
 title: "面試題 - async & defer"
 pubDatetime: 2023-09-25T01:24:56.000Z
 tags: ["Interview Preparation","browser","DOM","HTML"]
-description: " Q1. <script 在HTML中的位置放在<body最底部，請問：在瀏覽器渲染流程中，會在什麼時機點載入JavaS..."
+description: "Q1. <script 在HTML中的位置放在<body最底部，請問：在瀏覽器渲染流程中，會在什麼時機點載入JavaS..."
+hackmd_id: "rJXHQJ4f3"
 ---
 
 ## Q1.` <script>` 在HTML中的位置放在`<body>`最底部，請問：在瀏覽器渲染流程中，會在什麼時機點載入JavaScript 程式碼？為什麼需要這樣做？

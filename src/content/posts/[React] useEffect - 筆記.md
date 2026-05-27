@@ -2,7 +2,8 @@
 title: "[React] useEffect - 筆記"
 pubDatetime: 2025-05-18T23:25:04.000Z
 tags: ["JavaScript","React.js","React Hook"]
-description: " Table of contents 為什麼需要useEffect? 先回顧一下React的主要功能： 負責將 UI 渲..."
+description: "Table of contents 為什麼需要useEffect? 先回顧一下React的主要功能： 負責將 UI 渲..."
+hackmd_id: "Hkl29A-Zel"
 ---
 
 ## Table of contents
@@ -228,7 +229,8 @@ useEffect(() => {
 ```
 正確寫法：加入正確dependencies、或使用 `setCount(prev => prev + 1)`
 
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 * dependencies是空陣列`[]`表示這個 effect 只在初次 render 後執行一次。
 
 ❓那為什麼`setCount(...)` 還會導致無限渲染？
@@ -262,7 +264,8 @@ useEffect(() => {
 // 或者
 const [count, setCount] = useState(() => 1) // 初始就給值，不用 effect
 ```
-</div>
+
+</blockquote>
 
 ### 2. 非同步函式不能直接作為 `useEffect` callback
 ```jsx

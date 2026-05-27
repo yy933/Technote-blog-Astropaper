@@ -2,7 +2,8 @@
 title: "Simple Twitter專案開發過程反思"
 pubDatetime: 2023-04-11T01:37:34.000Z
 tags: ["Learning reflection","project","MySQL","Sequelize","Node.js","Express.js"]
-description: " Table of contents ![](https://i.imgur.com/cbre3IM.gif) <h4 ..."
+description: "Table of contents ![](https://i.imgur.com/cbre3IM.gif) <h4..."
+hackmd_id: "HJbL2nkf3"
 ---
 
 ## Table of contents

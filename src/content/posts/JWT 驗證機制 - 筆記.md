@@ -2,7 +2,8 @@
 title: "JWT 驗證機制 - 筆記"
 pubDatetime: 2023-09-25T01:24:40.000Z
 tags: ["authentication","HTTP","web security","JWT","token"]
-description: " Table of contents :memo: HTTP 的無狀態 (Stateless) 特性 HTTP通訊協定(..."
+description: "Table of contents :memo: HTTP 的無狀態 (Stateless) 特性 HTTP通訊協定(..."
+hackmd_id: "Sy50KyJen"
 ---
 
 ## Table of contents
@@ -10,10 +11,10 @@ description: " Table of contents :memo: HTTP 的無狀態 (Stateless) 特性 HTT
 ## :memo: HTTP 的無狀態 (Stateless) 特性
 HTTP通訊協定(HTTP Protocol)具無狀態(Stateless)的特性，這表示每個伺服器所接收的HTTP request是獨立的，並且與先前接收到的request不相關。伺服器不會保存client的狀態，因此伺服器給予的response是根據當下的狀態；也就是說，client端發送的第一個request進行登入，在第二個request發送時，伺服器無法得知第二個request是否來自同一個使用者。
 
-因此，如果我們希望伺服器能認出 request 的狀態 (例如之前已經登入)，我們可以讓 request 本身攜帶充足的資訊，來幫助伺服器判斷這個 request 是否為會員系統裡的某位使用者，再進一步判斷這位使用者的狀態，這是一種「交換憑證」的概念，[先前](https://hackmd.io/@Fb1mLcumT_GI60TovN10dQ/ryWRxZCns)提到的cookie與session機制為達成交換憑證的策略之一，然而，cookie的值限定在特定網域中可以被存取，在前後端分離的開發模式中，如果後端API站和前端網站部署在不同網域，則無法跨網域使用瀏覽器提供的cookie機制，因此，可以採用token-based的機制來進行交換憑證。
+因此，如果我們希望伺服器能認出 request 的狀態 (例如之前已經登入)，我們可以讓 request 本身攜帶充足的資訊，來幫助伺服器判斷這個 request 是否為會員系統裡的某位使用者，再進一步判斷這位使用者的狀態，這是一種「交換憑證」的概念，[先前](/posts/cookie--session---筆記/)提到的cookie與session機制為達成交換憑證的策略之一，然而，cookie的值限定在特定網域中可以被存取，在前後端分離的開發模式中，如果後端API站和前端網站部署在不同網域，則無法跨網域使用瀏覽器提供的cookie機制，因此，可以採用token-based的機制來進行交換憑證。
 
 ## :memo: 憑證
-token-based authentication的概念和介紹[cookie-session的文章](https://hackmd.io/@Fb1mLcumT_GI60TovN10dQ/ryWRxZCns)中提到的cookie-based authentication概念類似，都是**辨認憑證中的資訊**來進行管理，達成用戶端與伺服器端的資訊傳遞，只是此處的憑證是token。
+token-based authentication的概念和介紹[cookie-session的文章](/posts/cookie--session---筆記/)中提到的cookie-based authentication概念類似，都是**辨認憑證中的資訊**來進行管理，達成用戶端與伺服器端的資訊傳遞，只是此處的憑證是token。
 
 ![](https://i.imgur.com/Md0uYhL.png)
 <p style="text-align:center">兩種不同的web session管理機制</p>

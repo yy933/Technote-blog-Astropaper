@@ -2,7 +2,8 @@
 title: "Cookie & Session - 筆記"
 pubDatetime: 2023-09-25T01:25:14.000Z
 tags: ["HTTP","cookie","session","authentication","web security"]
-description: " Table of contents :memo: HTTP 的無狀態 (Stateless) 特性 HTTP通訊協定(..."
+description: "Table of contents :memo: HTTP 的無狀態 (Stateless) 特性 HTTP通訊協定(..."
+hackmd_id: "ryWRxZCns"
 ---
 
 ## Table of contents

@@ -2,7 +2,8 @@
 title: "利用JavaScript操作DOM Tree - 筆記"
 pubDatetime: 2025-02-13T03:26:18.000Z
 tags: ["browser","DOM","Interview Preparation"]
-description: " Table of contents :memo: 選取節點 querySelector & querySelector..."
+description: "Table of contents :memo: 選取節點 querySelector & querySelector..."
+hackmd_id: "S1O0CfjK1g"
 ---
 
 ## Table of contents
@@ -119,12 +120,14 @@ container.appendChild(h1)
 ```
 
 
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 📌 Modern Style：
 現代的 JavaScript 有推出一套新的語法，試圖簡化選取節點的流程，如以下所示：
 ![image_1](https://hackmd.io/_uploads/BJbKfLsKJg.png)
 這套語法的撰寫風格比較簡潔，而且同時可以插入節點或文字。可惜**在 IE 瀏覽器上尚未支援，目前仍不普及。**
-</div>
+
+</blockquote>
 
 ### 刪除節點
 ```javascript
@@ -157,7 +160,7 @@ JavaScript 可以操作 DOM：
 * `.appendChild()` 新增節點
 * `.removeChild()` 刪除節點
 
-關於DOM節點介紹，詳見[另一篇筆記](https://hackmd.io/@yy933/Hk8y7gcYye)。
+關於DOM節點介紹，詳見[另一篇筆記](/posts/瀏覽器渲染流程與dom---筆記/)。
 
 
 ---

@@ -2,7 +2,8 @@
 title: "利用指令建立Express專案的步驟 - 筆記"
 pubDatetime: 2025-04-06T22:57:14.000Z
 tags: ["Express.js","Node.js","cheatsheet"]
-description: " Table of contents 1. 新增專案資料夾 mkdir project cd project 2. 設定..."
+description: "Table of contents 1. 新增專案資料夾 mkdir project cd project 2. 設定..."
+hackmd_id: "HyOQDaC9xe"
 ---
 
 ## Table of contents

@@ -3,6 +3,7 @@ title: "[TypeScript] Generics (泛型)  - 筆記"
 pubDatetime: 2025-06-02T03:47:04.000Z
 tags: ["cheatsheet","TypeScript"]
 description: "Tags: TypeScript cheatsheet Table of contents 什麼是Generics? G..."
+hackmd_id: "rkCcSlsMgx"
 ---
 
 Tags: `TypeScript` `cheatsheet`

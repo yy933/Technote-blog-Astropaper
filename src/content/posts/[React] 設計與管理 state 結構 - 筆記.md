@@ -2,7 +2,8 @@
 title: "[React] 設計與管理 state 結構 - 筆記"
 pubDatetime: 2025-05-15T03:55:58.000Z
 tags: ["JavaScript","React.js","React Hook"]
-description: " Table of contents state結構設計五大原則 原則 說明 1️⃣ 群組相關的 state 若兩個變數..."
+description: "Table of contents state結構設計五大原則 原則 說明 1️⃣ 群組相關的 state 若兩個變數..."
+hackmd_id: "rk9RErlbeg"
 ---
 
 ## Table of contents
@@ -132,7 +133,8 @@ export default function Form() {
   );
 }
 ```
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 :bulb: 不要以`props`初始化`state`變數
 ```jsx
 import { useState } from 'react';
@@ -174,7 +176,8 @@ function Message({ initialColor }) {
 ```
 * 適用場景：如使用者自訂初始值、編輯器初始內容等
 * 通常會用 `initialXXX` 或 `defaultXXX` 命名，表示之後的更新會被「忽略」
-</div>
+
+</blockquote>
 
 ### 4. 避免 state 重複儲存同樣資訊: 只存 id 而非整個物件
 ```jsx

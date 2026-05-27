@@ -2,7 +2,8 @@
 title: "[React] 條件渲染 (Conditional Rendering) - 筆記"
 pubDatetime: 2025-04-30T02:49:48.000Z
 tags: ["JavaScript","React.js"]
-description: " Table of contents 在 Component 組成的網頁裡，Component 會需要根據不同條件顯示不..."
+description: "Table of contents 在 Component 組成的網頁裡，Component 會需要根據不同條件顯示不..."
+hackmd_id: "S1Gnh7Jxlg"
 ---
 
 ## Table of contents
@@ -93,13 +94,15 @@ return (
 ```jsx
 {isPacked ? <del>{name} ✅</del> : name}
 ```
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 這種寫法的:
 ✅ 優點：語法簡潔，適合簡單條件。
 ⚠️ 注意：如果條件變多或內容複雜，JSX 會變得難讀，這時建議：
 * 把內容抽成變數
 * 包成子component
-</div>
+
+</blockquote>
 <blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
 
 **⚠️ 以上兩種寫法相同嗎？**
@@ -145,12 +148,14 @@ return (
 
 ```
 **:bulb: 以上寫法可以理解為：如果isPacked為true，顯示後方內容(✅)；為false則什麼都不顯示。**
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 ❗注意：不要把數字放左側，例如 `0 && <p>New</p>` 會渲染出 `0`！
 * JavaScript 的 `&&` 運算會回傳第一個 falsy 值（如 0）或最後一個 truthy 值。
 * 所以 `messageCount && <p>New</p>`，當 `messageCount = 0 `時，其實會回傳 0，React 就會真的渲染出「0」。
 * 正確寫法應該是用布林判斷：`messageCount > 0 && <p>New</p>`。
-</div>
+
+</blockquote>
 
 ## 將 JSX 存進變數
 在條件越來越複雜時，可以避免 `<li>{條件 ? xxx : yyy}</li>` 這類難讀的巢狀寫法，提升可讀性。

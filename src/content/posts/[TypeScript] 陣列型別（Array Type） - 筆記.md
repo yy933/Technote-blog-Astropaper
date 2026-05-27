@@ -2,7 +2,8 @@
 title: "[TypeScript] 陣列型別（Array Type） - 筆記"
 pubDatetime: 2025-05-28T00:54:56.000Z
 tags: ["TypeScript"]
-description: " Table of contents 基本語法 寫法 範例 說明 T[] string[], number[] 常見、簡..."
+description: "Table of contents 基本語法 寫法 範例 說明 T[] string[], number[] 常見、簡..."
+hackmd_id: "B1RIHQEzgx"
 ---
 
 ## Table of contents

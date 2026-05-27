@@ -2,7 +2,8 @@
 title: "JavaScript的constructor"
 pubDatetime: 2023-09-25T01:22:58.000Z
 tags: ["JavaScript","Interview Preparation"]
-description: " Table of contents :memo: 什麼是建構式(Constructor) 建構式(Constructo..."
+description: "Table of contents :memo: 什麼是建構式(Constructor) 建構式(Constructo..."
+hackmd_id: "B1MGs4Tni"
 ---
 
 ## Table of contents

@@ -2,7 +2,8 @@
 title: "React 元件 - 筆記"
 pubDatetime: 2025-04-28T20:27:26.000Z
 tags: ["JavaScript","React.js"]
-description: " Table of contents 元件是什麼？ 元件（Component）：把 HTML、CSS 和 JavaScr..."
+description: "Table of contents 元件是什麼？ 元件（Component）：把 HTML、CSS 和 JavaScr..."
+hackmd_id: "S1MEpA2kex"
 ---
 
 ## Table of contents
@@ -60,9 +61,11 @@ return (
   </div>
 );
 ```
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 ✅ 注意：`return` 後沒加括號，下面的 JSX 會被忽略！
-</div>
+
+</blockquote>
 
 ## 使用元件
 * 直接像 HTML 標籤一樣使用自訂元件。
@@ -99,7 +102,8 @@ export default function Gallery() {
 ## 組織元件（Nesting and Organizing Components）
 * 小元件可以跟主元件寫在同一個檔案（方便管理）。
 * 如果太多元件，建議「分開檔案」整理。
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 :bulb: 重要原則：**不要在元件內再定義新的元件！**
 
 錯誤寫法（會變慢又容易出錯）：
@@ -116,7 +120,8 @@ function Profile() { ... }
 export default function Gallery() { ... }
 ```
 :exclamation: 如果要把資料傳給子元件，用「props」，而不是把元件寫在一起。
-</div>
+
+</blockquote>
 
 ## Recap
 ### 核心觀念

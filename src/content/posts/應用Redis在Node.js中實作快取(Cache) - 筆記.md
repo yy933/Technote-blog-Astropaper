@@ -2,7 +2,8 @@
 title: "應用Redis在Node.js中實作快取(Cache) - 筆記"
 pubDatetime: 2025-02-11T00:52:08.000Z
 tags: ["cache","database","Node.js","Redis","Express.js"]
-description: " Table of contents :memo: 簡介 當網站有些常常需要存取的資料、或是要依賴第三方API回傳資料時..."
+description: "Table of contents :memo: 簡介 當網站有些常常需要存取的資料、或是要依賴第三方API回傳資料時..."
+hackmd_id: "HkUTVvQT2"
 ---
 
 ## Table of contents

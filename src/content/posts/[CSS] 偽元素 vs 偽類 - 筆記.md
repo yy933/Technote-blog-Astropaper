@@ -2,7 +2,8 @@
 title: "[CSS] 偽元素 vs 偽類 - 筆記"
 pubDatetime: 2025-04-10T23:11:10.000Z
 tags: ["cheatsheet","CSS"]
-description: " Table of contents 在 CSS 中，「偽元素」與「偽類」都能幫助我們選取、操作一些 原本無法直接選取的..."
+description: "Table of contents 在 CSS 中，「偽元素」與「偽類」都能幫助我們選取、操作一些 原本無法直接選取的..."
+hackmd_id: "H1wMpELRkl"
 ---
 
 ## Table of contents
@@ -63,10 +64,12 @@ a:hover {
 | `:not(selector)` | 選取不是某個條件的元素               |
 
 
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 * 單數的子元素 `p:nth-child(odd)` 也可以寫作 `p:nth-child(2n+1)`
 * 雙數的子元素 `p:nth-child(even)` 也可以寫作 `p:nth-child(2n)` 
-</div>
+
+</blockquote>
 
 範例：
 ```css

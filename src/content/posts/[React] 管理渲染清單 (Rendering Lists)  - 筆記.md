@@ -2,7 +2,8 @@
 title: "[React] 管理渲染清單 (Rendering Lists)  - 筆記"
 pubDatetime: 2025-05-04T23:15:32.000Z
 tags: ["JavaScript","React.js"]
-description: " Table of contents 基本概念 常見需求：從一筆資料清單中渲染多個類似元件（如留言列表、圖庫等）。 使用..."
+description: "Table of contents 基本概念 常見需求：從一筆資料清單中渲染多個類似元件（如留言列表、圖庫等）。 使用..."
+hackmd_id: "rkOhjlMggg"
 ---
 
 ## Table of contents
@@ -98,7 +99,8 @@ export default function List() {
   return <ul>{listItems}</ul>;
 }
 ```
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 :bulb: 補充：箭頭函式的隱式回傳（Implicit Return）
 箭頭函式（`=>`）在 沒有大括號 `{}` 包住的情況下，會「自動回傳」等號右邊的表達式，不需要寫 return。
 
@@ -125,7 +127,8 @@ const listItems = chemists.map(person => {
 ✅ 什麼時候用哪種？
 * 只有一行 JSX：可以用簡潔的隱式回傳，少打一些字。
 * 有多行邏輯或條件判斷：用 `{} `和 `return `比較清楚。
-</div>
+
+</blockquote>
 
 ## 重點概念：Key 的使用
 為什麼要加 key？
@@ -138,9 +141,11 @@ const listItems = people.map(person => (
   <li key={person.id}>{person.name}</li>
 ));
 ```
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 在 `map()` 裡渲染多個 JSX 元素時，每一個元素都必須有 `key`，否則 React 會發出警告。
-</div>
+
+</blockquote>
 
 **不建議用 index 當 key：**
 ```jsx

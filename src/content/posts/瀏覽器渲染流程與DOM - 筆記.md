@@ -2,7 +2,8 @@
 title: "瀏覽器渲染流程與DOM - 筆記"
 pubDatetime: 2025-02-13T03:26:56.000Z
 tags: ["Interview Preparation","HTML","browser","DOM","CSS"]
-description: " Table of contents :memo: 瀏覽器渲染流程 當我們在瀏覽器輸入網址並請求網頁時，瀏覽器會經歷以下..."
+description: "Table of contents :memo: 瀏覽器渲染流程 當我們在瀏覽器輸入網址並請求網頁時，瀏覽器會經歷以下..."
+hackmd_id: "Hk8y7gcYye"
 ---
 
 ## Table of contents
@@ -141,7 +142,7 @@ window 之下還有其他的子物件包括 screen、navigator、location、hist
 * 文件節點：整個 document
 * 註解節點：HTML 註解
 
-關於操作DOM節點，詳見[另一篇筆記](https://hackmd.io/@yy933/S1O0CfjK1g)。
+關於操作DOM節點，詳見[另一篇筆記](/posts/利用javascript操作dom-tree---筆記/)。
 
 
 ---

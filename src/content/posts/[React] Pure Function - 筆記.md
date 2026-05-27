@@ -2,7 +2,8 @@
 title: "[React] Pure Function - 筆記"
 pubDatetime: 2025-05-07T20:37:06.000Z
 tags: ["JavaScript","React.js"]
-description: " Table of contents 什麼是 Pure Function？ Pure Function 的特徵 Same..."
+description: "Table of contents 什麼是 Pure Function？ Pure Function 的特徵 Same..."
+hackmd_id: "H1FnO7zgeg"
 ---
 
 ## Table of contents
@@ -77,7 +78,8 @@ Tea cup for guest #3
 
 此時這個元件是純粹的(pure)，會產出的JSX可以由props推測。
 
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 :bulb: 元件應各自獨立，不依賴渲染順序：
 * 你不能假設某個元件會先 render、某個後 render
 * 每個元件應該「自己算自己的 JSX」，不與其他元件協調
@@ -126,7 +128,8 @@ export default function TeaParty() {
 * 每個 `Cup` 元件都靠傳入的 `props` 自行計算 JSX
 * 不管誰先 render、誰後 render，結果都是可預期的
 * 更容易測試、除錯、優化（如 React.memo）
-</div>
+
+</blockquote>
 
 ## 如何發現不純的元件？
 * 開啟 `<React.StrictMode>`：
@@ -170,7 +173,8 @@ useEffect(() => {
   - 讓畫面 JSX 自然呈現 state 或 props
 * 需要「改變某些東西」時，優先選擇`event handler`，真的找不到事件觸發的時機（例如頁面載入時要 fetch 資料），可以用 `useEffect`  這個專門處理side effects的 Hook　[[註2]](###註2)
 
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 ### 註1
 不可以直接修改（mutate）元件用來渲染的資料來源，而應該使用 `setState` 或其他機制來更新畫面。
 
@@ -201,9 +205,11 @@ function updateAge() {
 說明：
 * **React 是靠「比較新舊 state」來決定要不要重新渲染，所以要給它一個新的物件或陣列**
 * 用 `setUser` 是一個安全且可預期的方式
-</div>
 
-<div class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200">
+</blockquote>
+
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
 ### 註2
 需要「改變某些東西」時，優先選擇`event handler`，真的找不到事件觸發的時機（例如頁面載入時要 fetch 資料），可以用 `useEffect`
 #### 優先選擇：事件處理器 (event handler)
@@ -227,7 +233,8 @@ useEffect(() => {
 }, []);
 ```
 `useEffect` 不是第一選擇，因為它發生在 render 之後、比較難控管。
-</div>
+
+</blockquote>
 
 ## 挑戰範例
 ### 範例一

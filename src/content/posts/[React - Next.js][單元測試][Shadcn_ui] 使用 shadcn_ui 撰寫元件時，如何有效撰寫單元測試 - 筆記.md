@@ -2,7 +2,7 @@
 title: "[React - Next.js][單元測試][Shadcn/ui] 使用 shadcn/ui 撰寫元件時，如何有效撰寫單元測試 - 筆記"
 pubDatetime: 2025-07-07T20:35:42.000Z
 tags: ["React.js","Node.js","Next.js","Project","Debugging","Unit Test","Shadcn"]
-description: " Table of contents 問題 使用shadcn/ui開發的過程中，很常遇到的問題是，由於shadcn是Ra..."
+description: "Table of contents 問題 使用shadcn/ui開發的過程中，很常遇到的問題是，由於shadcn是Ra..."
 ---
 
 ## Table of contents
