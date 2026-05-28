@@ -92,12 +92,12 @@ model Account {
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String?
-  access_token      String?
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String?
+  id_token          String? @db.Text
   session_state     String?
   user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -120,6 +120,13 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 ```
+
+<blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
+
+💡 小提示：NextAuth 的官方 Adapter 原生主要是為無密碼（Passwordless）或 OAuth 登入設計的。當我們手動加入 `password` 欄位做憑證登入時，在下一篇設定 NextAuth 的 authorize 函數時，記得在 `return user` 前手動把 `password` 剔除（設為 `undefined` 或 `delete`），避免雜湊密碼暴露到前端的 Session/JWT 中。
+
+</blockquote>
+
 3. 建立 `.env`：
 ```bash
 DATABASE_URL="postgresql://admin:admin@localhost:5432/nextauthdb?schema=public"
@@ -129,7 +136,6 @@ GOOGLE_CLIENT_SECRET="Your Google client secret"
 ```
 4. Prisma migration：
 ```bash
-npx prisma generate
 npx prisma migrate dev --name init
 ```
 * 建立 `prisma/migrations/` 資料夾
@@ -138,6 +144,7 @@ npx prisma migrate dev --name init
 * 檢查 pgAdmin → 應該會看到 User 等表格。
 
 ## 管理Prisma Client
+
 <blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
 
 Prisma Client的功能:
@@ -152,14 +159,16 @@ Prisma Client的功能:
     where: { email },
     include: { accounts: true },
   })
-* 交易 (Transactions)
+  ```
+  
+* **交易 (Transactions)**
 需要一次性執行多個操作時，可以用 transaction 保證一致性：
-```ts
-await prisma.$transaction([
-  prisma.user.create(...),
-  prisma.session.create(...),
-])
-```
+    ```ts
+    await prisma.$transaction([
+      prisma.user.create(...),
+      prisma.session.create(...),
+    ])
+    ```
 
 </blockquote>
 
@@ -216,8 +225,11 @@ export async function POST(req: Request) {
       },
     })
     
+    // remove password before returning to client
+    const { password: _, ...userWithoutPassword } = user;
+    
     // return user
-    return NextResponse.json({ user }, { status: 201 })
+    return NextResponse.json({ user: userWithoutPassword }, { status: 201 })
   } catch (err) {
     console.error(err)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
@@ -253,10 +265,13 @@ export async function POST(req: Request) {
         { status: 401 },
       )
     }
+      
+     // remove password before returning user
+    const { password: _, ...userWithoutPassword } = user
 
     // TODO: integrate with NextAuth session
     return NextResponse.json(
-      { message: 'Login success', user },
+      { message: 'Login success', user: userWithoutPassword },
       { status: 200 },
     )
   } catch (err) {
@@ -309,10 +324,11 @@ export default function SignupPage() {
       body: JSON.stringify({ email, password, name }),
     })
 
+    const data = await response.json()
     if (response.ok) {
-      console.log('User created:', await response.json())
+      console.log('User created:', data)
     } else {
-      console.error('Signup failed:', await response.json())
+      console.error('Signup failed:', data.error || 'Unknown error')
     }
   }
 
