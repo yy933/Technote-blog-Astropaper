@@ -1,6 +1,7 @@
 ---
 title: "如何把專案部署到Railway上 - 筆記"
 pubDatetime: 2023-09-25T01:25:38.000Z
+modDatetime: 2026-05-25T10:04:23.062Z
 tags: ["Node.js","database","MySQL","deployment"]
 description: "Table of contents <blockquote class=\"my6 p4 bgorange50 dark..."
 hackmd_id: "HyuwNxYXh"

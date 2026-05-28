@@ -1,6 +1,7 @@
 ---
 title: "JavaScript的柯里化(Currying in JavaScript)"
 pubDatetime: 2023-09-25T01:21:30.000Z
+modDatetime: 2026-05-25T10:04:23.196Z
 tags: ["JavaScript","Interview Preparation"]
 description: "Table of contents <img src=\"https://images.unsplash.com/pho..."
 hackmd_id: "B1Dc1MAAn"

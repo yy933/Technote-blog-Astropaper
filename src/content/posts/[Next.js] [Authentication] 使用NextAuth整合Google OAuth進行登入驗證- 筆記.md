@@ -1,6 +1,7 @@
 ---
 title: "[Next.js] [Authentication] 使用NextAuth整合Google OAuth進行登入驗證- 筆記"
 pubDatetime: 2025-09-18T19:38:04.000Z
+modDatetime: 2026-05-25T10:04:23.290Z
 tags: ["React.js","Next.js","Authentication","Prisma","PostgreSQL","JWT","token","session","cookie","NextAuth","OAuth"]
 description: "Table of contents 在[上一篇文章](https://hackmd.io/Msx1EFz6Q8Ob5C..."
 hackmd_id: "H1qLMLdile"

@@ -1,6 +1,7 @@
 ---
 title: "Promise.all - 筆記"
 pubDatetime: 2025-04-28T01:08:00.000Z
+modDatetime: 2026-05-25T10:04:23.675Z
 tags: ["JavaScript","asynchronous","Interview Preparation"]
 description: "Table of contents ✨ 關於Promise，先參考[這篇筆記](https://hackmd.io/l..."
 hackmd_id: "r1zU-ankxe"

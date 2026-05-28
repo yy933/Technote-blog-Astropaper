@@ -1,6 +1,7 @@
 ---
 title: "[React - Next.js] Next.js Google Fonts 處理 - 筆記"
 pubDatetime: 2025-06-03T21:00:36.000Z
+modDatetime: 2026-05-25T10:04:23.425Z
 tags: ["React.js","Node.js","Next.js"]
 description: "Table of contents 為什麼要優化 Google Fonts？ 之前引入Google Fonts的方法，..."
 hackmd_id: "SylIMO1feg"

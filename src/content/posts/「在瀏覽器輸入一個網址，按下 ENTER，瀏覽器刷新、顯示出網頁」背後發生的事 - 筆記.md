@@ -1,6 +1,7 @@
 ---
 title: "「在瀏覽器輸入一個網址，按下 ENTER，瀏覽器刷新、顯示出網頁」背後發生的事 - 筆記"
 pubDatetime: 2023-02-16T23:56:28.000Z
+modDatetime: 2026-05-25T10:04:23.864Z
 tags: ["others"]
 description: "1. 瀏覽器解析使用者輸入內容，解析網址URL( Uniform Resource Locator )， 依序處理 ：..."
 hackmd_id: "rkW_6bodi"

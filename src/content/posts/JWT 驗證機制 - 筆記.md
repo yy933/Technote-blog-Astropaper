@@ -1,6 +1,7 @@
 ---
 title: "JWT 驗證機制 - 筆記"
 pubDatetime: 2023-09-25T01:24:40.000Z
+modDatetime: 2026-05-25T10:04:23.081Z
 tags: ["authentication","HTTP","web security","JWT","token"]
 description: "Table of contents :memo: HTTP 的無狀態 (Stateless) 特性 HTTP通訊協定(..."
 hackmd_id: "Sy50KyJen"

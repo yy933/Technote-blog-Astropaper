@@ -1,6 +1,7 @@
 ---
 title: "Library & Framework  - 筆記"
 pubDatetime: 2025-04-01T01:42:06.000Z
+modDatetime: 2026-05-25T10:04:23.646Z
 tags: ["Interview Preparation"]
 description: "Table of contents Library（函式庫） 函式庫比較針對單一功能，你手邊先有一個開發中的應用程式，..."
 hackmd_id: "Syc4QNK61x"

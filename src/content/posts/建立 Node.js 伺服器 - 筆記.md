@@ -1,6 +1,7 @@
 ---
 title: "建立 Node.js 伺服器 - 筆記"
 pubDatetime: 2025-04-01T01:15:04.000Z
+modDatetime: 2026-05-25T10:04:23.703Z
 tags: ["Node.js","cheatsheet"]
 description: "Table of contents 建立 Node.js 本機伺服器 1. 載入 Node.js HTTP 模組 1...."
 hackmd_id: "SkMyc7Fp1l"

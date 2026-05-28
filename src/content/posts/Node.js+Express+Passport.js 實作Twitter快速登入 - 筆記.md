@@ -1,6 +1,7 @@
 ---
 title: "Node.js+Express+Passport.js 實作Twitter快速登入 - 筆記"
 pubDatetime: 2023-05-28T05:49:50.000Z
+modDatetime: 2026-05-25T10:04:23.888Z
 tags: ["Node.js","Express.js","npm","Passport.js","Authentication"]
 description: "Table of contents :memo: 串接Twitter API 基本設置與Token取得 首先先到[Tw..."
 hackmd_id: "BJx366g8h"

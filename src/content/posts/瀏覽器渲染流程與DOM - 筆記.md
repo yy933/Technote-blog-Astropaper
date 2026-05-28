@@ -1,6 +1,7 @@
 ---
 title: "瀏覽器渲染流程與DOM - 筆記"
 pubDatetime: 2025-02-13T03:26:56.000Z
+modDatetime: 2026-05-25T10:04:23.849Z
 tags: ["Interview Preparation","HTML","browser","DOM","CSS"]
 description: "Table of contents :memo: 瀏覽器渲染流程 當我們在瀏覽器輸入網址並請求網頁時，瀏覽器會經歷以下..."
 hackmd_id: "Hk8y7gcYye"

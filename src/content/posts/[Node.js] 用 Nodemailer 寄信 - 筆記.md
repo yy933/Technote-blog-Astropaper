@@ -1,6 +1,7 @@
 ---
 title: "[Node.js] 用 Nodemailer 寄信 - 筆記"
 pubDatetime: 2023-09-25T01:25:54.000Z
+modDatetime: 2026-05-25T10:04:23.138Z
 tags: ["Node.js","Express.js","npm"]
 description: "Table of contents :memo: Nodemailer安裝與設定 首先參閱[Nodemailer的文件..."
 hackmd_id: "Hy9rKyAE3"

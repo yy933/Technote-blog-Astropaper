@@ -1,6 +1,7 @@
 ---
 title: "React 元件 - 筆記"
 pubDatetime: 2025-04-28T20:27:26.000Z
+modDatetime: 2026-05-25T10:04:23.624Z
 tags: ["JavaScript","React.js"]
 description: "Table of contents 元件是什麼？ 元件（Component）：把 HTML、CSS 和 JavaScr..."
 hackmd_id: "S1MEpA2kex"

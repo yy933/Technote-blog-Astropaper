@@ -1,6 +1,7 @@
 ---
 title: "JavaScript的原型繼承(Prototypal Inheritance)"
 pubDatetime: 2023-09-25T01:22:00.000Z
+modDatetime: 2026-05-25T10:04:23.224Z
 tags: ["Interview Preparation","JavaScript"]
 description: "Table of contents :memo: 前言 在[MDN文件](https://developer.mozi..."
 hackmd_id: "HkcySOHCn"

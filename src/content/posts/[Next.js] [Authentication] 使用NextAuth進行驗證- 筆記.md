@@ -1,6 +1,7 @@
 ---
 title: "[Next.js] [Authentication] 使用NextAuth進行驗證- 筆記"
 pubDatetime: 2025-09-24T03:20:58.000Z
+modDatetime: 2026-05-25T10:04:23.242Z
 tags: ["Authentication","React.js","Next.js","NextAuth","OAuth"]
 description: "Table of contents 在[上一篇文章](https://hackmd.io/A4memsR6Tcy5KP..."
 hackmd_id: "SJvVTmp5xl"

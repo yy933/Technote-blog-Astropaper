@@ -1,6 +1,7 @@
 ---
 title: "[React] useEffect - 筆記"
 pubDatetime: 2025-05-18T23:25:04.000Z
+modDatetime: 2026-05-25T10:04:23.441Z
 tags: ["JavaScript","React.js","React Hook"]
 description: "Table of contents 為什麼需要useEffect? 先回顧一下React的主要功能： 負責將 UI 渲..."
 hackmd_id: "Hkl29A-Zel"

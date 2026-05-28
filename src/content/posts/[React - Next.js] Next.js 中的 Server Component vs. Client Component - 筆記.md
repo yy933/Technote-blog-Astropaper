@@ -1,6 +1,7 @@
 ---
 title: "[React - Next.js] Next.js 中的 Server Component vs. Client Component - 筆記"
 pubDatetime: 2025-05-26T00:02:16.000Z
+modDatetime: 2026-05-25T10:04:23.380Z
 tags: ["React.js","Node.js","Next.js"]
 description: "Table of contents Server Component vs. Client Component 類型..."
 hackmd_id: "rJB-icWfll"

@@ -1,6 +1,7 @@
 ---
 title: "[React] 到底什麼時候需要 useEffect ? - 筆記"
 pubDatetime: 2025-05-18T23:20:10.000Z
+modDatetime: 2026-05-25T10:04:23.521Z
 tags: ["JavaScript","React.js","React Hook"]
 description: "Table of contents <blockquote class=\"my6 p4 bggreen50 dark:..."
 ---

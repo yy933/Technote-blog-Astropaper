@@ -1,6 +1,7 @@
 ---
 title: "Alpha Camp 完課心得"
 pubDatetime: 2023-04-10T23:25:52.000Z
+modDatetime: 2026-05-25T10:04:23.881Z
 tags: ["Learning reflection"]
 description: "How it all started 其實想轉職工程師這個想法在我腦中已經盤旋很多年了，身邊也有一些朋友半路出家轉職成..."
 hackmd_id: "ByCGHMZM2"

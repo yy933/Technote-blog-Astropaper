@@ -1,6 +1,7 @@
 ---
 title: "document.createDocumentFragment() 如何減少 DOM 操作並提高效能？ - 筆記"
 pubDatetime: 2025-03-05T00:59:16.000Z
+modDatetime: 2026-05-25T10:04:23.834Z
 tags: ["JavaScript","asynchronous","Interview Preparation","axios"]
 description: "Table of contents document.createDocumentFragment() 在 JavaS..."
 hackmd_id: "Skx9-P49kg"

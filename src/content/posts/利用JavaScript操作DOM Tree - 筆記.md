@@ -1,6 +1,7 @@
 ---
 title: "利用JavaScript操作DOM Tree - 筆記"
 pubDatetime: 2025-02-13T03:26:18.000Z
+modDatetime: 2026-05-25T10:04:23.857Z
 tags: ["browser","DOM","Interview Preparation"]
 description: "Table of contents :memo: 選取節點 querySelector & querySelector..."
 hackmd_id: "S1O0CfjK1g"

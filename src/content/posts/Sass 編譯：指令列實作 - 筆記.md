@@ -1,6 +1,7 @@
 ---
 title: "Sass 編譯：指令列實作 - 筆記"
 pubDatetime: 2025-04-16T21:32:14.000Z
+modDatetime: 2026-05-25T10:04:23.750Z
 tags: ["Node.js","cheatsheet","CSS","Sass"]
 description: "Table of contents 1. 檢查 Node.js 版本 先確認是否已經安裝 v14 以上的 Node.j..."
 hackmd_id: "HJKqXWACJl"

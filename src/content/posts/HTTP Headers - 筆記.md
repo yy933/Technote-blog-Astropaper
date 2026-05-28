@@ -1,6 +1,7 @@
 ---
 title: "HTTP Headers - 筆記"
 pubDatetime: 2023-09-25T01:22:30.000Z
+modDatetime: 2026-05-25T10:04:23.234Z
 tags: ["HTTP","session","authentication","web security","headers"]
 description: "Table of contents :memo: 什麼是HTTP Headers 無論是瀏覽器發送的request或伺..."
 hackmd_id: "rkO7KSZGn"

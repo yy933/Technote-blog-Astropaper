@@ -1,6 +1,7 @@
 ---
 title: "JavaScript 的同步與非同步觀念 - 筆記"
 pubDatetime: 2025-02-19T02:18:30.000Z
+modDatetime: 2026-05-25T10:04:23.841Z
 tags: ["JavaScript","asynchronous"]
 description: "Table of contents 同步請求（Synchronous Request） 📌 特點： 用戶端 (cli..."
 hackmd_id: "S1vc7awTj"

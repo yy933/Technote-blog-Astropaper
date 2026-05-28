@@ -1,6 +1,7 @@
 ---
 title: "[TypeScript] 函式（Function） - 筆記"
 pubDatetime: 2025-05-29T01:15:30.000Z
+modDatetime: 2026-05-25T10:04:23.498Z
 tags: ["TypeScript","cheatsheet"]
 description: "Tags: TypeScript cheatsheet Table of contents 1. 參數類型註解 (Par..."
 hackmd_id: "ByUHyjHMll"

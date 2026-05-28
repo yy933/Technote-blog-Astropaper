@@ -1,6 +1,7 @@
 ---
 title: "[TypeScript] Narrowing - 筆記"
 pubDatetime: 2025-05-29T00:35:52.000Z
+modDatetime: 2026-05-25T10:04:23.574Z
 tags: ["TypeScript","cheatsheet"]
 description: "Tags: TypeScript cheatsheet Table of contents 為什麼需要 Type Nar..."
 hackmd_id: "SyRNV5Szxe"

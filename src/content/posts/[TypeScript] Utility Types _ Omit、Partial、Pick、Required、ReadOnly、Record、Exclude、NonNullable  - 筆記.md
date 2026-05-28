@@ -1,6 +1,7 @@
 ---
 title: "[TypeScript] Utility Types : Omit、Partial、Pick、Required、ReadOnly、Record、Exclude、NonNullable  - 筆記"
 pubDatetime: 2025-06-02T01:21:16.000Z
+modDatetime: 2026-05-25T10:04:23.483Z
 tags: ["TypeScript","cheatsheet"]
 description: "Tags: TypeScript cheatsheet Table of contents Omit<Type, Key..."
 ---

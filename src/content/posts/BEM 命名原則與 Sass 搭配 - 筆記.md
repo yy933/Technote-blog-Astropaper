@@ -1,6 +1,7 @@
 ---
 title: "BEM 命名原則與 Sass 搭配 - 筆記"
 pubDatetime: 2025-04-17T03:32:32.000Z
+modDatetime: 2026-05-25T10:04:23.742Z
 tags: ["Sass","CSS"]
 description: "Table of contents 主流命名分為三種： OOCSS (Object oriented CSS) ：物件..."
 hackmd_id: "HJAEJUCCJx"

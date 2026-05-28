@@ -1,6 +1,7 @@
 ---
 title: "利用指令建立Express專案的步驟 - 筆記"
 pubDatetime: 2025-09-10T01:42:00.000Z
+modDatetime: 2026-05-25T10:04:23.317Z
 tags: ["Express.js","Node.js","cheatsheet"]
 description: "Table of contents 在上一篇文章中，設計了Prisma schema以及signup/login的AP..."
 ---

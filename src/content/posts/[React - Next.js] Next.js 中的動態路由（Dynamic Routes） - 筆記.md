@@ -1,6 +1,7 @@
 ---
 title: "[React - Next.js] Next.js 中的動態路由（Dynamic Routes） - 筆記"
 pubDatetime: 2025-05-26T21:51:46.000Z
+modDatetime: 2026-05-25T10:04:23.506Z
 tags: ["React.js","Node.js","Next.js"]
 description: "Table of contents 什麼是動態路由（Dynamic Routes）？ Dynamic Route 指的..."
 hackmd_id: "Bkg-ZoZflx"

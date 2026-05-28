@@ -1,6 +1,7 @@
 ---
 title: "[React] Pure Function - 筆記"
 pubDatetime: 2025-05-07T20:37:06.000Z
+modDatetime: 2026-05-25T10:04:23.607Z
 tags: ["JavaScript","React.js"]
 description: "Table of contents 什麼是 Pure Function？ Pure Function 的特徵 Same..."
 hackmd_id: "H1FnO7zgeg"

@@ -1,6 +1,7 @@
 ---
 title: "Cross-Site Request Forgery (CSRF) - 筆記"
 pubDatetime: 2023-09-25T01:26:34.000Z
+modDatetime: 2026-05-25T10:04:23.162Z
 tags: ["web security","web attacks"]
 description: "Table of contents :memo: 什麼是CrossSite Request Forgery (CSRF..."
 hackmd_id: "SJHvRS4G3"

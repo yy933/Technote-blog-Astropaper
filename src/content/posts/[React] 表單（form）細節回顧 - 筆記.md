@@ -1,6 +1,7 @@
 ---
 title: "[React] 表單（form）細節回顧 - 筆記"
 pubDatetime: 2025-05-08T23:48:02.000Z
+modDatetime: 2026-05-25T10:04:23.600Z
 tags: ["JavaScript","React.js","HTML"]
 description: "Table of contents 本文雖然不完全屬於React的範圍，但在React中操作表單(form)相當常見，..."
 hackmd_id: "Bker7boleg"

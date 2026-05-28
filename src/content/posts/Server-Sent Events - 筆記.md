@@ -1,6 +1,7 @@
 ---
 title: "Server-Sent Events - 筆記"
 pubDatetime: 2026-05-25T01:57:22.000Z
+modDatetime: 2026-05-25T10:04:23.088Z
 tags: ["Node.js","Backend","Express.js"]
 description: "Table of contents :memo: 什麼是ServerSent Events ServerSent Ev..."
 hackmd_id: "Hy6D7cblzg"
