@@ -1,8 +1,7 @@
 ---
 title: "React 語法糖：JSX - 筆記"
-pubDatetime: 2025-05-05T20:16:02.000Z
-modDatetime: 2026-05-25T10:04:23.631Z
-tags: ["JavaScript","React.js"]
+pubDatetime: 2026-06-17T05:30:55.988Z
+tags: ["JavaScript","React.js","Frontend"]
 description: "Table of contents JSX 是什麼？ 🧠 JSX: 把 Markup 寫進 JavaScript！..."
 hackmd_id: "rJgW2XJC1ll"
 ---
@@ -28,7 +27,8 @@ const element = <h1>Hello, world!</h1>;
 ```javascript
 const element = React.createElement('h1', null, 'Hello, world!');
 ```
-比起`React.createElement`，JSX更像 HTML，直觀易上手，並且在巢狀元件、條件渲染時，結構比 `createElement` 好讀。大部分 React 專案會透過 Vite、Next.js 或 Webpack 等工具，自動設定 Babel，把 JSX 轉譯成 `createElement`，無須手動處理。
+比起`React.createElement`或現代的 `_jsx` 函式，JSX更像 HTML，直觀易上手，並且在巢狀元件、條件渲染時，結構比 `createElement` 好讀。
+大部分現代 React 專案（透過 Vite、Next.js 或 Webpack 等工具）會自動設定轉譯器，在幕後自動把 JSX 轉譯成瀏覽器看得懂的 JavaScript 物件（例如全新的 JSX Transform 函式（如 `_jsx`） 或是舊版的 `React.createElement`），無須手動處理。
 
 
 
@@ -41,10 +41,40 @@ const element = React.createElement('h1', null, 'Hello, world!');
 ![螢幕擷取畫面 2025-04-29 133556](https://hackmd.io/_uploads/BkpoE10ygx.png)
 
 
+## JSX 的本質就是一個 JavaScript 物件（Object）
+當我們寫下這行 JSX：
 
+```jsx
+const element = <h2 className="title">Hello</h2>;
+```
+
+編譯器會把它轉換成 `React.createElement()`（在現代 React 中則是類似 `_jsx()` 的函式）：
+
+```jsx
+// 編譯後的樣子
+const element = React.createElement(
+  'h2',
+  { className: 'title' },
+  'Hello'
+);
+```
+
+而這個函式執行完後，最終產出的就是一個普通的 JavaScript 物件，也就是所謂的 虛擬 DOM（Virtual Node），標籤裡面的屬性（如 className, onClick），最終都會變成這個物件裡的 props 屬性：
+
+```jsx
+// 最終在記憶體裡長這樣
+{
+  type: 'h2',
+  props: {
+    className: 'title',
+    children: 'Hello' // 子元素會被放在 props.children 裡面
+  }
+}
+```
 
 ## 從 HTML 轉成 JSX
 原本 HTML 長這樣：
+
 ```html
 <h1>Hedy Lamarr's Todos</h1>
 <img src="https://i.imgur.com/yXOvdOSs.jpg" alt="Hedy Lamarr" class="photo">
@@ -56,7 +86,7 @@ const element = React.createElement('h1', null, 'Hello, world!');
 ```
 
 在 JSX 中直接貼上會錯誤！
-```nginx
+```text
 Adjacent JSX elements must be wrapped in an enclosing tag.
 ```
 <blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
@@ -96,7 +126,9 @@ return (
   </>
 );
 ```
-:pencil: `<>...</>`叫做Fragment，它不會在 HTML 結果裡產生額外的標籤，很輕量。
+:pencil: `<>...</>`叫做Fragment，它不會在真實的 HTML 結果裡產生額外的標籤，非常輕量。
+
+:pencil: 進階小技巧： 如果在迴圈（如 `.map()`）中需要給 Fragment 綁定 `key` 屬性，就不能使用 <>...</> 縮寫，必須寫成完整的 `<React.Fragment key={item.id}>...</React.Fragment>` 喔！
 
 </blockquote>
 
