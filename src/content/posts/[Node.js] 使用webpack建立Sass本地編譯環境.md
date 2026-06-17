@@ -42,7 +42,7 @@ npm install webpack@4.43.0 webpack-cli@3.3.11 mini-css-extract-plugin@0.9.0 css-
  
 ### 建立設定檔
 #### 專案架構規劃
-![ExportedContentImage_03](https://hackmd.io/_uploads/Sk6PPMRCkg.png)
+![ExportedContentImage_03](/images/Sk6PPMRCkg.png)
 ```
 webpack_test/
 ├── node_modules/         ← 安裝 npm 後自動產生
@@ -175,9 +175,9 @@ module.exports = {
 在終端機執行：`npm run build`
 
 成功編譯的話，就可以在專案中看到 dist 資料夾，裡面包含了 js 及被編譯後的 css：
-![螢幕擷取畫面 2025-04-17 144544](https://hackmd.io/_uploads/HyCmm70AJg.png)
+![螢幕擷取畫面 2025-04-17 144544](/images/HyCmm70AJg.png)
 打開 index.html :
-![螢幕擷取畫面 2025-04-17 144708](https://hackmd.io/_uploads/Hkyv7X001l.png)
+![螢幕擷取畫面 2025-04-17 144708](/images/Hkyv7X001l.png)
 
 ### :spiral_note_pad: Error
 

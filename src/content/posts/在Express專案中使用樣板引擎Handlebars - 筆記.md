@@ -41,8 +41,8 @@ app.set('view engine', 'handlebars')
 
 #### 建立 views 和 layouts 資料夾
 結構如下圖:
-![ExportedContentImage_09 (1)](https://hackmd.io/_uploads/S1iCnJrkll.png)
-![ExportedContentImage_10 (1)](https://hackmd.io/_uploads/HJR16yBkll.png)
+![ExportedContentImage_09 (1)](/images/S1iCnJrkll.png)
+![ExportedContentImage_10 (1)](/images/HJR16yBkll.png)
 注意：這些資料夾名稱都要遵守 Express 框架的慣例(`views`, `layouts`)，如果名稱不一樣，Express 就會找不到檔案，而產生類似` no such file or directory` 的錯誤訊息。
 * 把「佈局」的部分放在 layouts 資料夾中
 * 把「局部樣板」的部分放在 views 這個資料夾中

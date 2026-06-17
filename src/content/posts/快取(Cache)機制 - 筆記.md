@@ -25,7 +25,7 @@ hackmd_id: "SkKN4On23"
 即使原始資料庫暫時關閉，快取也可以用作保留某些資料可用性的一種方式。
 
 ### 使用情境
-![](https://hackmd.io/_uploads/BJKz3h332.png)
+![](/images/BJKz3h332.png)
 <div style="text-align:center;">
 HTTP Web App的分層(layer)<br>
     

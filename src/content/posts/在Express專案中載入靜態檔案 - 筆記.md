@@ -18,9 +18,9 @@ hackmd_id: "rJ7pr4Sygl"
 
 :bulb:（延續[這篇文](https://hackmd.io/44K-PkTHQ6SJmNZPt4psGQ)的專案結構）
 建立`public`資料夾與其中`stylesheets` 和 `javascripts` 的資料夾:
-![ExportedContentImage_01 (4)](https://hackmd.io/_uploads/SkvIgxr1ex.png)
+![ExportedContentImage_01 (4)](/images/SkvIgxr1ex.png)
 將需要使用到的js和css檔案放進資料夾，例如Bootstrap：(到[Bootstrap官網](https://getbootstrap.com/docs/5.1/getting-started/download/)下載，在 Bootstrap v5 中有額外使用 Popper.js 這個套件，因此需要一併下載：[Popper.js官網](https://floating-ui.com/?utm_source=popper.js.org)))
-![ExportedContentImage_07 (2)](https://hackmd.io/_uploads/HJKg-xBJxe.png)
+![ExportedContentImage_07 (2)](/images/HJKg-xBJxe.png)
 
 ## 載入靜態檔案
 因為在 Bootstrap 中會用到 popper.js，因此**載入時需要留意順序， popper.js 一定要放在 Bootstrap 之前** :

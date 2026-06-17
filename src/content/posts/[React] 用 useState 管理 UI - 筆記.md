@@ -48,7 +48,7 @@ Imperative 像是你開車告訴駕駛每個轉彎；Declarative 像你坐計程
 * 失敗回應 → error
 
 畫出「狀態轉移圖」釐清流程（圓圈表示狀態、箭頭表示觸發事件）。如下所示:
-![螢幕擷取畫面 2025-05-13 114045](https://hackmd.io/_uploads/SkG20VlWgl.png)
+![螢幕擷取畫面 2025-05-13 114045](/images/SkG20VlWgl.png)
 
 ### Step 3：用`useState` 表示狀態
 剛開始會寫很多state，可能會導致狀態衝突（ex: `isTyping` 和 `isSubmitting`同時 `true`），先寫出來再重構:

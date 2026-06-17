@@ -38,7 +38,7 @@ hackmd_id: "HJKqXWACJl"
 `man sass`
 `npx sass -help` 或 `npx sass --help`
 Sass 剛好沒有提供 `man` 指令 (`man` 是 manual 的意思)。使用 `npx sass -help` 來開啟文件，在文件上方找到基本的語法結構，以及描述：
-![螢幕擷取畫面 2025-04-17 125644](https://hackmd.io/_uploads/r1QYYbA0yl.png)
+![螢幕擷取畫面 2025-04-17 125644](/images/r1QYYbA0yl.png)
 
 
 ## 準備測試專案
@@ -76,7 +76,7 @@ cd test/src
 npx sass main.scss output.css 
 ```
 編譯後會出現結果如下:
-![螢幕擷取畫面 2025-04-17 130122](https://hackmd.io/_uploads/Hk3oqbC0kl.png)
+![螢幕擷取畫面 2025-04-17 130122](/images/Hk3oqbC0kl.png)
 
 
 ### 追蹤單一 sass 檔案並持續編譯成 css
@@ -127,7 +127,7 @@ test
 npx sass --watch scss_dir:css_dir
 ```
 執行指令時，專案目錄自動生成了` css_dir` 資料夾，並且映射 (map) 了一套檔名相同的` .css `檔案：
-![螢幕擷取畫面 2025-04-17 132948](https://hackmd.io/_uploads/BkNBZMCRJe.png)
+![螢幕擷取畫面 2025-04-17 132948](/images/BkNBZMCRJe.png)
 
 資料夾結構:
 ```

@@ -104,7 +104,7 @@ NODE.innerText = "textContent"
 newDiv.textContent = "這是一個新的區塊";
 ```
 ### 將節點插入 DOM Tree：appendChild、insertBefore、replaceChild
-![pasted_image_0__11_](https://hackmd.io/_uploads/Sycs-IjF1x.png)
+![pasted_image_0__11_](/images/Sycs-IjF1x.png)
 例如以下HTML：
 ```html
 <div class="container">
@@ -125,7 +125,7 @@ container.appendChild(h1)
 
 📌 Modern Style：
 現代的 JavaScript 有推出一套新的語法，試圖簡化選取節點的流程，如以下所示：
-![image_1](https://hackmd.io/_uploads/BJbKfLsKJg.png)
+![image_1](/images/BJbKfLsKJg.png)
 這套語法的撰寫風格比較簡潔，而且同時可以插入節點或文字。可惜**在 IE 瀏覽器上尚未支援，目前仍不普及。**
 
 </blockquote>

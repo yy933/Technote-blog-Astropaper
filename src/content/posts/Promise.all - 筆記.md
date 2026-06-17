@@ -14,14 +14,14 @@ hackmd_id: "r1zU-ankxe"
 
 ## 基本原理：
 在有多個 Promise 的時候，使用 `Promise.all` 可以確保 **「所有的 Promise 都執行完以後，才進入 then」**
-![ExportedContentImage_00 (4)](https://hackmd.io/_uploads/B1uabah1gg.png)
+![ExportedContentImage_00 (4)](/images/B1uabah1gg.png)
 
 * 當所有的 `Promise` 都成功完成時，`Promise.all()` 會回傳一個解析後的值，這個值是一個陣列，包含所有 `Promise` 解決的結果。
 * 如果其中有任何一個 `Promise` 失敗（reject），`Promise.all()` 會立即拒絕並返回錯誤。
 
 
 ### 範例一
-![ExportedContentImage_01 (5)](https://hackmd.io/_uploads/BJaWf6n1xe.png)
+![ExportedContentImage_01 (5)](/images/BJaWf6n1xe.png)
 
 ### 範例二
 ```javascript

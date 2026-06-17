@@ -14,7 +14,7 @@ hackmd_id: "Hy9rKyAE3"
 ### 安裝
 `npm install --save nodemailer`
 安裝完成後到package.json確認，沒問題就來進行接下來的設定，看一下文件的說明：
-![](https://hackmd.io/_uploads/By9ijyRV2.png)
+![](/images/By9ijyRV2.png)
 其實就是3個重點：
 1. 先做一個transporter，可以使用[SMTP](https://www.geeksforgeeks.org/simple-mail-transfer-protocol-smtp/)或[其他傳輸機制](https://nodemailer.com/transports/)
 2. 設定寄信的內容，包含寄件人、收件人、信件內容、主旨、附件等
@@ -54,11 +54,11 @@ let transporter = nodemailer.createTransport({
 ```
 但是由於gmail對安全性的限制，這裡無法直接使用gmail帳號密碼做為驗證，必須設定**App password**：
 1. 首先進入Google account頁面，點選左側**Security**
-![](https://hackmd.io/_uploads/Bk-Z9gRVh.png)
+![](/images/Bk-Z9gRVh.png)
 2. 找到 How you sign in to Google的區塊，確認 2-Step Verification已經開啟
- ![](https://hackmd.io/_uploads/BJMUcxANh.png)
+ ![](/images/BJMUcxANh.png)
 3. 進入 2-Step Verification頁面，拉到最下面，找到App passwords
- ![](https://hackmd.io/_uploads/HyHjqgRN2.png)
+ ![](/images/HyHjqgRN2.png)
 4. 點進App passwords，選擇app：Mail、device:(你的裝置)，按Generate。
 5. 這時會產生一組password，這組密碼可以做為transporter中auth的密碼，**記得複製下來貼到.env裡面，視窗關了就看不到了**，必須重新產生一組。
 #### 如果不想使用密碼
@@ -202,11 +202,11 @@ app.listen(port, () => {
 都設定完畢後，來試用看看：
 1. 填寫表單並送出
 
-![](https://hackmd.io/_uploads/S1-vJQCV3.gif)
+![](/images/S1-vJQCV3.gif)
 
 2. 到信箱收信
 
-![](https://hackmd.io/_uploads/S1pxeXCN3.jpg)
+![](/images/S1pxeXCN3.jpg)
 
 成功寄信啦!! :tada::tada::tada:
 

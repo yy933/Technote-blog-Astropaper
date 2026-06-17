@@ -354,10 +354,10 @@ Prisma client log 設了 `log: ['query']`，也可以在 Next.js console 看到 
 SELECT * FROM public."User";
 ```
 如下圖，資料成功寫入:
-![螢幕擷取畫面 2025-09-10 150456](https://hackmd.io/_uploads/SyfWzi09lx.png)
+![螢幕擷取畫面 2025-09-10 150456](/images/SyfWzi09lx.png)
 
 4. 在`/auth/login`測試看看能否用剛剛signup的帳號密碼登入(成功轉導`/user/dashboard`)
-![螢幕擷取畫面 2025-09-10 151110](https://hackmd.io/_uploads/BJmdmoC9ll.png)
+![螢幕擷取畫面 2025-09-10 151110](/images/BJmdmoC9ll.png)
 這樣就成功了!
 
 Email註冊登入基本流程就完成了，但目前還沒有真正建立 session / cookie，只是確認帳號密碼正確。下一篇會整合 NextAuth 來完成真正的驗證流程。

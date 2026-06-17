@@ -83,7 +83,7 @@ BEM 是一種讓 class 命名有邏輯、結構清晰的規範，特別適合模
 </form>
 ```
 BEMCSS 會產生相當長的類別名稱，在 Sass 中，**可以透過 & 符號來使得代碼更加簡潔**。
-![ExportedContentImage_00 (2)](https://hackmd.io/_uploads/H1Mie8CC1e.png)
+![ExportedContentImage_00 (2)](/images/H1Mie8CC1e.png)
 
 ```sass
 .card {

@@ -38,7 +38,7 @@ const element = React.createElement('h1', null, 'Hello, world!');
 
 > 🔔 JSX 是語法擴充 (syntax extension)，React 是函式庫！它們可以分開使用。
 > 
-![螢幕擷取畫面 2025-04-29 133556](https://hackmd.io/_uploads/BkpoE10ygx.png)
+![螢幕擷取畫面 2025-04-29 133556](/images/BkpoE10ygx.png)
 
 
 ## JSX 的本質就是一個 JavaScript 物件（Object）

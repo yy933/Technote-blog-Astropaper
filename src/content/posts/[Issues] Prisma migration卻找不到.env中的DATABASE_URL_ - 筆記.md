@@ -200,7 +200,7 @@ Your database is now in sync with your schema.
 ALTER TABLE "public"."User" ALTER COLUMN "name" DROP NOT NULL;
 ```
 看一下prisma studio，也有正確更新:
-![螢幕擷取畫面 2025-09-19 130218](https://hackmd.io/_uploads/ryf1XP9ole.png)
+![螢幕擷取畫面 2025-09-19 130218](/images/ryf1XP9ole.png)
 
 這樣就成功migrate了!
 <blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">

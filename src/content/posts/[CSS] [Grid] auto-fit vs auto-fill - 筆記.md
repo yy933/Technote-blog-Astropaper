@@ -42,13 +42,13 @@ grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
 直接看圖的範例：
 * 寫死的狀況：直接定義要三個欄位，每格寬度 100px。
-![ExportedContentImage_00](https://hackmd.io/_uploads/SktdpLi0Jx.png)
+![ExportedContentImage_00](/images/SktdpLi0Jx.png)
 
 * `auto-fill`： 想辦法讓 container 列上放滿越多欄位越好，因此當 container 列上還有多餘空間再放一格寬度為 100px 的欄位時，會自動產生空欄位。
-![ExportedContentImage_01](https://hackmd.io/_uploads/BkAqTUsCJx.png)
+![ExportedContentImage_01](/images/BkAqTUsCJx.png)
 
 * `auto-fit`：與 `auto-fill` 類似，但自動產生的空欄位，也就是沒有內容的部分，會被收起來 (寬度變成 0px) 。
-![ExportedContentImage_02 (1)](https://hackmd.io/_uploads/HJR3aIjRJe.png)
+![ExportedContentImage_02 (1)](/images/HJR3aIjRJe.png)
 
 ## 搭配 `minmax()`
 
@@ -59,11 +59,11 @@ grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 ```
 在 300px 寬的小螢幕中，畫面會是剛好三格:
-![ExportedContentImage_05 (1)](https://hackmd.io/_uploads/BJqRA8sAkg.png)
+![ExportedContentImage_05 (1)](/images/BJqRA8sAkg.png)
 假定畫面為 360px，三個格子的寬度會改以 1fr 來計算，每個格子的寬度最終會是 360 / 3=120px:
-![ExportedContentImage_06 (2)](https://hackmd.io/_uploads/SkQekDoRJe.png)
+![ExportedContentImage_06 (2)](/images/SkQekDoRJe.png)
 畫面繼續被拉寬，來到 400px，會自動產生一個寬度 100px 的新格子，但因為沒有內容，是一個空格:
-![ExportedContentImage_07 (1)](https://hackmd.io/_uploads/BkDZ1Po0Jx.png)
+![ExportedContentImage_07 (1)](/images/BkDZ1Po0Jx.png)
 
 
 ### auto-fit 搭配 minmax()
@@ -73,11 +73,11 @@ grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 ```
 在 300px 寬的小螢幕中，畫面也是剛好三格：
-![ExportedContentImage_09](https://hackmd.io/_uploads/HJfByvoRJg.png)
+![ExportedContentImage_09](/images/HJfByvoRJg.png)
 假定畫面為 360px，三個格子的寬度會改以 1fr 來計算--每個格子的寬度最終會是360 / 3=120px。和 auto-fill 相同:
-![ExportedContentImage_10](https://hackmd.io/_uploads/r1xPyDi0Jx.png)
+![ExportedContentImage_10](/images/r1xPyDi0Jx.png)
 當畫面繼續被拉寬，每多出 100px 時雖然一樣會自動產生新格子，但凡是沒有內容的格子都會被收起來，寬度變為 0px。也就是說，現有的三個欄位在計算寬度所使用的 1fr 會因為剩餘空間變大而增加：
-![ExportedContentImage_11](https://hackmd.io/_uploads/By-t1wsAyl.png)
+![ExportedContentImage_11](/images/By-t1wsAyl.png)
 
 ## 簡單記憶法
 * `auto-fit`：像彈性書櫃，書少時會自動把格子壓縮掉，其他書自動填滿整行。簡單來說，**就是請瀏覽器計算這一列可以擺幾格，盡量擺好擺滿**。

@@ -25,7 +25,7 @@ $padding: 1rem;
   padding: $padding;
 }
 ```
-![ExportedContentImage_00 (1)](https://hackmd.io/_uploads/r1NkBrR0ke.png)
+![ExportedContentImage_00 (1)](/images/r1NkBrR0ke.png)
 
 
 
@@ -43,7 +43,7 @@ $padding: 1rem;
   }
 }
 ```
-![ExportedContentImage_01 (1)](https://hackmd.io/_uploads/ByXIHBRAyl.png)
+![ExportedContentImage_01 (1)](/images/ByXIHBRAyl.png)
 
 ✅ 只建議巢狀 2~3 層內，避免過度複雜。
 
@@ -84,7 +84,7 @@ $padding: 1rem;
 }
 ```
 
-![ExportedContentImage_04 (1)](https://hackmd.io/_uploads/Sk26LBC0Je.png)
+![ExportedContentImage_04 (1)](/images/Sk26LBC0Je.png)
 
 
 ### 範例三：RWD（響應式 mixin）
@@ -113,7 +113,7 @@ $padding: 1rem;
 
 ## 檔案模組化
 在 Sass 中，我們可以將檔案拆成多個，配合上妥善的命名，讓專案變得更容易管理。
-![ExportedContentImage_02 (2)](https://hackmd.io/_uploads/H1e3PrC0Jl.png)
+![ExportedContentImage_02 (2)](/images/H1e3PrC0Jl.png)
 
 * 開頭為底線` _ `的檔名在 Sass 中稱之為**partial**，也就是一個低階的模組。
 * 我們使用 `@use` 來引用 partial。請注意**引用名稱不包含底線，也不包含副檔名**。
@@ -136,7 +136,7 @@ body {
 繼承可以使多個類別都享有共同的屬性—— Sass 使用 `%` 來**宣告類別**，並使用 `@extend` 來**執行繼承**。如果要覆寫屬性，則直接宣告即可。
 
 直接看範例:
-![ExportedContentImage_03 (1)](https://hackmd.io/_uploads/SyY5OrC0ye.png)
+![ExportedContentImage_03 (1)](/images/SyY5OrC0ye.png)
 
 ```sass
 %card-base {

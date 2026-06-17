@@ -175,13 +175,13 @@ app.get('/recipes', async (req, res, next) => {
 接著來測試加入快取後回傳的速度，先讓伺服器運作：
 `node app.js`
 接著到Postman設置環境並發送請求，第一次請求由於快取中還沒有資料，因此必須向第三方API請求資料，回傳時間比較長，花了1288ms：
-![](https://hackmd.io/_uploads/ByhYniNa2.png) <br>
+![](/images/ByhYniNa2.png) <br>
 接著到Redis中查看資料是否成功存入：
-![](https://hackmd.io/_uploads/B1iM6oEp2.png)
+![](/images/B1iM6oEp2.png)
 成功寫入了一筆key為recipes、value是回傳的60筆食譜資料轉成的字串。
 <br>
 接著再發送第二次請求，這次是從Redis中取得資料：
-![](https://hackmd.io/_uploads/HyZ10oV6h.png)
+![](/images/HyZ10oV6h.png)
 這次只花了17ms就回傳，速度大幅提升!
 
 完整的`app.js`程式碼如下：

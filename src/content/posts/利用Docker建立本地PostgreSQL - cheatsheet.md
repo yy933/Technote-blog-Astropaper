@@ -112,7 +112,7 @@ docker network rm nextauth-net
 
 ### 2. 連線設定
 接著會看到如下畫面:
-![螢幕擷取畫面 2025-09-09 233710](https://hackmd.io/_uploads/HkH5u6Tcgx.png)
+![螢幕擷取畫面 2025-09-09 233710](/images/HkH5u6Tcgx.png)
 * General Tab:
   - Name：隨意，例如 nextauth-db
 * Connection Tab:

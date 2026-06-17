@@ -13,7 +13,7 @@ hackmd_id: "SyQHrn31ee"
 ## 什麼是 Promise
 `Promise` 是一個物件建構子 (constructor)，使用時需要先從 `Promise` 物件產生物件實例 (instance)，再使用繼承特性的 instance 去包裝程式碼的 callback 流程。`Promise` 使得處理非同步操作變得更加直觀，避免了callback地獄（callback hell）的問題。
 
-![ExportedContentImage_02 (4)](https://hackmd.io/_uploads/S1brUhhkll.png)
+![ExportedContentImage_02 (4)](/images/S1brUhhkll.png)
 
 
 ## Promise基本用法
@@ -54,7 +54,7 @@ myPromise
 `Promise` 是用於進行流程控制的物件 (容器)，它具備了 callback 的優點，但透過 `.then()` 來標明流程，而 `.then() `之間可以互相鏈結 (chaining)，把之前「一層包一層的 callback」，轉換成 `.then()` 的串接。
 
 ### 範例1
-![ExportedContentImage_03 (2)](https://hackmd.io/_uploads/ByMOP331ge.png)
+![ExportedContentImage_03 (2)](/images/ByMOP331ge.png)
 
 ### 範例2
 ```javascript

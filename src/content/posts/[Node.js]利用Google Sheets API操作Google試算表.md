@@ -186,7 +186,7 @@ run()
 同時根目錄也新增了一個`token.json`檔案，也可以到web介面看看，網址:https://docs.google.com/spreadsheets/d/**<Your spreadsheet Id>**/edit?pli=1#gid=0
 應該可以看到一個標題是test的試算表建立成功，也可以進入[個人的Google Sheets頁面](https://docs.google.com/spreadsheets/u/0/)，查看是否新增了一個新的試算表test：
 :bell: <span style="color: crimson;">需用取得Google憑證時的Google account去看，目前其他人還沒有權限</span> <br>
-![](https://hackmd.io/_uploads/rJbMlkRa2.png)
+![](/images/rJbMlkRa2.png)
 
     
 
@@ -225,7 +225,7 @@ async function updateValues (auth, spreadsheetId) {
 * `values`:試算表範圍內的資料，也就是要操作的資料，values是必填的參數，型態是陣列(array)。其他參數參考[文件](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values?hl=zh-tw#resource-valuerange)。    
 * `valueInputOption`是指系統如何解讀輸入資料。例如這裡使用`USER_ENTERED`，則系統會解析`Total`那列的`'=SUM(B2:B4)'`，加總B2:B4的值，就和在Excel資料表裡面操作一樣的方法。其他選項參考[文件](https://developers.google.com/sheets/api/reference/rest/v4/ValueInputOption)。
 * `range`是指資料的範圍，可以指定多個儲存格 (例如 A1:D5) 或單一儲存格 (例如 A1)。詳細用法參考[文件](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values?hl=zh-tw#resource-valuerange)。或是[範例](https://developers.google.com/sheets/api/guides/values?hl=zh-tw)中也有提到:
-![](https://hackmd.io/_uploads/SJhygyC6n.png)
+![](/images/SJhygyC6n.png)
 
 
 在`run()`中加入：
@@ -247,7 +247,7 @@ Spreadsheet ID: <Your spreadsheet Id>
 20 cells updated.
 ```
 到web介面看看，這時可以看到test試算表中有資料了!
-    ![](https://hackmd.io/_uploads/Sk4qS2663.png)
+    ![](/images/Sk4qS2663.png)
     
 #### **讀取試算表的資料**
 * [`spreadsheets.values.get`](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/get?hl=zh-tw)：官方提供的[範例](https://developers.google.com/sheets/api/guides/values?hl=zh-tw)
@@ -295,7 +295,7 @@ Spreadsheet ID: <Your spreadsheet Id>
 ]
 ```
 成功讀取了A1:D2這個範圍的資料，也就是Web介面上：
-![](https://hackmd.io/_uploads/rkN8xkCT3.png)
+![](/images/rkN8xkCT3.png)
 
 
 

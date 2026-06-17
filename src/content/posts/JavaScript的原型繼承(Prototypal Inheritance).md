@@ -117,11 +117,11 @@ console.log(milkProtoProtoProto)
 ```
 
 `console.log(milkProto)`這一行程式碼在console中可以看到:
-![](https://hackmd.io/_uploads/rJWVBKrCh.png)
+![](/images/rJWVBKrCh.png)
 它的原型中包含建構式(constructor)`Number()`函式以及各種這個原型建構的實例可以使用的方法(method)，`[[Prototype]]` 則可以觀察到這個`Number`的原型是`Object`，也就是原型鏈的上一層。
 
 `console.log(milkProtoProto)`這一行程式碼在console中則可以看到:
-![](https://hackmd.io/_uploads/SJ-58tHCh.png)
+![](/images/SJ-58tHCh.png)
 `__proto__: (...)` 也就是再往原型鏈的上層找不到東西了，所以`console.log(milkProtoProtoProto)`印出的是`null`
 
 ## :memo: 範例
