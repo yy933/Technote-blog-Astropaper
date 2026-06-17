@@ -11,37 +11,37 @@ hackmd_id: "B1Dc1MAAn"
 
 <img src="https://images.unsplash.com/photo-1631452180539-96aca7d48617?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
 
-<div style="text-align:center;font-size: 10px">
+<div style="text-align:center;font-size: 10px">  
 (Photo by <a href="https://unsplash.com/@mekalluakella?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kalyani Akella</a> on <a href="https://unsplash.com/photos/gml9g1kRQcM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>)
 </div>
 <br/>
 
 > 此Curry非彼Curry，不過Naan沾咖哩真的好好吃啊:yum:
 
-## :memo: 前言
-柯里化(Currying)是functional programming的一種技術 ，透過currying可以編寫模組化、易於測試和高度可重複使用的程式碼。
+## :memo: 前言  
+柯里化(Currying)是functional programming的一種技術 ，透過currying可以編寫模組化、易於測試和高度可重複使用的程式碼。  
 Functional programming(FP)是一種宣告式規範( declarative paradigm)，強調不變性(immutability)和純函式(Pure Functions)—代表該函式對於任何給定的輸入(input)，永遠會回傳相同的輸出(output)。這些特性可以使程式碼更易讀並且更容易維護，而Currying只是其中的一種技術。
 <blockquote class="my-6 p-4 bg-sky-50 dark:bg-sky-950/30 border-l-4 border-sky-500 rounded-r-md text-sky-900 dark:text-sky-200 blocknoted-fix">
 
-更多關於Functional Programming，可以閱讀以下文章:
-1. [為什麼要學 Functional Programming?](https://ithelp.ithome.com.tw/articles/10233399)
-2. [JavaScript: Functional Programming 函式編程概念](https://totoroliu.medium.com/javascript-functional-programming-%E5%87%BD%E5%BC%8F%E7%B7%A8%E7%A8%8B%E6%A6%82%E5%BF%B5-e8f4e778fc08)
+更多關於Functional Programming，可以閱讀以下文章:  
+1. [為什麼要學 Functional Programming?](https://ithelp.ithome.com.tw/articles/10233399)  
+2. [JavaScript: Functional Programming 函式編程概念](https://totoroliu.medium.com/javascript-functional-programming-%E5%87%BD%E5%BC%8F%E7%B7%A8%E7%A8%8B%E6%A6%82%E5%BF%B5-e8f4e778fc08)  
 3. [Buzz Word 1 : Declarative vs. Imperative](https://ithelp.ithome.com.tw/articles/10233761)
 
 </blockquote>
 
 ## :memo: 柯里化(Currying)
-### 原理
+### 原理  
 Currying可以將**具有多個參數的函式轉換為一系列巢狀(nesting)函式**。也就是說，函式並非一次接受所有參數，而是接受第一個參數並返回一個新函式，此新函式接受第二個參數並返回另一個新函式，此新函式再接受第三個參數，依此類推，直到所有參數都被執行完畢。
 
-### 範例
+### 範例  
 舉例來說，以下函式尚未進行currying：
 ```javascript
 function multiply(a,b) {
     return a * b;
 }
 ```
-如果只傳入一個參數`a`，此函式仍會執行，而參數`b`則會以`undefined`去執行，也就是說如果執行`multiply(5)`，實際上執行的是`5 * undefined`，回傳`NaN`。
+如果只傳入一個參數`a`，此函式仍會執行，而參數`b`則會以`undefined`去執行，也就是說如果執行`multiply(5)`，實際上執行的是`5 * undefined`，回傳`NaN`。  
 現在試著將函式currying，轉換成一系列巢狀函式:
 ```javascript
 function curried_multiply(a) {
@@ -50,8 +50,8 @@ function curried_multiply(a) {
    }
 }
 ```
-調用`curried_multiply()`函式:
-1. 調用`curried_multiply()`函式，這個函式接受一個參數傳入，並且回傳另一個函式`nested()`。也就是**調用`curried_multiply(a)`，回傳的結果是`nested(b)`。**
+調用`curried_multiply()`函式:  
+1. 調用`curried_multiply()`函式，這個函式接受一個參數傳入，並且回傳另一個函式`nested()`。也就是**調用`curried_multiply(a)`，回傳的結果是`nested(b)`。**  
 2. 調用`nested()`函式，這個函式使用調用`curried_multiply()`以及`nested()`函式得到的參數`a`、`b`，並執行與回傳`a * b`的結果。**調用`nested(b)`，回傳的結果是`a * b`。**
 
 如果進一步拆解這個函式:
@@ -67,7 +67,7 @@ one(10)
 ```
 回傳的是 `a * b`，也就是 `5 * 10`的值。
 
-### 閉包(closure)與柯里化(currying)
+### 閉包(closure)與柯里化(currying)  
 呼叫`curried_multiply()`函式時調用的參數可用於巢狀函式，這是**閉包(closure)的特性**。函式中回傳函式，通常就是閉包。 當呼叫父函式時，會產生一個新的執行環境(context)，這個環境會保留所有區域變數(local variables)，這些區域變數可以透過和全域變數連結、或是從父函式的閉包，在全域環境中被取用。例如以下函式:
 ```javascript
 function foo(x) {
@@ -84,7 +84,7 @@ foo(2)
 
 <blockquote class="my-6 p-4 bg-sky-50 dark:bg-sky-950/30 border-l-4 border-sky-500 rounded-r-md text-sky-900 dark:text-sky-200 blocknoted-fix">
 
-Q: 函式中的函式一定代表閉包的存在?
+Q: 函式中的函式一定代表閉包的存在?  
 A: 不一定。如果內部的函式(子函式)並沒有參照該函式作用域外(如父函式作用域)的變數，則閉包不存在。例如:
 ```javascript
 function foo(x) {
@@ -101,14 +101,14 @@ foo(5)()
 </blockquote>
 
 巢狀函式根據定義函式的位置，保留父函式的作用域；亦即，內層函式的區塊也可以取用外層函式的變數，例如前述[範例](###範例)中，`function nested(b) {return a * b}`，`nested()`函式可以取用父函式、也就是`curried_multiply()`函式的參數`a`，當我們執行`const one = curried_multiply(5)`時，`one()`保留了`curried_multiply()`的作用域，因此可以取用該作用域的變數`5`；也可以理解成在此巢狀函式中，第一個傳入的參數`a`，會成為閉包中的變數被記憶/儲存，並傳入巢狀函式鏈中的下一個函式執行。
-### 箭頭函式
-使用ES6的箭頭函式語法，重新撰寫前述[範例](###範例)中的`curried_multiply()`函式:
+### 箭頭函式  
+使用ES6的箭頭函式語法，重新撰寫前述[範例](###範例)中的`curried_multiply()`函式:  
 `let curried_multiply = a => b => a * b`
 
-拆解一下上面這行程式碼:
-1. 把最外層的箭頭函式`a => ...`賦值給變數`curried_multiply` 
-(i.e. `curried_multiply`是一個接受`a`作為參數傳入的函式 )
-3. 呼叫`curried_multiply`，傳入參數`a`，回傳另一個箭頭函式`b => a * b`(i.e. `curried_multiply`函式接受`a`作為參數傳入後，回傳的函式接受`b`作為參數傳入 )
+拆解一下上面這行程式碼:  
+1. 把最外層的箭頭函式`a => ...`賦值給變數`curried_multiply`   
+(i.e. `curried_multiply`是一個接受`a`作為參數傳入的函式 )  
+3. 呼叫`curried_multiply`，傳入參數`a`，回傳另一個箭頭函式`b => a * b`(i.e. `curried_multiply`函式接受`a`作為參數傳入後，回傳的函式接受`b`作為參數傳入 )  
 4. 調用箭頭函式`b => a * b`，回傳相乘的結果(`a * b`) 
 
 試著將參數傳入這個函式:
@@ -129,23 +129,23 @@ const curry =(fn) =>{
     }
 }
 ```
-以上code做了什麼?
-1. `curry`作為外層函式，接受`fn`函式作為參數傳入，並回傳另一個函式`curried`
+以上code做了什麼?  
+1. `curry`作為外層函式，接受`fn`函式作為參數傳入，並回傳另一個函式`curried`  
 2. `curried`接受另一參數`args`傳入，並用[其餘參數（rest parameters）](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters)將參數集合成陣列，並且比較`fn`和`args`的長度
 <blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
 
 :bulb: 函式的長度(function length)是function的一種屬性(property)，**表示該 function 預期被傳入的參數數量**，這個數量並不包含其餘參數(rest parameter)且只包含第一個預設參數(Default Parameters)前的參數。
 *Ref: [MDN doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/length)*
 
-</blockquote>
+</blockquote>  
 3. `if`判斷式中的邏輯: 若`fn`和`args`的長度(也就是參數的數量)不同，則呼叫[`bind()`](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)方法，建立一個新的函式並傳入參數`...args`；若`fn`和`args`的長度(也就是預期傳入的參數數量)相同，則回傳傳入`args`參數的`fn`
 <blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
 
-:bulb: `bind()`是函式的一種方法(method)，它的基本語法如下:
-`fun.bind(thisArg[, arg1[, arg2[, ...]]])`
+:bulb: `bind()`是函式的一種方法(method)，它的基本語法如下:  
+`fun.bind(thisArg[, arg1[, arg2[, ...]]])`  
 第一個參數是`this`要指向的物件，第二個與其後的參數則是要傳入該函式的參數。`bind()`會建立一個新的函式，必須調用該函式才會執行。
 
-</blockquote>
+</blockquote>  
 實際應用這個函式:
 ```javascript
 const totalNum=(x,y,z) => {
@@ -187,12 +187,12 @@ const curry =(fn) =>{
 // sum output
 60
 ```
-印出的順序依序是<span style="background-color: tan">`args`</span>、<span style="background-color: lightcoral">`fn.length`</span>、<span style="background-color: gold">`args.length`</span>，因此console印出的東西可以分成三組:
-1. 傳入`curry`函式的參數是`totalNum`函式，這個函式有三個參數，因此<span style="background-color: lightcoral">`fn.length`</span>是3
+印出的順序依序是<span style="background-color: tan">`args`</span>、<span style="background-color: lightcoral">`fn.length`</span>、<span style="background-color: gold">`args.length`</span>，因此console印出的東西可以分成三組:  
+1. 傳入`curry`函式的參數是`totalNum`函式，這個函式有三個參數，因此<span style="background-color: lightcoral">`fn.length`</span>是3  
 2. 第一次傳入一個參數，使用其餘參數轉換成陣列 `[10]`，也就是
-<span style="background-color: tan">`args`</span>，此時的<span style="background-color: gold">`args.length`</span>是1，和<span style="background-color: lightcoral">`fn.length`</span>不同，因此執行`curried.bind(null, ...args)`，`curried`的參數數量變成1
+<span style="background-color: tan">`args`</span>，此時的<span style="background-color: gold">`args.length`</span>是1，和<span style="background-color: lightcoral">`fn.length`</span>不同，因此執行`curried.bind(null, ...args)`，`curried`的參數數量變成1  
 3. 第二次也是傳入一個參數20，和剛剛的參數10使用其餘參數轉換成陣列 `[10, 20]`，也就是
-<span style="background-color: tan">`args`</span>，此時的<span style="background-color: gold">`args.length`</span>是2，和<span style="background-color: lightcoral">`fn.length`</span>不同，因此執行`curried.bind(null, ...args)`，`curried`的參數數量變成2
+<span style="background-color: tan">`args`</span>，此時的<span style="background-color: gold">`args.length`</span>是2，和<span style="background-color: lightcoral">`fn.length`</span>不同，因此執行`curried.bind(null, ...args)`，`curried`的參數數量變成2  
 4. 第三次傳入參數30，此時的<span style="background-color: tan">`args`</span>是 `[10, 20, 30]`，<span style="background-color: gold">`args.length`</span>是3，和<span style="background-color: lightcoral">`fn.length`</span>相同，因此執行`fn(...args)`，也就是把`[10, 20, 30]`使用[展開運算子(spread operator)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)傳入`totalNum`函式，加總後得到結果60。
 
 假如不使用currying的函式，一次傳入三個參數`curriedTotal(10, 20, 30)`，則會在console上印出:
@@ -221,8 +221,8 @@ function curry(fn) {
 與`bind()`方法的不同之處在於，`apply()`方法接受的第二個參數是一個**陣列**，因此無須再展開。
 <blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
 
-:bulb: [`apply()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)方法的基本語法:
-`fun.apply(thisArg, [argsArray])`
+:bulb: [`apply()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)方法的基本語法:  
+`fun.apply(thisArg, [argsArray])`  
 第一個參數一樣是`this`指向的對象，第二個參數則是參數陣列或是array-like 物件；和`bind()`方法不一樣，`apply()`是直接執行該函式，而非建立新函式(或是說拷貝原函式物件)。
 
 </blockquote>
@@ -235,7 +235,7 @@ function curry(fn) {
 - [[JavaScript] 函數原型最實用的 3 個方法 — call、apply、bind](https://realdennis.medium.com/javascript-%E8%81%8A%E8%81%8Acall-apply-bind%E7%9A%84%E5%B7%AE%E7%95%B0%E8%88%87%E7%9B%B8%E4%BC%BC%E4%B9%8B%E8%99%95-2f82a4b4dd66)
 
 </blockquote>
-## :memo: Currying的優點
+## :memo: Currying的優點  
 Currying可以**使函式具有單一用途，使程式碼更加模組化，從而更易於測試、debug、維護和閱讀。** 以下直接用範例說明:
 
 
@@ -273,8 +273,8 @@ const filterByValueFromLocation = (candidateArr, location, filterKey, filterValu
  
 console.log(filterByValueFromLocation(candidate, "CA", "skills", "JavaScript"));
 ```
-以上兩個函式可以觀察到:
-1. 這兩個函式都根據地點篩選，並且每次都執行相同的篩選方式: 寫了許多重複的code
+以上兩個函式可以觀察到:  
+1. 這兩個函式都根據地點篩選，並且每次都執行相同的篩選方式: 寫了許多重複的code  
 2. 這兩個函式都接受多個參數: 倘若發生錯誤，需要花比較多時間確認是哪個參數造成的錯誤
 
 試著用Currying改寫以上函式，讓code變得更模組化、容易閱讀、可以重複使用:
@@ -367,13 +367,13 @@ const dairyPromotion = startDate => {
 ```
 看起來是不是比較簡潔?把共通的部分抽取出來，也就是折扣20%，另外寫成函式`twentyOffPromotion`，並且把它的參數`discount`固定為20這個值，便可以把這個函式應用在其他的函式中，`fruitPromotion`和`dairyPromotion`都只需要接收參數`startDate`即可。這就是partial application。
 
-### 高階函式 (High Order Function)
+### 高階函式 (High Order Function)  
 高階函式意指一個函式可以接收另一函式作為參數、或者回傳一個函式。
 <blockquote class="my-6 p-4 bg-sky-50 dark:bg-sky-950/30 border-l-4 border-sky-500 rounded-r-md text-sky-900 dark:text-sky-200 blocknoted-fix">
 
 Ref: [高階函式 (Higher Order Function) 是什麼？](https://www.explainthis.io/zh-hant/swe/what-is-hof)
 
-</blockquote>
+</blockquote>  
 上述的範例如果應用高階函式改寫:
 ```javascript
 const partial = (fn, ...argsToApply) => {
@@ -393,9 +393,9 @@ fruitPromotion() // The fruits price is 20% off from 2020/02/20
 const dairyPromotion = partial(twentyOffPromotion, 'dairy products', '2020/01/23')
 dauryPromotion() // The dairy products price is 20% off from 2020/01/23 
 ```
-`partial`函式做了什麼?
-1. 傳入兩個參數`fn`, `argsToApply`:`fn`是要被partially applied的函式，`argsToApply`則是收集傳入的參數，利用其餘參數轉換為陣列
-2. 執行`partial`函式會回傳另一個函式，這個函式接收除了 `argsToApply`以外的參數，這裡命名為 `restArgsToApply`
+`partial`函式做了什麼?  
+1. 傳入兩個參數`fn`, `argsToApply`:`fn`是要被partially applied的函式，`argsToApply`則是收集傳入的參數，利用其餘參數轉換為陣列  
+2. 執行`partial`函式會回傳另一個函式，這個函式接收除了 `argsToApply`以外的參數，這裡命名為 `restArgsToApply`  
 3. 執行這個回傳的函式會再回傳另一個函式，這個函式接收兩個參數`argsToApply`及 `restArgsToApply`；這裡跟currying一樣，應用到閉包的概念，執行外層`partial`函式的參數`argsToApply`和`fn`儲存於閉包中，內部的函式因此可以取得外部函式(父函式)的參數。所以最內層回傳的函式，其實是執行最外層傳入的參數`fn`，也就是我們要進行partially applied的函式。
 
 

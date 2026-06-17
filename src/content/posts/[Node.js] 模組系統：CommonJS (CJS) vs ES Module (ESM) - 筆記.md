@@ -8,7 +8,7 @@ hackmd_id: "r1nXzTCxGe"
 
 ## Table of contents
 
-## :memo: CJS 與 ESM 是什麼？
+## :memo: CJS 與 ESM 是什麼？  
 在 JavaScript 的世界裡，隨者專案規模擴大，我們需要將程式碼拆分成多個檔案管理，這就是**模組化（Modularity）**。而在 Node.js 與前端開發生態中，最核心的兩大模組標準就是 **CommonJS (CJS)** 與 **ES Module (ESM)**。
 
 * **CommonJS (CJS)**：Node.js 誕生初期的預設模組系統，歷史包袱最重。使用 `require()` 引入、`module.exports` 導出。
@@ -32,7 +32,7 @@ hackmd_id: "r1nXzTCxGe"
 3. **ESM 的轉變**：到了 ESM 環境，Node.js 不再使用外殼函式注入。因此 `__dirname` 與 `__filename` 在 ESM 中是完全不存在的，必須統一改用官方標準的 `import.meta` 物件（如 `import.meta.dirname`）來動態獲取元資料（Metadata）。
 
 
-## :memo: CJS和ESM核心機制三大本質差別
+## :memo: CJS和ESM核心機制三大本質差別  
 除了語法上 require 與 import 的不同外，這兩者在底層運行機制上有著根本性的巨大差異：
 
 1. 運行時機：動態同步 vs. 靜態編譯
@@ -50,16 +50,16 @@ hackmd_id: "r1nXzTCxGe"
 
 ## :memo: CJS 和 ESM 的核心差別與環境支援
 
-| 特性  | CommonJS (CJS) | ES Module (ESM) |
-| :--- | :--- | :--- |
-| **主要語法** | `require()` / `module.exports` | `import` / `export` |
-| **路徑環境變數** | 有 `__dirname`, `__filename` | 無，改用 `import.meta.dirname` |
-| **載入時機** | 執行時（Runtime），同步載入 | 編譯時（Compile-time），非同步 |
-| **導出機制** | 值的複製品（彼此獨立） | 值的引用連結（即時同步更新） |
-| **前端（瀏覽器）** | **原生完全不支援**（需透過 Webpack/Vite 打包）。 | **原生支援**（`<script type="module">`）。 |
+| 特性  | CommonJS (CJS) | ES Module (ESM) |  
+| :--- | :--- | :--- |  
+| **主要語法** | `require()` / `module.exports` | `import` / `export` |  
+| **路徑環境變數** | 有 `__dirname`, `__filename` | 無，改用 `import.meta.dirname` |  
+| **載入時機** | 執行時（Runtime），同步載入 | 編譯時（Compile-time），非同步 |  
+| **導出機制** | 值的複製品（彼此獨立） | 值的引用連結（即時同步更新） |  
+| **前端（瀏覽器）** | **原生完全不支援**（需透過 Webpack/Vite 打包）。 | **原生支援**（`<script type="module">`）。 |  
 | **後端（Node.js）** | **原生支援**（歷史預設標準）。 | **原生支援**（Node.js 12+ 後趨於成熟）。 |
 
-## :memo: 實務應用：Node.js 如何判斷與選擇？
+## :memo: 實務應用：Node.js 如何判斷與選擇？  
 當我們在後端執行 `node app.js` 時，Node.js 主要透過以下兩套機制來判斷該以 CJS 還是 ESM 運行：
 
 1. 透過 package.json 中的 "type" 欄位（全域影響）
@@ -73,12 +73,12 @@ hackmd_id: "r1nXzTCxGe"
 * `.mjs`：強制將該檔案視為 ES Module。
 * `.js`：聽從 `package.json` 裡 `"type"` 的決定。
 
-### 💡 舊專案 CJS 想重構升級成 ESM，會很麻煩嗎？
+### 💡 舊專案 CJS 想重構升級成 ESM，會很麻煩嗎？  
 老實說，會有一點痛苦，因為會遇到一連串的連鎖報錯：
 
-1. **路徑報錯**：所有的 `__dirname` 必須手動改寫為 `import.meta.dirname`。
-1. **副檔名限制**：在 ESM 中引入本地檔案，`import user from './user.js'` 必須補上 `.js` 副檔名，否則會噴 `ERR_MODULE_NOT_FOUND`。
-1. **相容性地獄**：CJS 檔案完全無法去 `require` 一個已經升級成 ESM 的檔案或現代套件，這會逼得你必須把整條依賴鏈一口氣全改掉。
+1. **路徑報錯**：所有的 `__dirname` 必須手動改寫為 `import.meta.dirname`。  
+1. **副檔名限制**：在 ESM 中引入本地檔案，`import user from './user.js'` 必須補上 `.js` 副檔名，否則會噴 `ERR_MODULE_NOT_FOUND`。  
+1. **相容性地獄**：CJS 檔案完全無法去 `require` 一個已經升級成 ESM 的檔案或現代套件，這會逼得你必須把整條依賴鏈一口氣全改掉。  
 1. **引入 JSON 變嚴格**：不能直接 `import JSON`，必須改用新語法：`import data from './data.json' with { type: 'json' };`。
 
 <blockquote class="my-6 p-4 bg-sky-50 dark:bg-sky-950/30 border-l-4 border-sky-500 rounded-r-md text-sky-900 dark:text-sky-200 blocknoted-fix">

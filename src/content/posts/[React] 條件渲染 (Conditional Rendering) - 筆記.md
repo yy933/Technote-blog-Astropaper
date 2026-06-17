@@ -97,8 +97,8 @@ return (
 ```
 <blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
 
-這種寫法的:
-✅ 優點：語法簡潔，適合簡單條件。
+這種寫法的:  
+✅ 優點：語法簡潔，適合簡單條件。  
 ⚠️ 注意：如果條件變多或內容複雜，JSX 會變得難讀，這時建議：
 * 把內容抽成變數
 * 包成子component
@@ -106,9 +106,9 @@ return (
 </blockquote>
 <blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
 
-**⚠️ 以上兩種寫法相同嗎？**
-JSX 元素不是 OOP 中的實例（instance）！
-若學過物件導向程式語言（ object-oriented programming ），可能會以為` <li> `的兩種寫法會產生不同的「實例」（instance）。其實不是，JSX 元素只是輕量描述，像是一張藍圖，**不是真實 DOM 或有內部狀態的實例。**
+**⚠️ 以上兩種寫法相同嗎？**  
+JSX 元素不是 OOP 中的實例（instance）！  
+若學過物件導向程式語言（ object-oriented programming ），可能會以為` <li> `的兩種寫法會產生不同的「實例」（instance）。其實不是，JSX 元素只是輕量描述，像是一張藍圖，**不是真實 DOM 或有內部狀態的實例。**  
 舉例來說，以上兩種寫法:
 ```jsx
 // 寫法 1：
@@ -123,8 +123,8 @@ JSX 元素不是 OOP 中的實例（instance）！
 ```jsx
 React.createElement("li", null, isPacked ? React.createElement("del", null, name) : name)
 ```
-這種轉換出來的東西**只是一份描述（也稱為 virtual DOM blueprint），它不是一個真實 DOM，也不是 class 實例**。
-React 不會因為在 JSX 中「寫了兩個 `<li>`」，就真的建立兩個 `<li>` DOM 節點。
+這種轉換出來的東西**只是一份描述（也稱為 virtual DOM blueprint），它不是一個真實 DOM，也不是 class 實例**。  
+React 不會因為在 JSX 中「寫了兩個 `<li>`」，就真的建立兩個 `<li>` DOM 節點。  
 它會聰明地比對這些 blueprint（即 JSX 結果），判斷哪些需要更新、哪些可以重用。
 
 </blockquote>
@@ -158,7 +158,7 @@ return (
 
 </blockquote>
 
-## 將 JSX 存進變數
+## 將 JSX 存進變數  
 在條件越來越複雜時，可以避免 `<li>{條件 ? xxx : yyy}</li>` 這類難讀的巢狀寫法，提升可讀性。
 
 ### 重點整理
@@ -181,7 +181,7 @@ return (
 );
 ```
 
-比起直接把邏輯塞進 JSX，更清楚易懂，很適合條件較多、判斷較複雜的情境。
+比起直接把邏輯塞進 JSX，更清楚易懂，很適合條件較多、判斷較複雜的情境。  
 變數 `itemContent` 可以放字串、JSX 元素，甚至函式結果，靈活又直觀。例如以下把JSX放進`itemContent`的範例:
 
 ```jsx
@@ -224,12 +224,12 @@ export default function PackingList() {
 }
 ```
 
-## Recap
-| 條件渲染方式             | 語法範例                            | 行為說明                                                  | 備註                         |
-|------------------------|-------------------------------------|----------------------------------------------------------|----------------------------|
-| `if` 條件判斷           | `if (cond) return <A />`            | 如果條件為 true，回傳 `<A />`                            | 適合較複雜邏輯               |
-| 變數儲存 JSX            | `let content = <A />`<br/>`return {content}` | 先把 JSX 存進變數，再插入 JSX 結構中                        | 易讀性高                     |
-| 三元運算子              | `{cond ? <A /> : <B />}`            | 如果條件為 true，渲染 `<A />`，否則渲染 `<B />`           | 適合簡單切換                 |
+## Recap  
+| 條件渲染方式             | 語法範例                            | 行為說明                                                  | 備註                         |  
+|------------------------|-------------------------------------|----------------------------------------------------------|----------------------------|  
+| `if` 條件判斷           | `if (cond) return <A />`            | 如果條件為 true，回傳 `<A />`                            | 適合較複雜邏輯               |  
+| 變數儲存 JSX            | `let content = <A />`<br/>`return {content}` | 先把 JSX 存進變數，再插入 JSX 結構中                        | 易讀性高                     |  
+| 三元運算子              | `{cond ? <A /> : <B />}`            | 如果條件為 true，渲染 `<A />`，否則渲染 `<B />`           | 適合簡單切換                 |  
 | 邏輯與運算子 (`&&`)     | `{cond && <A />}`                   | 如果條件為 true，渲染 `<A />`；false 時顯示 nothing       | ⚠️ `0 && <A />` 會渲染 `0` |
 
 :bulb: 以上簡寫很常見，但複雜的情況也可以直接用`if`判斷式:

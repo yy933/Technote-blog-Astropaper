@@ -12,7 +12,7 @@ hackmd_id: "B13g4BRA1g"
 
  
 
-## 變數 (variable) 與運算子 (operator)
+## 變數 (variable) 與運算子 (operator)  
 變數可以使 css 代碼具備更佳的可維護性與可讀性—— Sass 使用冒號 `:` 進行**變數的指派**，並以分號 `;` **作為結尾**。此外，還可以針對數值進行各種常見的計算。
 
 範例:
@@ -29,7 +29,7 @@ $padding: 1rem;
 
 
 
-## 巢狀（Nesting）
+## 巢狀（Nesting）  
 使用巢狀語法來編寫**組合選擇符 (nested combinator)** ，例如空白以及 > + ~ ，以達到更好的可讀性。
 
 範例:
@@ -49,7 +49,7 @@ $padding: 1rem;
 
 
 
-## @mixins＋ @include
+## @mixins＋ @include  
 用來抽離重複樣式！在物件導向程式設計中，mixin 意指一種工具形式的類別，用以附加在目標類別之上，為目標類別增添額外的方法或屬性——你可以將它視作一種更彈性的繼承 (inherit) 的實作方式。在 Sass 裡，我們使用 @mixin 進行宣告，並使用 @include 使用 mixin。
 
 ### 範例一
@@ -87,7 +87,7 @@ $padding: 1rem;
 ![ExportedContentImage_04 (1)](/images/Sk26LBC0Je.png)
 
 
-### 範例三：RWD（響應式 mixin）
+### 範例三：RWD（響應式 mixin）  
 寫一個簡單的 media query 工具：
 ```sass
 @mixin respond($breakpoint) {
@@ -111,8 +111,8 @@ $padding: 1rem;
 
 
 
-## 檔案模組化
-在 Sass 中，我們可以將檔案拆成多個，配合上妥善的命名，讓專案變得更容易管理。
+## 檔案模組化  
+在 Sass 中，我們可以將檔案拆成多個，配合上妥善的命名，讓專案變得更容易管理。  
 ![ExportedContentImage_02 (2)](/images/H1e3PrC0Jl.png)
 
 * 開頭為底線` _ `的檔名在 Sass 中稱之為**partial**，也就是一個低階的模組。
@@ -132,10 +132,10 @@ body {
 ```
 
 
-## 繼承（`@extend`）與覆寫
+## 繼承（`@extend`）與覆寫  
 繼承可以使多個類別都享有共同的屬性—— Sass 使用 `%` 來**宣告類別**，並使用 `@extend` 來**執行繼承**。如果要覆寫屬性，則直接宣告即可。
 
-直接看範例:
+直接看範例:  
 ![ExportedContentImage_03 (1)](/images/SyY5OrC0ye.png)
 
 ```sass
@@ -149,7 +149,7 @@ body {
 }
 ```
 
-## 函數（Functions）
+## 函數（Functions）  
 單位轉換或計算時很實用。
 ```sass
 @function px-to-rem($px) {
@@ -163,7 +163,7 @@ body {
 
 
 ## 控制結構（`@if`, `@for`, `@each`, `@while`）
-### `@if / @else`
+### `@if / @else`  
 條件判斷，就像 JavaScript 的 `if...else`，用來根據變數或條件產生不同的樣式。
 ```sass
 $theme: dark;
@@ -177,8 +177,8 @@ body {
 }
 ```
 
-### `@for`
-循環指定次數（適合自動產生 class）
+### `@for`  
+循環指定次數（適合自動產生 class）  
 有兩種語法：
 * `from ... through ...`：包含結尾
 * `from ... to ...`：不包含結尾
@@ -211,8 +211,8 @@ body {
 
 ```
 
-### `@each`
-Array or Map
+### `@each`  
+Array or Map  
 適合用來產生有顏色、類型、尺寸等變化的 class。
 
 #### 語法（針對 list）：
@@ -240,7 +240,7 @@ $colors: (
 }
 ```
 
-### `@while`：條件迴圈（少用）
+### `@while`：條件迴圈（少用）  
 根據一個條件不斷重複，直到條件不成立為止。
 
 #### 語法：
@@ -265,14 +265,14 @@ $i: 1;
 
 ## 比較：`@mixin` vs `@extend` vs `@function`
 
-| 功能 | `@mixin` | `@extend` | `@function` |
-| --- | --- | --- | --- |
-| **用來做什麼？** | 封裝一段樣式，帶或不帶參數 | 繼承現有選擇器的樣式 | 回傳一個單一值（顏色、數字、單位） |
-| **使用方式** | `@include mixin-name()` | `@extend .class-name` or `%placeholder` | `property: function-name()` |
-| **可帶參數？** | ✅ 可以 | ❌ 不行 | ✅ 可以 |
-| **可用條件邏輯（if/each）？** | ✅ 可以 | ❌ 不行 | ✅ 可以 |
-| **會產生多份 CSS？** | ✅ 每次使用會複製樣式 | ❌ 共用同一份樣式 | ❌ 回傳單一值，不產生樣式 |
-| **維護性** | 高，彈性大，適合元件 | 中，寫法簡潔但耦合高 | 高，簡潔、明確，用於計算 |
+| 功能 | `@mixin` | `@extend` | `@function` |  
+| --- | --- | --- | --- |  
+| **用來做什麼？** | 封裝一段樣式，帶或不帶參數 | 繼承現有選擇器的樣式 | 回傳一個單一值（顏色、數字、單位） |  
+| **使用方式** | `@include mixin-name()` | `@extend .class-name` or `%placeholder` | `property: function-name()` |  
+| **可帶參數？** | ✅ 可以 | ❌ 不行 | ✅ 可以 |  
+| **可用條件邏輯（if/each）？** | ✅ 可以 | ❌ 不行 | ✅ 可以 |  
+| **會產生多份 CSS？** | ✅ 每次使用會複製樣式 | ❌ 共用同一份樣式 | ❌ 回傳單一值，不產生樣式 |  
+| **維護性** | 高，彈性大，適合元件 | 中，寫法簡潔但耦合高 | 高，簡潔、明確，用於計算 |  
 | **最佳使用場景** | 按鈕樣式、RWD 模組、陰影等 | reset、卡片樣式、標題樣式共用 | px→rem 轉換、顏色處理、比例計算 |
 
 ###  什麼時候用 @mixin

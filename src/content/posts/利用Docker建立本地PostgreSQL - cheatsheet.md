@@ -15,7 +15,7 @@ hackmd_id: "BJuBMT6qlx"
 * 視需求安裝[VSCode Docker Extension](https://code.visualstudio.com/docs/containers/overview)(Docker的GUI)、[pgAdmin](https://www.pgadmin.org/)(PostgreSQL的GUI)
 > 小提醒：Docker 在 Windows 有 WSL2 需求，確認 BIOS 內已開啟虛擬化 (Virtualization)，確定 Docker Desktop 正常啟動。
  
-## 1. 確認 Docker 可用
+## 1. 確認 Docker 可用  
 開啟專案資料夾，在terminal輸入:
 ```bash
 docker --version
@@ -29,7 +29,7 @@ Docker version 24.0.5, build xxx
 docker network create nextauth-net
 ```
 * 這個步驟是未來如果有多個 container（例如 Redis、PostgreSQL）可以互相通訊。
-* 如果目前只有一個 PostgreSQL，可以先跳過這步。
+* 如果目前只有一個 PostgreSQL，可以先跳過這步。  
 確認 network：
 ```bash
 docker network ls
@@ -76,7 +76,7 @@ docker ps
 CONTAINER ID   IMAGE         COMMAND                   CREATED          STATUS          PORTS                                         NAMES
 a6482392b756   postgres:15   "docker-entrypoint.s…"   37 seconds ago   Up 36 seconds   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   nextauth-postgres
 ```
-## 4. 連線到 PostgreSQL
+## 4. 連線到 PostgreSQL  
 1. 用 VSCode extension 連線：
 * 安裝 PostgreSQL extension（如 PostgreSQL 或 PgAdmin）
 * Host: localhost
@@ -107,11 +107,11 @@ docker network rm nextauth-net
 
 ## pgAdmin連線到Docker PostgreSQL
 
-### 1. 建立Server
+### 1. 建立Server  
 開啟pgAdmin，左側的Servers(也可以Create新的Server Group)按右鍵 → Register → Server
 
-### 2. 連線設定
-接著會看到如下畫面:
+### 2. 連線設定  
+接著會看到如下畫面:  
 ![螢幕擷取畫面 2025-09-09 233710](/images/HkH5u6Tcgx.png)
 * General Tab:
   - Name：隨意，例如 nextauth-db
@@ -145,7 +145,7 @@ docker logs nextauth-postgres
 docker exec -it nextauth-postgres psql -U admin -d nextauthdb
 ```
 
-建立完資料庫之後，就可以利用Prisma在JS/TS中操作資料庫了!
+建立完資料庫之後，就可以利用Prisma在JS/TS中操作資料庫了!  
 [下一篇](https://hackmd.io/A4memsR6Tcy5KPAwlz053g)來詳細說明Prisma schema的設計與建立table，可以將使用者資料寫入，方便後續操作登入驗證。
 <blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
 

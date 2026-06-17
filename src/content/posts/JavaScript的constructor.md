@@ -9,10 +9,10 @@ hackmd_id: "B1MGs4Tni"
 
 ## Table of contents
 
-## :memo: 什麼是建構式(Constructor)
+## :memo: 什麼是建構式(Constructor)  
 建構式(Constructor)是一種在創造物件時，執行初始化的函式。使用`new`關鍵字時，參數(arguments)將被傳入Constructor函式。以下分別介紹傳統的constructor function，以及ES6引入的class中的`constructor`方法。
-### 物件建構函式 (The Object Constructor Function)
-要使用constructor創造物件，只需定義一個帶有任意數量參數(arguments)的 JavaScript 函式即可。在函式內部，關鍵字`this`指的是正在創造的物件，因此我們可以用`this.property`來寫入該物件的屬性。**constructor函式的第一個字母最好使用大寫字母，以方便溝通、及避免與一般函式混淆**。
+### 物件建構函式 (The Object Constructor Function)  
+要使用constructor創造物件，只需定義一個帶有任意數量參數(arguments)的 JavaScript 函式即可。在函式內部，關鍵字`this`指的是正在創造的物件，因此我們可以用`this.property`來寫入該物件的屬性。**constructor函式的第一個字母最好使用大寫字母，以方便溝通、及避免與一般函式混淆**。  
 例如：
 ```javascript
 // Define a constructor function
@@ -38,9 +38,9 @@ cheese.info()
 // output: The cheese costs 15 dollars and has a rating of 4.5 stars.
 ```
 
-- 上述例子中，由constructor(也就是`Food`函式)所建立的物件稱為實例(Instance)，因此，`cheese`是一個實例。也可以用`constructor.name`的方法取得該物件的constructor function名稱，例如上述例子中：
+- 上述例子中，由constructor(也就是`Food`函式)所建立的物件稱為實例(Instance)，因此，`cheese`是一個實例。也可以用`constructor.name`的方法取得該物件的constructor function名稱，例如上述例子中：  
 `
-console.log(cheese.constructor.name)　// output: Food
+console.log(cheese.constructor.name)　// output: Food  
 `
 
 - `this`指向的是正在建立的物件，所以上述的constructor function如果寫成下面的程式碼，會得到一樣的結果：
@@ -77,8 +77,8 @@ const cheese = Food('cheese', 15, 4.5)
 cheese.info()
 // output: undefined
 ```
-會得到`undefined`的結果以及以下error:
-`TypeError: Cannot read properties of undefined (reading 'info')`
+會得到`undefined`的結果以及以下error:  
+`TypeError: Cannot read properties of undefined (reading 'info')`  
 因為此時的`this`指向的是全域物件`window`，`window`中沒有`info`這個屬性(property)，因此結果是`undefined`
 
 ### 類別(Class)中的`constructor`方法 (The Class constructor Method)

@@ -9,7 +9,7 @@ description: "Tags: TypeScript cheatsheet Table of contents Omit<Type, Key..."
 Tags: `TypeScript` `cheatsheet`
 ## Table of contents
 
-## Omit<Type, Keys>
+## Omit<Type, Keys>  
 用途：從一個型別中「排除」一或多個屬性。
 
 ### 語法
@@ -44,7 +44,7 @@ const slim: SlimUser = {
 };
 ```
 
-## Partial<Type>
+## Partial<Type>  
 用途：讓某個型別中所有屬性變成optional，常用於更新或初始化階段。
 
 ### 語法
@@ -94,7 +94,7 @@ function updateProfile(profile: Profile, updates: Partial<Profile>) {
 }
 ```
     
-## Pick<T, K>
+## Pick<T, K>  
 功能：從物件類型 T 中「挑出」指定的屬性 K 組成新的型別。
 ```ts
 type User = {
@@ -114,7 +114,7 @@ type PublicUser = {
 */
 ```
     
-## Required<T>
+## Required<T>  
 功能：把類型 T 中所有Optional（?）的屬性都變成必填。
 ```ts
 type Profile = {
@@ -135,7 +135,7 @@ type FullProfile = {
 */
 ```
 
-## Readonly<T>
+## Readonly<T>  
 功能：讓類型 T 中所有屬性變成唯讀（不可修改）。
 ```ts
 type Settings = {
@@ -151,7 +151,7 @@ const defaultSettings: Readonly<Settings> = {
 defaultSettings.theme = "dark"; // ❌ 錯誤：因為 Readonly 限制修改
 ```
     
-## Record<K, T>
+## Record<K, T>  
 建立一個 key-value 結構，key 的型別是 K，value 是 T
 ```ts
 type Role = "admin" | "member";
@@ -177,7 +177,7 @@ const users: UserMap = {
 ```
 
     
-## Exclude<T, U>
+## Exclude<T, U>  
 從 T 中移除與 U 重疊的部分
 ```ts
 type Status = "active" | "inactive" | "archived";
@@ -186,7 +186,7 @@ type VisibleStatus = Exclude<Status, "archived">;
 // => "active" | "inactive"
 ```
     
-## NonNullable<T>
+## NonNullable<T>  
 移除 null 與 undefined
 ```ts
 type MaybeName = string | null | undefined;
@@ -195,13 +195,13 @@ type Name = NonNullable<MaybeName>;
 // => string
 ```
     
-## Recap
-| Utility Type     | 功能                         |
-| ---------------- | -------------------------- |
-| `Partial<T>`     | 全部屬性變成 optional (`?`)      |
-| `Required<T>`    | 全部屬性變成必填                   |
-| `Omit<T, K>`     | 移除指定屬性                     |
-| `Pick<T, K>`     | 挑選指定屬性                     |
-| `Record<K, T>`   | 建立一個 key 為 K、value 為 T 的物件 |
-| `Exclude<T, U>`  | 從 T 中排除與 U 相同的型別           |
+## Recap  
+| Utility Type     | 功能                         |  
+| ---------------- | -------------------------- |  
+| `Partial<T>`     | 全部屬性變成 optional (`?`)      |  
+| `Required<T>`    | 全部屬性變成必填                   |  
+| `Omit<T, K>`     | 移除指定屬性                     |  
+| `Pick<T, K>`     | 挑選指定屬性                     |  
+| `Record<K, T>`   | 建立一個 key 為 K、value 為 T 的物件 |  
+| `Exclude<T, U>`  | 從 T 中排除與 U 相同的型別           |  
 | `NonNullable<T>` | 移除 `null` 和 `undefined`    |

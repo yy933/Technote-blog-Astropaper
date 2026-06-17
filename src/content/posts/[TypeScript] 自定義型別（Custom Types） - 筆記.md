@@ -11,7 +11,7 @@ hackmd_id: "rkn7F-4fgg"
 
 在 TypeScript 中，當基本型別（如 `string`, `number`, `boolean`）不足以描述我們所使用的資料結構時，可以使用「自定義型別」（Custom Types）來更準確表達物件的型別。
 
-## 基本語法
+## 基本語法  
 使用 `type` 關鍵字定義：
 
 ```typescript
@@ -33,7 +33,7 @@ const ada: Programmer = {
 };
 ```
 
-## 型別註解說明（TSDoc）
+## 型別註解說明（TSDoc）  
 可用 `/** ... */` 為每個欄位加上說明，有助於 IDE 自動補全與文件生成：
 ```typescript
 type Programmer = {
@@ -62,7 +62,7 @@ const lizzy3: Programmer = {
 };
 ```
 
-## 巢狀型別（Nested Types）
+## 巢狀型別（Nested Types）  
 可以將一個型別嵌入另一個型別中：
 ```typescript
 type Person = { name: string; };
@@ -77,7 +77,7 @@ const company: Company = {
 ```
 :bulb: 只要物件結構吻合，即使未明確標註型別也不會出錯（型別推論）。
 
-## 選擇性屬性（Optional Properties）
+## 選擇性屬性（Optional Properties）  
 使用 `?` 宣告可選屬性：
 
 ```typescript
@@ -91,8 +91,8 @@ const lizzy: Programmer = {
 };
 ```
 
-## 可索引型別（Indexable Types）
-「可以用變動的 key 來存取屬性」，讓物件的結構可以彈性擴充，不需要每一個 key 都事先寫死。
+## 可索引型別（Indexable Types）  
+「可以用變動的 key 來存取屬性」，讓物件的結構可以彈性擴充，不需要每一個 key 都事先寫死。  
 有些情況下，我們無法預先知道一個物件裡會有哪些欄位名稱，或者這些欄位名稱是由使用者、API、資料動態決定的。
 
 ```typescript
@@ -111,7 +111,7 @@ const info: Data = {
 * `key`: string 表示：這個物件可以用任何字串當 key（例如 name, age, foo, abc123...）
 * `any` 表示：每個 key 的值是什麼型別都可以（可以是字串、數字、布林、物件等等）
 
-</blockquote>
+</blockquote>  
 也可以可以加上固定屬性，指定某些屬性是「必備」的，同時保留其餘屬性的彈性：：
 
 ```typescript
@@ -153,7 +153,7 @@ type UserData = {
   [key: string]: string;
 };
 ```
-這看起來好像是說：**「isActive 是 boolean，其他的 key 都是 string 對吧？」**
+這看起來好像是說：**「isActive 是 boolean，其他的 key 都是 string 對吧？」**  
 但 TypeScript 的行為並不是這樣判斷的。
 ```typescript
 [key: string]: string;
@@ -169,7 +169,7 @@ type UserData = {
 };
 ```
 
-* 正解二：移除Index Signature，改用更精確的 mapped type（進階用法）
+* 正解二：移除Index Signature，改用更精確的 mapped type（進階用法）  
 如果只想支援特定 key，例如 name, email，但不開放所有 key 都能任意加，可以考慮用：
 ```typescript
 type UserData = {
@@ -191,7 +191,7 @@ type UserData = {
 
 </blockquote>
 
-## 陣列中至少包含幾個元素（Rest Tuple）
+## 陣列中至少包含幾個元素（Rest Tuple）  
 保證陣列最少包含兩個字串：
 
 ```typescript
@@ -223,12 +223,12 @@ const staff: Employee = {
 };
 ```
 
-## Recap
-| 功能       | 關鍵語法                            |
-| -------- | ------------------------------- |
-| 自訂型別     | `type`                          |
-| 可選屬性     | `?`                             |
-| 可索引屬性    | `[key: string]: any`            |
-| 最少 N 項陣列 | `[string, string, ...string[]]` |
-| 聯集型別     | `A \| B`                        |
+## Recap  
+| 功能       | 關鍵語法                            |  
+| -------- | ------------------------------- |  
+| 自訂型別     | `type`                          |  
+| 可選屬性     | `?`                             |  
+| 可索引屬性    | `[key: string]: any`            |  
+| 最少 N 項陣列 | `[string, string, ...string[]]` |  
+| 聯集型別     | `A \| B`                        |  
 | 交集型別     | `A & B`                         |

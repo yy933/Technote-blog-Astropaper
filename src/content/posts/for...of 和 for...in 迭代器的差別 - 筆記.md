@@ -62,6 +62,6 @@ for (let key in person) {
 // city: Taipei
 ```
 
-## 總結
-📌遍歷「值」👉 `for...of`
+## 總結  
+📌遍歷「值」👉 `for...of`  
 📌遍歷「索引或鍵」👉 `for...in`

@@ -46,16 +46,16 @@ my-app/
 ├── next.config.js
 ```
 
-## 確認 App Router 是否開啟
-`app/` 資料夾存在，代表已使用 App Router。
+## 確認 App Router 是否開啟  
+`app/` 資料夾存在，代表已使用 App Router。  
 如還是 `pages/` 架構，可手動切換（建議用最新版 Next.js）。
 
 ### 建立第一個 Route（使用 App Router）
 *  `app/page.tsx` → 對應 / 首頁
 *  `app/about/page.tsx` → 對應 /about 頁面
 
-## 建立 Layout
-`app/layout.tsx`（必要）
+## 建立 Layout  
+`app/layout.tsx`（必要）  
 範例:
 ```tsx
 // app/layout.tsx
@@ -99,7 +99,7 @@ export function Button({ text }: ButtonProps) {
 }
 ```
 
-## Tailwind 快速確認
+## Tailwind 快速確認  
 檢查以下三個檔案：
 * `tailwind.config.ts`
 * `postcss.config.js`
@@ -145,13 +145,13 @@ import { Button } from "@/components/ui/button"
 npx vercel
 ```
 
-## 常用指令
-| 指令                         | 說明                         |
-| -------------------------- | -------------------------- |
-| `npm run dev`              | 啟動本地伺服器 (`localhost:3000`) |
-| `npm run build`            | 打包產出                       |
-| `npm run lint`             | 程式碼檢查                      |
-| `npx shadcn-ui@latest add` | 加元件                        |
+## 常用指令  
+| 指令                         | 說明                         |  
+| -------------------------- | -------------------------- |  
+| `npm run dev`              | 啟動本地伺服器 (`localhost:3000`) |  
+| `npm run build`            | 打包產出                       |  
+| `npm run lint`             | 程式碼檢查                      |  
+| `npx shadcn-ui@latest add` | 加元件                        |  
 | `npx vercel`               | 快速部署                       |
 
 > 進階設定：Prisma、API Route、環境變數　（待補）

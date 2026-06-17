@@ -12,15 +12,15 @@ hackmd_id: "r1zU-ankxe"
 
 ✨ 關於Promise，先參考[這篇筆記](https://hackmd.io/l_Tx5Tg7SqaPw4o6vHIzKA)。
 
-## 基本原理：
-在有多個 Promise 的時候，使用 `Promise.all` 可以確保 **「所有的 Promise 都執行完以後，才進入 then」**
+## 基本原理：  
+在有多個 Promise 的時候，使用 `Promise.all` 可以確保 **「所有的 Promise 都執行完以後，才進入 then」**  
 ![ExportedContentImage_00 (4)](/images/B1uabah1gg.png)
 
 * 當所有的 `Promise` 都成功完成時，`Promise.all()` 會回傳一個解析後的值，這個值是一個陣列，包含所有 `Promise` 解決的結果。
 * 如果其中有任何一個 `Promise` 失敗（reject），`Promise.all()` 會立即拒絕並返回錯誤。
 
 
-### 範例一
+### 範例一  
 ![ExportedContentImage_01 (5)](/images/BJaWf6n1xe.png)
 
 ### 範例二
@@ -38,7 +38,7 @@ Promise.all([promise1, promise2, promise3])
   });
 ```
 
-如果其中一個 Promise 失敗：
+如果其中一個 Promise 失敗：  
 `Promise.all() `會馬上進入 `catch()`，並顯示錯誤訊息。
 ```javascript
 const promise1 = new Promise((resolve, reject) => setTimeout(resolve, 1000, 'First'));
@@ -56,7 +56,7 @@ Promise.all([promise1, promise2, promise3])
 ```
 
 ## 注意事項
-### Promise.all 期待接受的參數是陣列形式
+### Promise.all 期待接受的參數是陣列形式  
 可以用 `.map` 來處理資料：
 ```javascript
 Promise.all(
@@ -70,7 +70,7 @@ Promise.all(
 
 </blockquote>
 
-### 不需要再用條件式來檢查終止條件
+### 不需要再用條件式來檢查終止條件  
 如果改成 `Promise.all` 的語法，則會直接將兩次的 `UserModel.create` 放進陣列參數，`Promise.all` 會確保陣列中所有的項目都執行完以後，才進入 `then`。因此就不需要原本的條件式了。
 
 ## 什麼時候要用 `Promise.all`

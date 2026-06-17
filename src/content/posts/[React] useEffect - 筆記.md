@@ -46,10 +46,10 @@ export default function App(props) {
     )
 }
 ```
-這樣寫，會**造成無窮迴圈(infinite loop)**！為什麼？
-每次 React 執行 `App()` 函式時：
-1. App 函式被呼叫 → `fetch()` 執行 → `setStarWarsData(data)` 觸發狀態改變。
-1. 狀態改變後，React 重新 render → `App()` 被再次呼叫 → 又執行一次 `fetch()` → 又呼叫 `setStarWarsData()`。
+這樣寫，會**造成無窮迴圈(infinite loop)**！為什麼？  
+每次 React 執行 `App()` 函式時：  
+1. App 函式被呼叫 → `fetch()` 執行 → `setStarWarsData(data)` 觸發狀態改變。  
+1. 狀態改變後，React 重新 render → `App()` 被再次呼叫 → 又執行一次 `fetch()` → 又呼叫 `setStarWarsData()`。  
 1. 如此重複無數次，造成 infinite re-render loop。
 
 ## 什麼是useEffect
@@ -59,7 +59,7 @@ export default function App(props) {
 * 在 component render 之後執行Side Effect
 * Cleanup函式
 
-### useEffect 的兩個參數
+### useEffect 的兩個參數  
 1. setup 函式（必填）
 * 通常是callback function
 * **寫下Side Effect邏輯**，例如訂閱資料、DOM 操作等。
@@ -74,10 +74,10 @@ export default function App(props) {
 * React 會使用 `Object.is` 判斷dependencies是否改變(i.e. dependencies沒變就不會re-render)。
 * 如果不寫這個陣列，Effect 每次 re-render 都會執行。
 
-| dependencies | 說明                                 |
-| ------------ | ---------------------------------- |
-| `[a, b]`     | a 或 b 改變時執行（推薦）                    |
-| `[]`         | 只在初次渲染時執行一次（相當於 `componentDidMount`） |
+| dependencies | 說明                                 |  
+| ------------ | ---------------------------------- |  
+| `[a, b]`     | a 或 b 改變時執行（推薦）                    |  
+| `[]`         | 只在初次渲染時執行一次（相當於 `componentDidMount`） |  
 | 無            | 每次 render 都會執行（不建議，效能差）            |
 
 ### 基本範例
@@ -93,7 +93,7 @@ useEffect(() => {
 }, [dependency1, dependency2]);
 ```
 
-### Cleanup Function
+### Cleanup Function  
 先看一個例子：
 ```jsx
 // App.jsx
@@ -193,12 +193,12 @@ useEffect(() => {
 
 #### 常見使用情境
 
-| 情境                  | 清理方式                       |
-| ------------------- | -------------------------- |
-| `setInterval`       | `clearInterval(timerId)`   |
-| `setTimeout`        | `clearTimeout(timerId)`    |
-| 事件監聽器            | `removeEventListener(...)` |
-| WebSocket 資源       | `socket.close()`           |
+| 情境                  | 清理方式                       |  
+| ------------------- | -------------------------- |  
+| `setInterval`       | `clearInterval(timerId)`   |  
+| `setTimeout`        | `clearTimeout(timerId)`    |  
+| 事件監聽器            | `removeEventListener(...)` |  
+| WebSocket 資源       | `socket.close()`           |  
 | 外部訂閱（e.g. Firebase） | `unsubscribe()`            |
 
 #### 範例：自動更新時間 + 清理 interval
@@ -325,8 +325,8 @@ useEffect(() => {
 * 每次 `count` 改變，就會清除再重設一次 `setInterval`
 * 等於計時器會不斷重啟 → **不建議用在 interval**
 
-## 其實你不一定需要useEffect！
-React 的核心精神: 處理「資料 ➜ 畫面」，只有在要做的事是 **「跟畫面渲染以外的東西溝通」時，才需要 `useEffect`。**
+## 其實你不一定需要useEffect！  
+React 的核心精神: 處理「資料 ➜ 畫面」，只有在要做的事是 **「跟畫面渲染以外的東西溝通」時，才需要 `useEffect`。**  
 詳細請見[[React] 到底什麼時候需要 useEffect ? - 筆記](https://hackmd.io/G7rtvRhhQ2iVPqOu4hIm5A)
 
 ## Recap

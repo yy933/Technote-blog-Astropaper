@@ -35,25 +35,25 @@ app.set('view engine', 'handlebars')
 * `app.set`：透過這個方法告訴 Express 要設定的 view engine 是 handlebars。
 
 </blockquote>
-### 3. 定義佈局（layout）和局部樣板（partial template）
-在同一個網站內，幾乎每一個頁面都會套用的版型，就稱作佈局（layout）；
+### 3. 定義佈局（layout）和局部樣板（partial template）  
+在同一個網站內，幾乎每一個頁面都會套用的版型，就稱作佈局（layout）；  
 在不同頁面會有不同內容的地方，就稱作「局部樣板 (partial template)」
 
-#### 建立 views 和 layouts 資料夾
-結構如下圖:
-![ExportedContentImage_09 (1)](/images/S1iCnJrkll.png)
-![ExportedContentImage_10 (1)](/images/HJR16yBkll.png)
+#### 建立 views 和 layouts 資料夾  
+結構如下圖:  
+![ExportedContentImage_09 (1)](/images/S1iCnJrkll.png)  
+![ExportedContentImage_10 (1)](/images/HJR16yBkll.png)  
 注意：這些資料夾名稱都要遵守 Express 框架的慣例(`views`, `layouts`)，如果名稱不一樣，Express 就會找不到檔案，而產生類似` no such file or directory` 的錯誤訊息。
 * 把「佈局」的部分放在 layouts 資料夾中
 * 把「局部樣板」的部分放在 views 這個資料夾中
 
-#### 建立 layout
+#### 建立 layout  
 在 layouts 這個資料夾中，先建立一支名為 main.handlebars 的檔案
 
 <blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
 
-之前在`app.js`中設定：
-`app.engine('handlebars', exphbs({ defaultLayout: 'main' }))`
+之前在`app.js`中設定：  
+`app.engine('handlebars', exphbs({ defaultLayout: 'main' }))`  
 宣告預設用名為 `main.handlebars` 這支檔案當作佈局。
 
 </blockquote>
@@ -75,7 +75,7 @@ app.set('view engine', 'handlebars')
 </html>
 ```
 
-:pencil: 這裡用` {{{ body }}}` 的意思，就是會**把局部樣板的內容都放在這裡顯示**。
+:pencil: 這裡用` {{{ body }}}` 的意思，就是會**把局部樣板的內容都放在這裡顯示**。  
 可以把共通的部分，例如navbar，放在這裡：
 ```html
 <!-- … -->
@@ -93,15 +93,15 @@ app.set('view engine', 'handlebars')
 </body>
 <!-- … -->
 ```
-#### 建立 partial templates
+#### 建立 partial templates  
 接著來建立第一支局部樣板的檔案。它會放在 `views` 這個資料夾中，取名為 `index.handlebars`。這支局部樣板內所撰寫的內容，之後就會出現在 layouts 裡 `main.handlebars` 檔案的` {{{ body }}}` 中。
 ```html
 <!-- ./views/index.handlebars -->
 <h1>Create your own server with Node.js</h1>
 ```
 
-:bulb: **在`main.handlebars`中引入partials:**
-把一些可以重用的元件封裝成partials，再放到`main.handlebars`中，例如navbar：
+:bulb: **在`main.handlebars`中引入partials:**  
+把一些可以重用的元件封裝成partials，再放到`main.handlebars`中，例如navbar：  
 1. 建立 partial 檔案
 ```
 views/
@@ -126,7 +126,7 @@ views/
   </div>
 </nav>
 ```
-3. 在 `main.handlebars` 中引入 partial
+3. 在 `main.handlebars` 中引入 partial  
 注意語法，`{{> navbar}}`才能正確引入partial
 ```html
 <body>
@@ -134,7 +134,7 @@ views/
   {{{body}}}
 </body>
 ```
-4. 記得到`app.js`指定partials資料夾
+4. 記得到`app.js`指定partials資料夾  
 `app.js`
 ```javascript
 app.engine('handlebars', exphbs.engine({
@@ -153,12 +153,12 @@ app.get('/', (req, res ) => {
 // ...
 ```
 
-### Express 的靜態檔案 
+### Express 的靜態檔案   
 如果需要載入靜態檔案，參考這篇文的設定：[在Express專案中載入靜態檔案](https://hackmd.io/77SsyLdwSN2uKoDMoY9EBA)
 
 ### 其他常用的工具/語法
-#### helpers
-在 express-handlebars 中，helpers（輔助函式）是用來擴充 Handlebars 模板功能的小函式，我們可以在模板中呼叫這些函式，讓 HTML 的渲染更靈活、更動態。
+#### helpers  
+在 express-handlebars 中，helpers（輔助函式）是用來擴充 Handlebars 模板功能的小函式，我們可以在模板中呼叫這些函式，讓 HTML 的渲染更靈活、更動態。  
 簡單來說，就是：
 > Helpers 是自己定義的小工具，可以在模板裡使用，像是格式化日期、條件判斷、字串處理等等。
 
@@ -190,7 +190,7 @@ app.engine('handlebars', exphbs.engine({
 }))
 ```
 
-但是，如果需要使用多個helpers，全部都寫在`app.js`中的話，`app.js`會變得很雜亂。
+但是，如果需要使用多個helpers，全部都寫在`app.js`中的話，`app.js`會變得很雜亂。  
 因此，最好還是將helpers封裝成一個獨立的檔案，再引入`app.js`中：
 * 在專案根目錄下創建一個 `helpers.js` 檔案，然後把所有的 helpers 都寫進去。
 ```javascript

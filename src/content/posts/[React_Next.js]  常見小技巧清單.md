@@ -23,9 +23,9 @@ const clean = arr.filter(Boolean);
 
 ### 展開合併
 
-const a = [1, 2];
-const b = [3, 4];
-const all = [...a, ...b]; 
+const a = [1, 2];  
+const b = [3, 4];  
+const all = [...a, ...b];   
 // [1, 2, 3, 4]
 
 

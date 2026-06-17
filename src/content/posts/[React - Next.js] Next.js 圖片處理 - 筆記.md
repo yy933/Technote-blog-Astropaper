@@ -10,26 +10,26 @@ hackmd_id: "r19Q9D1Mex"
 ## Table of contents
 
 ## Next.js 中的圖片處理 `<Image />`有什麼好處？
-### 1. 圖片延遲載入（lazy loading）
+### 1. 圖片延遲載入（lazy loading）  
 當圖片還沒出現在瀏覽器可視範圍內（viewport），它就不會馬上下載，而是等使用者瀏覽頁面到那一區才載入。這樣做的好處是可以加快初始載入速度、減少不必要的流量，對手機用戶尤其友善（節省數據）。
 
-### 2. 響應式(RWD)尺寸、自動格式最佳化（WebP / AVIF）
+### 2. 響應式(RWD)尺寸、自動格式最佳化（WebP / AVIF）  
 Next.js 自動為不同裝置提供不同尺寸的圖片，也會轉換為效能更好的格式：
 * WebP：現代瀏覽器廣泛支援，容量比 JPG 小 20~30%
 * AVIF：更先進，容量更小，但支援度稍低
 
 這樣做的好處是畫質幾乎一樣，但檔案更小，能減少延遲時間、節省流量，更可依照使用者的裝置，自動挑選最佳尺寸。
 
-### 3. 預留空間避免 Layout Shift（CLS）
-CLS = Cumulative Layout Shift
-當網頁載入時，如果圖片還沒出現，其他內容會跳來跳去 → 體驗差、SEO 減分。
+### 3. 預留空間避免 Layout Shift（CLS）  
+CLS = Cumulative Layout Shift  
+當網頁載入時，如果圖片還沒出現，其他內容會跳來跳去 → 體驗差、SEO 減分。  
 Next.js 預留出圖片空間，等圖片載入後就不會整個畫面跳動（良好 UX & SEO）。
 
 給 `<Image />` 明確設定 width 和 height，它會：
 * 預先計算好圖片的比例（例如 4:3）
 * 用 padding 技巧讓區塊在載入前就佔好位子
 
-## 用法
+## 用法  
 圖片統一放在根目錄`/public`資料夾中
 ```jsx
 import Image from 'next/image'
@@ -44,7 +44,7 @@ import MyImage from '/public/example.jpg'
 ```
 <blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
 
-如果要使用遠端圖片(Remote image):
+如果要使用遠端圖片(Remote image):  
 例如：
 ```jsx
 import Image from 'next/image'
@@ -112,8 +112,8 @@ module.exports = {
       - `object-cover` : 圖片會保持原比例（不變形），若比例不合，多出來的會被裁掉；容器會被塞滿，不會留白。
       - `object-contain` : 圖片會保持原比例，會完整呈現在容器中，不會被裁切；若比例不同，容器邊緣會留空白。
 
-## SVG 要用 `<Image />`嗎？
-不建議，因為SVG本身是向量圖，沒尺寸模糊問題，`<Image />`不會優化 SVG。
+## SVG 要用 `<Image />`嗎？  
+不建議，因為SVG本身是向量圖，沒尺寸模糊問題，`<Image />`不會優化 SVG。  
 用原生 `<img />` 會更輕量快速。
 ```jsx
 <img src="/logo.svg" alt="Logo" className="w-10 h-auto" />

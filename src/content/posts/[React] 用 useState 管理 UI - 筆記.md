@@ -13,10 +13,10 @@ hackmd_id: "r1e96CKxxe"
 ## Declarative vs. Imperative UI
 * Imperative（命令式）：一步步告訴系統怎麼改變 UI（如 DOM 操作 show()、hide()）。
 * Declarative（宣告式）：描述 UI 在某個狀態應該長怎樣，React 負責讓它發生。
-* 生活化的例子：
+* 生活化的例子：  
 Imperative 像是你開車告訴駕駛每個轉彎；Declarative 像你坐計程車只告訴司機目的地。
 
-## 表單互動例子說明
+## 表單互動例子說明  
 使用者操作會導致 UI 狀態變化：
 * 輸入文字 → 按鈕啟用
 * 按下 Submit → 顯示 Spinner，表單與按鈕停用
@@ -24,14 +24,14 @@ Imperative 像是你開車告訴駕駛每個轉彎；Declarative 像你坐計程
 * 請求失敗 → 顯示錯誤訊息，重新啟用表單
 
 ## Thinking about UI declaratively：React 實作流程（5 步驟）
-### Think in React
-1. 列出視覺狀態（Visual States）
-1. 定義狀態轉換的觸發事件
-1. 用 `useState` 表示狀態
-1. 移除非必要的狀態（避免衝突）
+### Think in React  
+1. 列出視覺狀態（Visual States）  
+1. 定義狀態轉換的觸發事件  
+1. 用 `useState` 表示狀態  
+1. 移除非必要的狀態（避免衝突）  
 1. 與事件處理器連結設定狀態
 
-### Step 1: 列出視覺狀態（Visual States）
+### Step 1: 列出視覺狀態（Visual States）  
 常見狀態：
 * `empty`：輸入框無內容，按鈕停用
 * `typing`：輸入中，按鈕啟用
@@ -47,10 +47,10 @@ Imperative 像是你開車告訴駕駛每個轉彎；Declarative 像你坐計程
 * 成功回應 → success
 * 失敗回應 → error
 
-畫出「狀態轉移圖」釐清流程（圓圈表示狀態、箭頭表示觸發事件）。如下所示:
+畫出「狀態轉移圖」釐清流程（圓圈表示狀態、箭頭表示觸發事件）。如下所示:  
 ![螢幕擷取畫面 2025-05-13 114045](/images/SkG20VlWgl.png)
 
-### Step 3：用`useState` 表示狀態
+### Step 3：用`useState` 表示狀態  
 剛開始會寫很多state，可能會導致狀態衝突（ex: `isTyping` 和 `isSubmitting`同時 `true`），先寫出來再重構:
 ```jsx
 const [answer, setAnswer] = useState('');
@@ -63,20 +63,20 @@ const [isError, setIsError] = useState(false);
 ```
 
 ### Step 4：移除非必要的狀態（避免衝突）
-:arrow_right: 判斷原則（Refactoring State Checklist）：
-1. 是否存在矛盾？
-❌ `isTyping` 與 `isSubmitting` 同時為 `true` 不合理
+:arrow_right: 判斷原則（Refactoring State Checklist）：  
+1. 是否存在矛盾？  
+❌ `isTyping` 與 `isSubmitting` 同時為 `true` 不合理  
 ✅ 改為 `status = 'typing' | 'submitting' | 'success'`，只會有一種狀態成立
 
-1. 資訊是否重複？
-❌ `isEmpty` 與 `isTyping` 容易打架
+1. 資訊是否重複？  
+❌ `isEmpty` 與 `isTyping` 容易打架  
 ✅ 改為 `answer.length === 0` 判斷是否為空即可
 
-1. 是否可由其他狀態推得？
-❌ `isError` 多餘
+1. 是否可由其他狀態推得？  
+❌ `isError` 多餘  
 ✅ `error !== null` 已能表示是否有錯誤
 
-:warning: 避免「不可能的 UI 狀態」：
+:warning: 避免「不可能的 UI 狀態」：  
 如果你同時設 `isError: true` 且 `isTyping: false`，畫面會顯示錯誤訊息，但輸入框卻被鎖住，使用者完全無法修正錯誤 —— 這就是「不合理的狀態組合」，要透過整理 `state` 結構來避免這種情況。
 
 ### Step 5：與事件處理器連結設定狀態
@@ -85,7 +85,7 @@ const [isError, setIsError] = useState(false);
 * async 成功 → 設為 success
 * async 失敗 → 設為 error 並顯示訊息
 
-##  延伸工具建議：Storybook / Living Styleguides
+##  延伸工具建議：Storybook / Living Styleguides  
 一次展示所有狀態的元件畫面，有助設計、測試與開發。
 ```jsx
 {['empty', 'typing', 'submitting', 'success', 'error'].map(status => (
@@ -93,7 +93,7 @@ const [isError, setIsError] = useState(false);
 ))}
 ```
 
-## Recap
+## Recap  
 Declarative programming就是描述每一種視覺狀態的樣子，而不是用指令逐步操作UI。
 
 開發 React 元件時的步驟：

@@ -10,7 +10,7 @@ hackmd_id: "S1m7xVF6kx"
 ## Table of contents
 
 
-## 什麼是「關注點分離」？
+## 什麼是「關注點分離」？  
 在應用程式開發的領域裡，相當重視 **「關注點分離 (separation of concerns, SoC) 」的設計原則**，從字面上的意思，就是把整個應用程式分拆成不同功能層 (layer) 或程式碼模組 (module)，每個區塊有各自的關注點，彼此分工合作，以**提高程式碼的可讀性、可維護性和擴展性**。
 
 <blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
@@ -31,21 +31,21 @@ hackmd_id: "S1m7xVF6kx"
 
 Model-View-Controller（MVC）設計模式是一個常見的關注點分離模式，在這個模式裡，會把軟體分成 Model、View、Controller 三大功能層。每一次 request/response 週期的背後，都由這三大功能層來合作完成。
 
-### Model（模型）
-負責數據（和資料庫溝通）和業務邏輯。
+### Model（模型）  
+負責數據（和資料庫溝通）和業務邏輯。  
 Model 管理的功能層被稱做「邏輯層」，更明確一點說，**是和「商業邏輯」有關的功能**，例如：
 
-* 電商網站：
-會員購物有九折、訂單超過一定的金額免運費
+* 電商網站：  
+會員購物有九折、訂單超過一定的金額免運費  
 檢查登入帳號的類型，並依此開放不同權限
 * 社交網站：判斷使用者彼此之間的友好程度
 * To-do List：過了期但沒被執行的 to-dos 不能被刪除
 
-### View（視圖）
+### View（視圖）  
 負責 UI 顯示，View 所管理的功能層叫作「表現層 (presentation layer)」，顧名思義是負責管理畫面的呈現，也就是 HTML 樣板 (template)。
 
 在開發框架裡，因為 HTML template 會有需要以動態顯示資料的情況 (也就是由 Model 取出的資料內容)，所以 View 會再進一步運用樣板引擎 (template engine) 將資料帶入 template。
-### Controller（控制器）
+### Controller（控制器）  
 負責處理請求，協調 Model 和 View。
 
 Controller 常譯為「控制器」，它掌握使用者互動邏輯，也是應用程式收發 request/response 的核心。來自路由的 request 會先被送到 Controller，再由 Controller 通知 Model 調度資料，並且把資料傳遞給 View 來產生樣板 (template)，並將呈現資料的 HTML 頁面回傳給用戶端。

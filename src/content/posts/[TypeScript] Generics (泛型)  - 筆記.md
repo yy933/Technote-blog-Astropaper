@@ -10,10 +10,10 @@ hackmd_id: "rkCcSlsMgx"
 Tags: `TypeScript` `cheatsheet`
 ## Table of contents
 
-## 什麼是Generics?
+## 什麼是Generics?  
 Generics（泛型） 是一種讓函式、介面或類別在定義時可以「保留型別變數」，直到實際使用時再指定具體型別的語法工具。它的目的是讓我們寫出更通用、可重複使用、且保有型別安全的程式碼。
 
-## 為什麼需要 Generics？
+## 為什麼需要 Generics？  
 假設寫一個回傳參數本身的函式（identity function）：
 ```ts
 function identity(arg: any): any {
@@ -84,22 +84,22 @@ const response2: ApiResponse<number[]> = {
 };
 ```
 
-## Recap
-| 語法                          | 說明                  |
-| --------------------------- | ------------------- |
-| `<T>`                       | 定義一個泛型變數 T          |
-| `function fn<T>(arg: T): T` | 參數與回傳都是同一型別         |
-| `interface Box<T>`          | 泛型介面                |
+## Recap  
+| 語法                          | 說明                  |  
+| --------------------------- | ------------------- |  
+| `<T>`                       | 定義一個泛型變數 T          |  
+| `function fn<T>(arg: T): T` | 參數與回傳都是同一型別         |  
+| `interface Box<T>`          | 泛型介面                |  
 | `Array<T>`                  | TypeScript 原生泛型陣列寫法 |
 
 * T 是泛型的代稱（也可以叫 U, K, V，取決於上下文）
 * 泛型讓程式碼更通用、可重複使用、有型別保護
 * 它們最常出現在：函式、介面、class、React 的 props/useState 等等地方
 
-### 跟 any 有什麼不一樣？
-|      | `any` | `T` (Generic) |
-| ---- | ----- | ------------- |
-| 靜態檢查 | 不檢查   | 有型別保護         |
-| 型別推斷 | 沒有    | 根據傳入值自動推斷     |
-| 安全性  | 不安全   | 安全            |
+### 跟 any 有什麼不一樣？  
+|      | `any` | `T` (Generic) |  
+| ---- | ----- | ------------- |  
+| 靜態檢查 | 不檢查   | 有型別保護         |  
+| 型別推斷 | 沒有    | 根據傳入值自動推斷     |  
+| 安全性  | 不安全   | 安全            |  
 | 可讀性  | 模糊    | 更容易維護、看得懂傳入型別 |

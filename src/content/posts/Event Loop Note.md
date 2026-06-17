@@ -7,9 +7,9 @@ description: "title: Event Loop Note tags: Event Loop, JavaScript descrip..."
 hackmd_id: "Sk2ETu_Di"
 ---
 
----
-title: Event Loop Note
-tags: Event Loop, JavaScript
+---  
+title: Event Loop Note  
+tags: Event Loop, JavaScript  
 description: A brief introduction to event loop in Javascript.
 ---
 
@@ -33,9 +33,9 @@ JavaScript中，並行模型（concurrency model）建立於事件迴圈(event l
 console.log("How long will it take")
 for (let idx=0; idx < 999999999; idx++) {console.log(`This is the ${idx+1} loop.`)}
 console.log("to print the result?")
-```  
-1. Console會先印出'How long will it take'
-2. 接著`for`迴圈跑了999999999個迴圈，造成阻塞，因此有一段時間停滯。並且因為`console.log()` 是 I/O 操作，會佔用大量記憶體，甚至可能會拖垮開發工具。
+```    
+1. Console會先印出'How long will it take'  
+2. 接著`for`迴圈跑了999999999個迴圈，造成阻塞，因此有一段時間停滯。並且因為`console.log()` 是 I/O 操作，會佔用大量記憶體，甚至可能會拖垮開發工具。  
 3. 999999999迴圈都跑完後，才印出"to print the result?"
 
 </blockquote>
@@ -51,25 +51,25 @@ console.log("How long will it take");
 setTimeout(() => { console.log("the result?")}, 2000);
 console.log("to print");
 ```
-1. Console會先印出'How long will it take'
-2. 接著執行`setTimeout()`，開始計時2秒
-3. 再執行第三行，印出"to print"
+1. Console會先印出'How long will it take'  
+2. 接著執行`setTimeout()`，開始計時2秒  
+3. 再執行第三行，印出"to print"  
 4. 最後，`setTimeout()`計時2秒結束，印出"the result?"
 
-</blockquote>
+</blockquote>  
 ![](https://i.imgur.com/wdY6217.png)
 ###### 圖片來源:https://tw.alphacamp.co/blog/ajax-asynchronous-request
 
  ---
-## 事件循環的主要觀念 Main Concepts in Event Loop
+## 事件循環的主要觀念 Main Concepts in Event Loop  
 ![](https://i.imgur.com/tkMoZBW.png)
 <p style="text-align: center;">JavaScript中的事件循環(Event Loop)</p>
 
 ###### 圖片來源:https://dev.to/rahulsaha28/javascript-4j1m
-    
+      
 簡單來說，**事件循環是一個用於管理code執行的系統**，我們**想用JS非同步（asynchronously）**執行不阻塞的程式碼，這就是事件循環發揮功能的地方了。事件循環的主要元素包含：
 
-### **1. Memory Heap**
+### **1. Memory Heap**  
 以無順序的方式儲存物件的記憶體。當前使用的JavaScript變數和物件等會儲存在heap中。
 ### **2. Call Stack**
 
@@ -91,7 +91,7 @@ console.log("to print");
 console.log(one()()())
 ```
 
-- **分析程式碼:**
+- **分析程式碼:**  
 `console.log(one()()())` 其實是：
 ```javascript
 const result = one();  // result 現在是 function two
@@ -101,16 +101,16 @@ console.log(finalResult);
 ```
 所以，函式執行的順序是： 1️⃣ `one()` 2️⃣ `two()` 3️⃣ `three()`
 
-- **Call Stack 進入先後順序：**
+- **Call Stack 進入先後順序：**  
 當執行 `console.log(one()()())`; 時，Call Stack 變化如下：
 
-1️⃣ `console.log()` 進入 Call Stack（但要等 `one()()()`執行完才輸出）
-2️⃣ `one()` 進入 Call Stack
-3️⃣ `one()` 回傳 two，從 Call Stack 彈出
-4️⃣ `two()` 進入 Call Stack
-5️⃣ `two()` 回傳 three，從 Call Stack 彈出
-6️⃣ `three()` 進入 Call Stack
-7️⃣ `three()` 回傳 'Done!'，從 Call Stack 彈出
+1️⃣ `console.log()` 進入 Call Stack（但要等 `one()()()`執行完才輸出）  
+2️⃣ `one()` 進入 Call Stack  
+3️⃣ `one()` 回傳 two，從 Call Stack 彈出  
+4️⃣ `two()` 進入 Call Stack  
+5️⃣ `two()` 回傳 three，從 Call Stack 彈出  
+6️⃣ `three()` 進入 Call Stack  
+7️⃣ `three()` 回傳 'Done!'，從 Call Stack 彈出  
 8️⃣ `console.log('Done!')` 執行並輸出 'Done!'，然後從 Call Stack 彈出
 
 - **Call Stack 變化（LIFO - 後進先出）**
@@ -128,19 +128,19 @@ console.log(finalResult);
 [console.log]  ⬅️ 8️⃣  彈出（輸出 'Done!'）
 ```
 
-- **最終執行順序**
-函式執行順序（進入 Call Stack 順序）： 1️⃣ `one()` 2️⃣ `two()` 3️⃣ `three()`
+- **最終執行順序**  
+函式執行順序（進入 Call Stack 順序）： 1️⃣ `one()` 2️⃣ `two()` 3️⃣ `three()`  
 函式結束順序（從 Call Stack 彈出順序）： 1️⃣ `three()` 2️⃣ `two()` 3️⃣ `one()` 4️⃣ `console.log()`（最後輸出 'Done!'）
 
 
-- **總結**：
-進入Call Stack的先後順序：
-（底部-->頂部)
+- **總結**：  
+進入Call Stack的先後順序：  
+（底部-->頂部)  
 `global()` :arrow_right: `console.log(function)` :arrow_right: `one()` :arrow_right: `two()` :arrow_right: `three()`
 
 :dart: 第一次啟動程式時，全域執行環境(Global Execution Context) 會被加到call stack中，其中包含全域變數(global variable)和詞彙環境(Lexical Environment)。詞彙環境是指程式碼在程式中的位置，可以參考[這篇文章](https://javascript.plainenglish.io/scope-chain-and-lexical-environment-in-javascript-eb1f6e60997e)。
 
-</blockquote>
+</blockquote>  
 在JavaScript執行程式碼時，會由上而下、優先從全域(global)的程式碼開始執行，若全域的程式碼需要進入某個函式，再執行該函式，並把此函式加入stack的最上方，接著執行到函式中的return，函式便會移出堆疊(pop off)，以下程式碼舉例:
 ```javascript
 function multiply(a, b) {    -multiply函式放入stack最上方
@@ -180,7 +180,7 @@ console.log('JSConfEU')
 前文中的例子顯示，在瀏覽器中可以同時處理多個事情，因為瀏覽器不是只有一個JavaScript Runtime(執行環境)，如前文中的`setTimeout`，是**瀏覽器提供的一個API(Web API)**，而非JavaScript engine本身的功能。
 
 >:arrow_forward:關於執行環境(runtime)，這篇參考文章中有更詳細的說明：[從「為什麼不能用這個函式」談執行環境（runtime）](https://blog.huli.tw/2022/02/09/javascript-runtime/)
-:arrow_forward: Web API: 如DOM、ajax、setTimeout、HTTP Request等等，可以幫助單線處理的JavaScript在瀏覽器中完成更多事。
+:arrow_forward: Web API: 如DOM、ajax、setTimeout、HTTP Request等等，可以幫助單線處理的JavaScript在瀏覽器中完成更多事。  
 更多WebAPIs可參考[MDN文件](https://developer.mozilla.org/en-US/docs/Web/API)。
 
 `setTimeout` 中的 callback function（簡稱 cb）會被放到 WebAPIs 中，這時候，`setTimeout`已經執行結束，並從call stack中脫離。當計時時間到，就會將cb放入佇列(queue)中。**queue是以<span style="color:red">先進先出(First in first out，FIFO)</span>的方式執行，等待call stack中的任務清空，由事件循環監控，將queue中的任務傳入stack中依序執行**。
@@ -267,8 +267,8 @@ console.log("Last line")
 
 4. 同時，事件循環也不斷檢查<span style="color:Crimson" >**call stack**</span>是否都被執行完畢，當 <span style="color:Crimson" >**call stack**</span> 為空時，它才會從 <span style="color:ForestGreen" >**Event Queue**</span> 取出callback函式並執行。
 
-5. `console.log("Last line")`被加入<span style="color:Crimson" >**call stack**</span>並執行，印出'Last line'，接著被移出<span style="color:Crimson" >**call stack**</span>
-6. 等待 3000 毫秒：
+5. `console.log("Last line")`被加入<span style="color:Crimson" >**call stack**</span>並執行，印出'Last line'，接著被移出<span style="color:Crimson" >**call stack**</span>  
+6. 等待 3000 毫秒：  
 在等待期間，`setTimeout`的callback函式，也就是`usingsetTimeout`並未進入<span style="color:ForestGreen" >**Event Queue**</span>中，它只是在等待計時器倒數結束。
 
 7. 3000 毫秒後，計時器歸零，`usingsetTimeout` 被放入<span style="color:ForestGreen" >**Event Queue**</span>，等待執行。
@@ -280,7 +280,7 @@ console.log("Last line")
 10. 最後，`usingsetTimeout`被移出<span style="color:Crimson" >**call stack**</span>。
 <blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
 
-:bulb: **In a nutshell：**
+:bulb: **In a nutshell：**  
 JavaScript 的 Event Loop（事件迴圈）是其非同步運作的核心機制，負責處理同步與非同步程式碼的執行順序，確保 JavaScript 仍然是單執行緒（single-threaded）但可以處理非同步操作（如 I/O、計時器、DOM 事件等）。
 
 </blockquote>

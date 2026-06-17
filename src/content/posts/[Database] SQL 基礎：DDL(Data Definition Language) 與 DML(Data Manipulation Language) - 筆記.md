@@ -8,7 +8,7 @@ hackmd_id: "SJZqxE3gze"
 
 ## Table of contents
 
-## :memo: 簡介
+## :memo: 簡介  
 DDL(Data Definition Language) 與 DML(Data Manipulation Language) 是 SQL（結構化查詢語言）家族中，依據「操作對象的不同」所劃分的兩大核心子集。
 
 簡單用一個「蓋房子」的比喻來區分它們：
@@ -110,11 +110,11 @@ WHERE price < 50;
 
 ## 比較DDL和DML
 
-| 特性 | DDL (資料定義語言) | DML (資料操作語言) |
-| :--- | :--- | :--- |
-| **主要操作對象** | **骨架** (Database / Table / Columns) | **血肉** (Data Rows / Values) |
-| **經典關鍵字** | `CREATE`, `ALTER`, `DROP`, `TRUNCATE` | `SELECT`, `INSERT`, `UPDATE`, `DELETE` |
-| **對結構的影響** | 改變整個表格的結構。 | 不改變結構，僅欄位內的資料改變。 |
+| 特性 | DDL (資料定義語言) | DML (資料操作語言) |  
+| :--- | :--- | :--- |  
+| **主要操作對象** | **骨架** (Database / Table / Columns) | **血肉** (Data Rows / Values) |  
+| **經典關鍵字** | `CREATE`, `ALTER`, `DROP`, `TRUNCATE` | `SELECT`, `INSERT`, `UPDATE`, `DELETE` |  
+| **對結構的影響** | 改變整個表格的結構。 | 不改變結構，僅欄位內的資料改變。 |  
 | **執行時機** | 專案初始化、資料庫版本控制轉移 (Migration)。 | 網站日常運作、使用者與資料庫的互動。 |
 
 ## 小結

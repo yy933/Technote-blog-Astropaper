@@ -21,7 +21,7 @@ hackmd_id: "HyOQDaC9xe"
  `touch app.js`
 * 用`code .` 打開VS code
   設定 package.json 檔案: 把預設的main屬性改成`"main": "app.js"`
-### 3. 安裝 Express
+### 3. 安裝 Express  
 `npm install express`
 
 ### 4. 設定主程式 app.js
@@ -53,8 +53,8 @@ app.listen(port, ()=>{
 })
 ```
 * 利用`node app.js`測試伺服器是否成功啟動
- ![](https://i.imgur.com/OV9arDa.jpg)
-用瀏覽器打開網址 `localhost:3000/`，會看到在路由裡設定的內容：
+ ![](https://i.imgur.com/OV9arDa.jpg)  
+用瀏覽器打開網址 `localhost:3000/`，會看到在路由裡設定的內容：  
 ![](https://i.imgur.com/bS3miVY.jpg)
 
 <blockquote class="my-6 p-4 bg-sky-50 dark:bg-sky-950/30 border-l-4 border-sky-500 rounded-r-md text-sky-900 dark:text-sky-200 blocknoted-fix">
@@ -73,7 +73,7 @@ app.listen(port, ()=>{
 [nodemon ](https://www.npmjs.com/package/nodemon)這個工具最主要是去偵測開發者專案內的檔案，一旦在專案資料夾內的檔案有被修改變更，那麼 nodemon 就會自動重啟伺服器。於是重新整理瀏覽器後，就可以看到修改後的畫面，省去了開發者每次改完程式碼後，都需要按「Ctrl + C」停止伺服器，然後再重新啟動伺服器，瀏覽器畫面才會更新的惱人步驟。
 
 </blockquote>
-* 定義開發用腳本
+* 定義開發用腳本  
 「啟動伺服器」是一個很常見的情境，這種情境會直接寫成腳本 (script)。
 
 :arrow_right: 修改 package.json 設定常見的腳本：
@@ -88,13 +88,13 @@ app.listen(port, ()=>{
 ```
 只要用 npm run 加上腳本，就可以執行內容，例如：
 
-`npm run start` → 等於執行 `node app.js`
+`npm run start` → 等於執行 `node app.js`  
 `npm run dev` → 等於執行 `nodemon app.js`
 
 ### 6. 設定版本控制
 
 * 初始化 git: `git init`
-* .gitignore 
+* .gitignore   
 除了 node_modules 以外，作業系統還可能有一些自動生成的檔案，以下是一份常見的檔案清單，可以整份直接貼上，不需要等遇到時才一個個處理：
 
 ```javascript
@@ -113,9 +113,9 @@ node_modules
 *.log
 *.gz
 ```
-* 建立第一筆 commit:
-`git add .`  
-`git commit -m "feat: project init"`
+* 建立第一筆 commit:  
+`git add .`    
+`git commit -m "feat: project init"`  
 參考: [Conventional Commits](https://wadehuanglearning.blogspot.com/2019/05/commit-commit-commit-why-what-commit.html)
 
 <blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">

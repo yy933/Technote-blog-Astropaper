@@ -29,7 +29,7 @@ function Recipe({ drinkers }) {
 ```
 無論何時傳入 drinkers={2}，都會得到相同的 JSX 結果。**元件 = 純函式 ➝ 相同 props 永遠產出相同 JSX**
 
-## 避免 Side Effects
+## 避免 Side Effects  
 不可在 render 階段修改外部狀態，直接看範例:
 ```jsx
 let guest = 0;
@@ -48,9 +48,9 @@ export default function TeaSet() {
   );
 }
 ```
-以上會印出:
-Tea cup for guest #2
-Tea cup for guest #4
+以上會印出:  
+Tea cup for guest #2  
+Tea cup for guest #4  
 Tea cup for guest #6
 
 每次呼叫這個元件的時候會產出不同的JSX，如果修改guest的值也會產生不同的JSX，使得這個元件不可預測。
@@ -72,9 +72,9 @@ export default function TeaSet() {
 }
 ```
 
-以上會印出:
-Tea cup for guest #1
-Tea cup for guest #2
+以上會印出:  
+Tea cup for guest #1  
+Tea cup for guest #2  
 Tea cup for guest #3
 
 此時這個元件是純粹的(pure)，會產出的JSX可以由props推測。
@@ -83,7 +83,7 @@ Tea cup for guest #3
 
 :bulb: 元件應各自獨立，不依賴渲染順序：
 * 你不能假設某個元件會先 render、某個後 render
-* 每個元件應該「自己算自己的 JSX」，不與其他元件協調
+* 每個元件應該「自己算自己的 JSX」，不與其他元件協調  
 範例:(錯誤寫法)
 ```jsx
 let guestNumber = 1;
@@ -134,10 +134,10 @@ export default function TeaParty() {
 
 ## 如何發現不純的元件？
 * 開啟 `<React.StrictMode>`：
-* 開發模式中會 render 兩次 ➝ 偵測不純元件（結果會錯亂）
+* 開發模式中會 render 兩次 ➝ 偵測不純元件（結果會錯亂）  
 ex: 原本顯示 Guest #2/#4/#6 ➝ 修正後為 #1/#2/#3
 
-## 可以「局部修改」的情況（Local Mutation）
+## 可以「局部修改」的情況（Local Mutation）  
 OK 的範例（不影響外部）：
 ```jsx
 let cups = [];
@@ -176,7 +176,7 @@ useEffect(() => {
 
 <blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
 
-### 註1
+### 註1  
 不可以直接修改（mutate）元件用來渲染的資料來源，而應該使用 `setState` 或其他機制來更新畫面。
 
 直接舉例說明：
@@ -211,9 +211,9 @@ function updateAge() {
 
 <blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
 
-### 註2
+### 註2  
 需要「改變某些東西」時，優先選擇`event handler`，真的找不到事件觸發的時機（例如頁面載入時要 fetch 資料），可以用 `useEffect`
-#### 優先選擇：事件處理器 (event handler)
+#### 優先選擇：事件處理器 (event handler)  
 React 希望只在事件發生後改變 state
 ```jsx
 function Counter() {
@@ -226,7 +226,7 @@ function Counter() {
   return <button onClick={handleClick}>Clicked {count} times</button>;
 }
 ```
-#### 最後手段：`useEffect`
+#### 最後手段：`useEffect`  
 真的找不到事件觸發的時機（例如頁面載入時要 fetch 資料），可以用 `useEffect`：
 ```jsx
 useEffect(() => {
@@ -255,7 +255,7 @@ export default function Clock({ time }) {
 }
 ```
 以上這段code的問題：
-#### 問題一：直接操作 DOM（document.getElementById(...)）
+#### 問題一：直接操作 DOM（document.getElementById(...)）  
 React 是透過**虛擬 DOM（Virtual DOM）來管理真實 DOM**，這樣直接去改` <h1>` 的 class，等於繞過 React 的控制，會讓元件難以追蹤、無法預期行為，甚至未來難以除錯。
 
 #### 問題二：在「渲染期間」造成side effects
@@ -265,7 +265,7 @@ document.getElementById('time').className = ...
 這段操作真實 DOM是side effect，它改變了 React 外部的東西，不是單純「輸入（props, state） ➜ 輸出（JSX）」
 > 每次執行渲染都不應有side effect（例如改資料、操作 DOM、發 API）
 
-:bulb:怎麼分辨side effect？
+:bulb:怎麼分辨side effect？  
 只要程式碼：
 * 改變了外部狀態（像 DOM、全域變數、本地儲存、API 等）
 * 依賴外部狀態（像 DOM 的狀態或 URL）
@@ -407,11 +407,11 @@ export default function Profile({ person }) {
 ```
 這裡把 person 存進了模組層級的變數 `currentPerson`，然後其他元件（Header、Avatar）直接從外部變數讀資料。這會造成以下問題：
 
-* 問題 1：元件變成「不純」（impure）
+* 問題 1：元件變成「不純」（impure）  
 `Header()` 和 `Avatar()` 都不再是純函式（pure functions），因為它們依賴外部變數currentPerson。如果 currentPerson 被別的地方改掉，這些元件就會有預期外的行為。
 
-* 問題 2：React 無法追蹤資料變化
-React 是依賴 props / state 的變化來觸發 re-render。
+* 問題 2：React 無法追蹤資料變化  
+React 是依賴 props / state 的變化來觸發 re-render。  
 但這裡直接改了一個外部變數，**React 不會知道資料變了，所以畫面可能不會更新**。
 
 #### 正確做法：透過 Props 傳遞資料

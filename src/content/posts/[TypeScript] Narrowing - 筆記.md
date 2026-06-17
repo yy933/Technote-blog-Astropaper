@@ -10,10 +10,10 @@ hackmd_id: "SyRNV5Szxe"
 Tags: `TypeScript` `cheatsheet`
 ## Table of contents
 
-## 為什麼需要 Type Narrowing？
+## 為什麼需要 Type Narrowing？  
 當變數類型是 union type（例如 number | string），我們無法直接對變數使用該型別的方法。這時需要 **narrowing** 來讓 TypeScript 確認你正在處理哪一種型別。
 
-## Type Guard 是什麼？
+## Type Guard 是什麼？  
 Type Guard 是讓 TypeScript 根據條件判斷變數的實際型別，從而正確推斷型別的方式。
 
 ## 基本範例
@@ -51,7 +51,7 @@ function roughAge(age: number | string) {
 * "symbol"
 * "bigint"
 ```
-> 「function」不是一個 type，而是 JS 的一種 object 實體。
+> 「function」不是一個 type，而是 JS 的一種 object 實體。  
 雖然 `typeof fn === "function"` 是可以的，但 function 不是 TypeScript 中的型別，而是語言層級的概念。
 
 <blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
@@ -79,7 +79,7 @@ if (Array.isArray(strs)) {
 
 </blockquote>
 
-## 2. `if-else` 形式的 Type Guard
+## 2. `if-else` 形式的 Type Guard  
 當 if 判斷某一型別後，else 區塊會自動推斷為剩餘的型別。
 
 ```ts
@@ -91,7 +91,7 @@ function processAnswer(answer: number | boolean) {
   }
 }
 ```
-## 3. if + return 形式的 Type Guard
+## 3. if + return 形式的 Type Guard  
 若 `if` 裡有 `return`，之後的區塊會自動被視為處理剩下的型別。
 ```ts
 function formatAge(age: number | string) {
@@ -101,7 +101,7 @@ function formatAge(age: number | string) {
   return age; // age 是 string
 }
 ```
-## 4. 使用 in 判斷物件屬性
+## 4. 使用 in 判斷物件屬性  
 對 union 型別中的物件，可以用 in 判斷屬性來進行 type narrowing。
 ```ts
 type Fish = { swim: () => void };
@@ -191,10 +191,10 @@ if (container.value != null) {
   // value: number
 }
 ```
-## Recap
-| Narrowing方式          | 適用型別                   | 範例語法                       |
-| --------------- | ---------------------- | -------------------------- |
-| `typeof`        | 原始型別（number, string 等） | `typeof x === 'number'`    |
-| `in`            | 物件                     | `'prop' in obj`            |
-| `if` + `return` | 任意 union               | `if (條件) return ...`       |
+## Recap  
+| Narrowing方式          | 適用型別                   | 範例語法                       |  
+| --------------- | ---------------------- | -------------------------- |  
+| `typeof`        | 原始型別（number, string 等） | `typeof x === 'number'`    |  
+| `in`            | 物件                     | `'prop' in obj`            |  
+| `if` + `return` | 任意 union               | `if (條件) return ...`       |  
 | `if` + `else`   | 任意 union               | `if (A) {...} else {B...}` |

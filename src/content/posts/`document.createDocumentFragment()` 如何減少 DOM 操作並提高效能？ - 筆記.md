@@ -9,7 +9,7 @@ description: "Table of contents document.createDocumentFragment() 在 JavaS..."
 ## Table of contents
 
 
-## `document.createDocumentFragment()`
+## `document.createDocumentFragment()`  
 在 JavaScript 操作 DOM 時，每次 `appendChild()` 或 `innerHTML `都會觸發 重新渲染（Repaint） 和 重新排版（Reflow），這會影響效能，特別是當有大量的 DOM 操作時。
 
 `document.createDocumentFragment()`（文檔片段）是一個 **輕量級的虛擬 DOM 容器**，它不會直接改變 真實的DOM 結構，而是 **先在記憶體中暫存所有變更，最後一次性加入，減少不必要的渲染，從而提升效能。**
@@ -45,10 +45,10 @@ container.appendChild(fragment); // 一次性插入 DOM，只觸發 1 次重繪
 
 
 
-## 總結
+## 總結  
 所以，在需要**批量新增元素**的情境下，`document.createDocumentFragment()` 能有效提升效能，特別是對於 **大量 DOM 操作（如動態渲染列表）** 的應用場景非常有幫助！
 
-| 方法                     | 操作次數                             | 效能                       |
-|--------------------------|--------------------------------|--------------------------|
-| **直接 `appendChild`**   | N 次（每個元素都觸發 DOM 操作） | 差（頻繁 Repaint & Reflow） |
+| 方法                     | 操作次數                             | 效能                       |  
+|--------------------------|--------------------------------|--------------------------|  
+| **直接 `appendChild`**   | N 次（每個元素都觸發 DOM 操作） | 差（頻繁 Repaint & Reflow） |  
 | **使用 `DocumentFragment`** | 1 次（記憶體內部操作 + 最後一次插入） | 佳（只觸發 1 次 DOM 操作）  |

@@ -78,7 +78,7 @@ function App() {
 }
 ```
 
-## Form action in React 19
+## Form action in React 19  
 在[React 19](https://react.dev/reference/react-dom/components/form)中，可以更簡單地透過 `<form>` 搭配 action function（類似 server action）來處理表單提交。
 * `onSubmit` 可以是 async function。
 * 支援自動處理 FormData。
@@ -202,7 +202,7 @@ function App() {
  }    
 }
 ```
-和radio類似，不同的是可選擇多個選項，要得到使用者選擇的所有選項，使用：
+和radio類似，不同的是可選擇多個選項，要得到使用者選擇的所有選項，使用：  
 `formData.getAll("dietaryRestrictions") // 回傳使用者選擇的所有選項的陣列 `
 
 ## select & option

@@ -9,14 +9,14 @@ hackmd_id: "rJB-icWfll"
 
 ## Table of contents
 
-## Server Component vs. Client Component
-| 類型              | Server Component                  | Client Component |
-| --------------- | --------------------------------- | ----------------------------------- |
-| **執行位置**        | 伺服器端 (Node.js 環境)                 | 使用者的瀏覽器端（Browser）                   |
-| **預設行為**        | 預設為 Server Component              | 需要加 `use client` 宣告                 |
-| **能否使用 hook**   | ❌ 不可以用 React Hooks（如 `useState`）  | ✅ 可以使用 Hooks                        |
-| **能否使用瀏覽器 API** | ❌ 不可以（如 `localStorage`, `window`） | ✅ 可以使用                              |
-| **效能表現**        | 更快載入，減少 bundle size               | 較慢，會額外產生 JS bundle                  |
+## Server Component vs. Client Component  
+| 類型              | Server Component                  | Client Component |  
+| --------------- | --------------------------------- | ----------------------------------- |  
+| **執行位置**        | 伺服器端 (Node.js 環境)                 | 使用者的瀏覽器端（Browser）                   |  
+| **預設行為**        | 預設為 Server Component              | 需要加 `use client` 宣告                 |  
+| **能否使用 hook**   | ❌ 不可以用 React Hooks（如 `useState`）  | ✅ 可以使用 Hooks                        |  
+| **能否使用瀏覽器 API** | ❌ 不可以（如 `localStorage`, `window`） | ✅ 可以使用                              |  
+| **效能表現**        | 更快載入，減少 bundle size               | 較慢，會額外產生 JS bundle                  |  
 | **用途**          | 資料庫查詢、資料處理、SEO 頁面產生               | 表單互動、動畫、狀態管理等需要 JS 的部分              |
 
 ## Server Component 的特點
@@ -43,7 +43,7 @@ export default function ProductList({ products }) {
 }
 ```
 
-## Client Component 的特點
+## Client Component 的特點  
 使用方式：要在最上面加 `use client`
 ```jsx
 'use client';
@@ -65,8 +65,8 @@ export default function Counter() {
   - 動畫
   - 瀏覽器端狀態儲存（如 localStorage）
 
-## 如何搭配使用？
-1. 在 **Server Component 中呼叫 DB 或 API 拿資料**
+## 如何搭配使用？  
+1. 在 **Server Component 中呼叫 DB 或 API 拿資料**  
 1. 再把資料傳給 **Client Component 負責顯示或互動**
 
 ```jsx
@@ -91,10 +91,10 @@ Next.js 的混合渲染機制：
 * Server Component：先在 server 渲染 HTML。
 * Client Component：在 client 上「hydrate」（接管互動邏輯）。
 
-## 何時需要使用 Client Component？
+## 何時需要使用 Client Component？  
 要用到瀏覽器端功能或side effect，就必須使用 Client Component。具體來說：
 
-### 1. 使用 React hooks
+### 1. 使用 React hooks  
 `useState`、`useEffect`、`useContext`、`useRef` 等，這些都只能在瀏覽器執行。
 ```tsx
 'use client';
@@ -106,32 +106,32 @@ export default function Counter() {
 }
 ```
 
-### 2. 需要用戶互動
+### 2. 需要用戶互動  
 按鈕點擊、表單輸入、展開/收合、切換 tab
 
-### 3. 使用瀏覽器 API
+### 3. 使用瀏覽器 API  
 localStorage, window, document, navigator 等
 
-### 4. 整合第三方互動式 UI 套件
+### 4. 整合第三方互動式 UI 套件  
 像是使用 Chart.js、Swiper.js、Framer Motion 等，它們依賴 DOM 和瀏覽器。
 
 ## 不需要使用 Client Component 的情況
  Server Component 的使用情境非常多，像是：
- | 使用情境                      | Server Component |
-| ------------------------- | ---------------- |
-| 顯示從資料庫取得的內容               | ✅                |
-| 靜態頁面         | ✅                |
-| SSR 或 SSG 載入的內容           | ✅                |
-| 僅組合其他 Client Component    | ✅                |
+ | 使用情境                      | Server Component |  
+| ------------------------- | ---------------- |  
+| 顯示從資料庫取得的內容               | ✅                |  
+| 靜態頁面         | ✅                |  
+| SSR 或 SSG 載入的內容           | ✅                |  
+| 僅組合其他 Client Component    | ✅                |  
 | 使用 `<Image />`、`<Link />` | ✅                |
 
-### 判斷原則
-| 判斷問題                               | 是否使用 Client Component |
-| ---------------------------------- | --------------------- |
-| 有用 `useState`, `useEffect` 等 hook？ | ✅                     |
-| 有使用者互動？                            | ✅                     |
-| 有用到瀏覽器功能？                          | ✅                     |
-| 沒有互動，只是顯示資料？                       | ❌（用 Server 就好）        |
+### 判斷原則  
+| 判斷問題                               | 是否使用 Client Component |  
+| ---------------------------------- | --------------------- |  
+| 有用 `useState`, `useEffect` 等 hook？ | ✅                     |  
+| 有使用者互動？                            | ✅                     |  
+| 有用到瀏覽器功能？                          | ✅                     |  
+| 沒有互動，只是顯示資料？                       | ❌（用 Server 就好）        |  
 | 是資料列表、動態頁面、SSR 結果？                 | ❌                     |
 
 

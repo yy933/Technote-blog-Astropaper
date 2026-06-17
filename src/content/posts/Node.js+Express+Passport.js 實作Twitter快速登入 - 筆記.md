@@ -10,7 +10,7 @@ hackmd_id: "BJx366g8h"
 ## Table of contents
 
 ## :memo: 串接Twitter API
-### 基本設置與Token取得
+### 基本設置與Token取得  
 首先先到[Twitter Developer](https://developer.twitter.com/en/apply-for-access)建立一個帳戶，完成後到左邊選單Projects&Apps新增一個Project，並在Project裡面建立一個App(免費方案目前只有一個App的額度)，接著選擇剛剛建立的APP，找到頁面下方**User authentication settings**，點**Edit**，需要填寫以下欄位:
 * App permissions: 選擇需要的權限，這裡只是要使用者的帳戶名稱，所以選Read；另外也可以要求使用者的email，但是必須提供privacy policy和terms of service的連結，詳細方式見[Twitter文件](https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/manage-account-settings/api-reference/get-account-verify_credentials)。
 * Type of App：這裡選Web App, Automated App or Bot
@@ -45,11 +45,11 @@ TWITTER_CONSUMER_SECRET=your_secret
 ### Passport.js 驗證策略
 
 
-### 登入路由設置
+### 登入路由設置  
 需設定兩條路由：
 * 使用者要求使用 Twitter 帳號登入的按鈕：/auth/twitter
 
-* Twitter 獲得使用者同意之後，將使用者資料發送給 Express 的位址： /auth/twitter/callback
+* Twitter 獲得使用者同意之後，將使用者資料發送給 Express 的位址： /auth/twitter/callback  
 這條路由必須和在Twitter Developer console上填的callback URI一樣
 
 ### 發送登入請求

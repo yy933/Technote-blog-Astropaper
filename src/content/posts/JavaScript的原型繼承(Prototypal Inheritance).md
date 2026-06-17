@@ -9,11 +9,11 @@ hackmd_id: "HkcySOHCn"
 
 ## Table of contents
 
-## :memo: 前言
+## :memo: 前言  
 在[MDN文件](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)中提到，JavaScript並非一個以class為基礎(class-based)的語言(例如Java、C++)，儘管在JavaScript中有`class`這個關鍵字，但那只是為了開發者撰寫更直觀易懂的語法糖；事實上，**JavaScript是以原型為基礎(prototype-based)的語言**。
 
 ## :memo: 繼承(Inheritance)
-### 什麼是繼承
+### 什麼是繼承  
 繼承(Inheritance)可以說是物件導向程式設計（object-oriented programming, OOP）最重要的原則之一，繼承可以讓子類別(child class/subclass)沿用父類別(parent class/ superclass)的屬性與功能，以[MDN文件](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_programming)的例子而言:
 ```
 class Professor
@@ -26,7 +26,7 @@ class Professor
         grade(paper)
         introduceSelf()
 ```
-以上例子中，定義了一個`Professor`類別，而這個類別中有兩個屬性(properties): `name` 和 `teaches`，以及兩種方法(methods):`grade()` 和`introduceSelf()`
+以上例子中，定義了一個`Professor`類別，而這個類別中有兩個屬性(properties): `name` 和 `teaches`，以及兩種方法(methods):`grade()` 和`introduceSelf()`  
 類別就像是一個模板，可以創造該類型的物件，每個被創造出來的物件稱為該類別的**實例(Instance)**，而創造實例的過程則是透過一種特殊的函式- **建構式(Constructor)** 達成。
 
 至於什麼是繼承呢，再來看另一個類別`Student`:
@@ -68,23 +68,23 @@ class Student : extends Person
         introduceSelf()
 ```
 ### 繼承的優點
-- **提高程式碼的重複使用性**
+- **提高程式碼的重複使用性**  
 假如我們有一個class A，並且想再建立一個包含class A部分程式碼的class B，可以透過繼承從class A衍生class B，重複使用class A的資料與方法。
-- **避免程式碼重複**
+- **避免程式碼重複**  
 繼承可以在多個子類別中共享程式碼，減少程式碼重複；如果兩個相關的類別擁有類似的程式碼，我們可以將這些程式碼放進父類別中。
-- **提高程式碼靈活性及延展性**
+- **提高程式碼靈活性及延展性**  
 如果需要更改，可以在父類別中更改並由子類別繼承，換言之，父類別的屬性和方法所做的更改都可以直接應用在子類別上，所有公共的屬性和方法都可以直接在父類別宣告。另一方面，子類別也可以加入新的屬性或方法。
-- **提供更佳的程式碼結構與管理**
+- **提供更佳的程式碼結構與管理**  
 繼承使得子類別必須遵照標準的介面(interface)進行延伸，提供了方便理解的程式碼結構
-- **保留父類別的完整性**
+- **保留父類別的完整性**  
 宣告子類別並不影響父類別的原始碼，因此可以保留父類別的完整性。這也是封裝性（Encapsulation）的特性展現。
-- **隱藏數據**
+- **隱藏數據**  
 父類別可以將某些數據設為私有，子類別無法更改或取用
-- **幫助達成執行環境的多型(Polymorphism)**
+- **幫助達成執行環境的多型(Polymorphism)**  
 透過繼承，子類別可以加入不同的執行方式(implementation)，覆寫(override)父類別的方法
 
 *Ref: [MDN doc](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_programming), [Inheritance in OOPS: An Idea of Code Reusability](https://www.enjoyalgorithms.com/blog/inheritance-in-java)*
-### JavaScript的原型繼承
+### JavaScript的原型繼承  
 以下這兩段來自MDN文件的描述，快速說明了JS原型繼承的特性：
 > **某些人認為 JavaScript 並非真正的物件導向 (Object-oriented, OO) 語言。** 在「典型 OO」中，你必須定義特定的類別物件，才能定義哪些類別所要繼承的類別。**JavaScript 則使用不同的系統 —「繼承」的物件並不會一併複製功能過來，而是透過原型鍊連接其所繼承的功能，亦即所謂的原型繼承 (Prototypal inheritance)。**
  From [MDN文件](https://developer.mozilla.org/zh-TW/docs/Learn/JavaScript/Objects/Classes_in_JavaScript)
@@ -116,15 +116,15 @@ console.log(milkProtoProtoProto)
 // null
 ```
 
-`console.log(milkProto)`這一行程式碼在console中可以看到:
-![](/images/rJWVBKrCh.png)
+`console.log(milkProto)`這一行程式碼在console中可以看到:  
+![](/images/rJWVBKrCh.png)  
 它的原型中包含建構式(constructor)`Number()`函式以及各種這個原型建構的實例可以使用的方法(method)，`[[Prototype]]` 則可以觀察到這個`Number`的原型是`Object`，也就是原型鏈的上一層。
 
-`console.log(milkProtoProto)`這一行程式碼在console中則可以看到:
-![](/images/SJ-58tHCh.png)
+`console.log(milkProtoProto)`這一行程式碼在console中則可以看到:  
+![](/images/SJ-58tHCh.png)  
 `__proto__: (...)` 也就是再往原型鏈的上層找不到東西了，所以`console.log(milkProtoProtoProto)`印出的是`null`
 
-## :memo: 範例
+## :memo: 範例  
 說了那麼多，直接用程式碼操作:
 > Note: 以下例子使用[`class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)語法糖撰寫，和傳統的建構函式會略有不同，關於兩者的比較也可以參考[另一篇文章](/posts/javascript的constructor/)。
 ### `extends`和`super`
@@ -150,7 +150,7 @@ class Drink {
   }
 } 
 ```
-先定義一個class`Drink`，接著定義一個class`Coffee`:
+先定義一個class`Drink`，接著定義一個class`Coffee`:  
 (關於屬性名稱為何要使用底線，請參考[這個問題](https://stackoverflow.com/questions/54562790/cannot-set-property-which-only-has-getter-javascript-es6))
 ```javascript
 class Coffee {
@@ -208,10 +208,10 @@ const amountAdded = {
 }
 Object.assign(Drink.prototype, amountAdded);
 ```
-另外，在繼承父類別時，`class`語法糖使用`extends`關鍵字；ES6以前則可以使用[`call()`](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Function/call) 函式，getter、setter則可以使用[`Object.defineProperty()`函式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)。
+另外，在繼承父類別時，`class`語法糖使用`extends`關鍵字；ES6以前則可以使用[`call()`](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Function/call) 函式，getter、setter則可以使用[`Object.defineProperty()`函式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)。  
 Reference: [MDN docs - Object prototypes](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
 
-</blockquote>
+</blockquote>  
 接著，用子類別`Coffee`創造一個新的實例看看：
 ```javascript
 const latte = new Coffee('latte', 5, 'Brazil')
@@ -226,10 +226,10 @@ latte.amountAdded()
 console.log(latte.amount)
 // output: 1
 ```
-以上程式碼做了什麼呢?
-1. `Coffee`繼承了父類別`Drink`的`_amount`、amount getter、以及`amountAdded`函式
-2. 當我們建立了實例`latte`，`Drink`的建構式把`_amount`屬性設為0
-3. 因為繼承了`amountAdded`函式，所以新建立的實例`latte`可以呼叫這個方法並執行，使儲存在`_amount`屬性的值+1
+以上程式碼做了什麼呢?  
+1. `Coffee`繼承了父類別`Drink`的`_amount`、amount getter、以及`amountAdded`函式  
+2. 當我們建立了實例`latte`，`Drink`的建構式把`_amount`屬性設為0  
+3. 因為繼承了`amountAdded`函式，所以新建立的實例`latte`可以呼叫這個方法並執行，使儲存在`_amount`屬性的值+1  
 4. 最後呼叫amount getter，所以會回傳儲存在`this._amount`屬性中的值，也就是1
 
 如果我們再定義另一個子類別`Tea`，同樣繼承`Drink`的屬性和方法:
@@ -257,7 +257,7 @@ console.log(Object.getPrototypeOf(Tea) === Object.getPrototypeOf(Coffee))
 ```
 
 
-### 靜態方法(Static Methods)
+### 靜態方法(Static Methods)  
 有時，我們希望class中具有個別實例中不可調用的方法，但可以直接從該class中調用這些方法。這些方法稱為靜態方法(Static Methods)。這些方法可以用`static`關鍵字調用。
 
 延續前面的範例:

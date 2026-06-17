@@ -10,7 +10,7 @@ hackmd_id: "ByUHyjHMll"
 Tags: `TypeScript` `cheatsheet`
 ## Table of contents
 
-## 1. 參數類型註解 (Parameter Type Annotations)
+## 1. 參數類型註解 (Parameter Type Annotations)  
 在函式參數後面加冒號 `:` 和類型，確保呼叫時參數型別正確。
 ```ts
 function greet(noun: string) {
@@ -20,7 +20,7 @@ greet('World'); // 正確
 greet(2020);    // 錯誤：number 不能指派給 string
 ```
 
-## 2. Optional Parameter
+## 2. Optional Parameter  
 用 ? 表示參數可省略，若未傳入，參數值為 undefined。
 ```ts
 function greet(name?: string) {
@@ -29,7 +29,7 @@ function greet(name?: string) {
 greet(); // 輸出: Hello, stranger!
 ```
 
-## 3. Default Parameters
+## 3. Default Parameters  
 可直接給參數預設值，TS 會推斷參數型別為預設值型別。
 
 ```ts
@@ -41,7 +41,7 @@ exponentiation(4);  // 輸出: 256
 exponentiation(true); // 錯誤：boolean 不能指派給 number
 ```
 
-## 4. 回傳值類型推斷 (Inferring Return Types)
+## 4. 回傳值類型推斷 (Inferring Return Types)  
 TS 根據 return 語句的值自動推斷函式回傳型別。
 ```ts
 function factOrFiction() {
@@ -51,7 +51,7 @@ const myAnswer: boolean = factOrFiction();
 // 錯誤：string 不能指派給 boolean
 ```
 
-## 5. 無回傳值 (Void Return Type)
+## 5. 無回傳值 (Void Return Type)  
 函式不回傳值時，可標註回傳類型為 void。
 ```ts
 function sayHello(): void {
@@ -59,7 +59,7 @@ function sayHello(): void {
 }
 ```
 
-## 6. 明確指定回傳型別 (Explicit Return Types)
+## 6. 明確指定回傳型別 (Explicit Return Types)  
 可在函式定義時，明確標註回傳型別，確保回傳值符合預期。
 ```ts
 function trueOrFalse(value: boolean): boolean {
@@ -95,7 +95,7 @@ function fetchUserDetails(username: string): User {
 ```
 <blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
 
-### `ReturnType<T>`
+### `ReturnType<T>`  
 `ReturnType<T>` 是 TypeScript 提供的一個工具型別（Utility Types），可以幫你「推斷某個函式的回傳型別」。
 ```ts
 // Define a function that returns a string
@@ -139,12 +139,12 @@ type NotAFunction = number;
 type R = ReturnType<NotAFunction>; // ❌ Error: Type 'number' does not satisfy the constraint '(...args: any) => any'.
 ```
 
-#### 其他工具型別
-| 工具型別                       | 用途描述                |
-| -------------------------- | ------------------- |
-| `ReturnType<T>`            | 取得函式的回傳型別           |
-| `Parameters<T>`            | 取得函式的參數型別（是個 tuple） |
-| `ConstructorParameters<T>` | 取得建構子參數型別           |
+#### 其他工具型別  
+| 工具型別                       | 用途描述                |  
+| -------------------------- | ------------------- |  
+| `ReturnType<T>`            | 取得函式的回傳型別           |  
+| `Parameters<T>`            | 取得函式的參數型別（是個 tuple） |  
+| `ConstructorParameters<T>` | 取得建構子參數型別           |  
 | `InstanceType<T>`          | 取得建構子函式所產生的實例型別     |
 
 

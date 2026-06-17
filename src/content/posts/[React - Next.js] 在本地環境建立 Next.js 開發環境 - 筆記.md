@@ -10,7 +10,7 @@ hackmd_id: "BkEhea6blg"
 ## Table of contents
 
 
-## 從頭開始建立 Next.js 專案（使用 App Router）
+## 從頭開始建立 Next.js 專案（使用 App Router）  
 1. 新增一個專案資料夾，檢查Node版本，並且安裝必要的套件
 
 檢查Node版本:
@@ -38,7 +38,7 @@ npm i react@latest react-dom@latest next@latest
 ```
 
 
-2. 設定 `app/` 資料夾（Next.js App Router）
+2. 設定 `app/` 資料夾（Next.js App Router）  
 建立 `app/layout.jsx` 和 `app/page.jsx`（注意命名與結構）：
 
 ```jsx

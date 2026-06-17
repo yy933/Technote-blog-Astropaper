@@ -27,7 +27,7 @@ const element = <h1>Hello, world!</h1>;
 ```javascript
 const element = React.createElement('h1', null, 'Hello, world!');
 ```
-比起`React.createElement`或現代的 `_jsx` 函式，JSX更像 HTML，直觀易上手，並且在巢狀元件、條件渲染時，結構比 `createElement` 好讀。
+比起`React.createElement`或現代的 `_jsx` 函式，JSX更像 HTML，直觀易上手，並且在巢狀元件、條件渲染時，結構比 `createElement` 好讀。  
 大部分現代 React 專案（透過 Vite、Next.js 或 Webpack 等工具）會自動設定轉譯器，在幕後自動把 JSX 轉譯成瀏覽器看得懂的 JavaScript 物件（例如全新的 JSX Transform 函式（如 `_jsx`） 或是舊版的 `React.createElement`），無須手動處理。
 
 
@@ -37,11 +37,11 @@ const element = React.createElement('h1', null, 'Hello, world!');
 * 使用 JSX 語法來描述要顯示的內容
 
 > 🔔 JSX 是語法擴充 (syntax extension)，React 是函式庫！它們可以分開使用。
-> 
+>   
 ![螢幕擷取畫面 2025-04-29 133556](/images/BkpoE10ygx.png)
 
 
-## JSX 的本質就是一個 JavaScript 物件（Object）
+## JSX 的本質就是一個 JavaScript 物件（Object）  
 當我們寫下這行 JSX：
 
 ```jsx
@@ -72,7 +72,7 @@ const element = React.createElement(
 }
 ```
 
-## 從 HTML 轉成 JSX
+## 從 HTML 轉成 JSX  
 原本 HTML 長這樣：
 
 ```html
@@ -133,7 +133,7 @@ return (
 </blockquote>
 
 ## JSX三個使用規則
-### 1. 必須有一個單一根元素（Single Root Element）
+### 1. 必須有一個單一根元素（Single Root Element）  
 用 `<div>` 或空的` <>...</>`（Fragment）包起來：
 ```jsx
 <>
@@ -151,10 +151,10 @@ return (
 * 單標籤要加 /：`<img />`
 * 成對標籤要完整寫出：`<li>內容</li>`
 
-### 3. 屬性命名改用 camelCase
-| HTML屬性  | JSX寫法     |
-|-----------|-------------|
-| `class`     | `className`    |
+### 3. 屬性命名改用 camelCase  
+| HTML屬性  | JSX寫法     |  
+|-----------|-------------|  
+| `class`     | `className`    |  
 | `stroke-width` | `strokeWidth` |
 
 ```jsx
@@ -178,17 +178,17 @@ return (
 ```
 
 
-:bulb: 還有哪些 HTML 屬性在 JSX 中名稱不同？
-| HTML 屬性     | JSX 對應（React DOM 屬性） | 說明                              |
-|---------------|----------------------------|-----------------------------------|
-| `class`       | `className`                | 如上所述，避免與 JS 保留字衝突     |
-| `for`         | `htmlFor`                  | JS 中 `for` 是關鍵字                |
-| `onclick`     | `onClick`                  | 所有事件處理器需轉為小駝峰式命名    |
-| `tabindex`    | `tabIndex`                 | 使用小駝峰格式                    |
-| `maxlength`   | `maxLength`                | 也是 DOM property 的命名方式      |
-| `readonly`    | `readOnly`                 | 注意 O 大寫                       |
-| `contenteditable` | `contentEditable`     | 同樣是轉為 camelCase              |
-| `autoplay`    | `autoPlay`                 | 注意自動播放常見於 `<video>`      |
+:bulb: 還有哪些 HTML 屬性在 JSX 中名稱不同？  
+| HTML 屬性     | JSX 對應（React DOM 屬性） | 說明                              |  
+|---------------|----------------------------|-----------------------------------|  
+| `class`       | `className`                | 如上所述，避免與 JS 保留字衝突     |  
+| `for`         | `htmlFor`                  | JS 中 `for` 是關鍵字                |  
+| `onclick`     | `onClick`                  | 所有事件處理器需轉為小駝峰式命名    |  
+| `tabindex`    | `tabIndex`                 | 使用小駝峰格式                    |  
+| `maxlength`   | `maxLength`                | 也是 DOM property 的命名方式      |  
+| `readonly`    | `readOnly`                 | 注意 O 大寫                       |  
+| `contenteditable` | `contentEditable`     | 同樣是轉為 camelCase              |  
+| `autoplay`    | `autoPlay`                 | 注意自動播放常見於 `<video>`      |  
 | `crossorigin` | `crossOrigin`              | 常見於 `<img>`、`<video>`         |
 
 ✅ 特殊例外：`data-*` 與 `aria-*` 保持原樣，不需要轉換。
@@ -199,13 +199,13 @@ return (
 
 </blockquote>
 
-## 工具推薦：JSX 轉換器
-大量 HTML 要轉成 JSX？
+## 工具推薦：JSX 轉換器  
+大量 HTML 要轉成 JSX？  
 → 可以用 [JSX Converter](https://transform.tools/html-to-jsx) 幫忙，但還是要理解基本規則！
 
 ## Recap
 
-* React 把邏輯和標記放在一起是有原因的: 
+* React 把邏輯和標記放在一起是有原因的:   
 React 把「邏輯（JavaScript）」和「標記（HTML-like 的 JSX）」寫在一起，主要是因為現代網頁互動性大幅提升，內容已經被邏輯控制了，而不是單純靜態地寫在 HTML 裡。
 * JSX ≈ HTML，但規則更嚴格 
 * 常見錯誤訊息會引導你修正問題

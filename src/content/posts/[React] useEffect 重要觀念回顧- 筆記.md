@@ -13,7 +13,7 @@ hackmd_id: "ryjVTe7Wgl"
 * 給定相同的 props 或 state，元件會產出一樣的 UI。
 * 渲染本身不應產生side effect，例如不應直接修改外部系統或狀態。
 
-## 什麼是side effect？常見例子？
+## 什麼是side effect？常見例子？  
 side effect = 影響或連動到 React 控制範圍以外的行為 (外部行為)
 
 常見例子：
@@ -22,7 +22,7 @@ side effect = 影響或連動到 React 控制範圍以外的行為 (外部行為
 * 操作真實 DOM（非 React 處理的）
 * 使用 WebSocket、setTimeout 等
 
-## 哪些不是side effect？
+## 哪些不是side effect？  
 React 自己會處理的，不算side effect。
 
 非side effect範例：
@@ -31,7 +31,7 @@ React 自己會處理的，不算side effect。
 * 將資料渲染成 DOM
 * 讓 UI 隨資料變化而更新
 
-## useEffect 什麼時候會執行？什麼時候不會？
+## useEffect 什麼時候會執行？什麼時候不會？  
 🟢 會執行：
 
 * 元件第一次渲染時
@@ -41,8 +41,8 @@ React 自己會處理的，不算side effect。
 
 dependencies array沒變，React 就不會重新執行 useEffect
 
-## 什麼是dependencies array？
-是 `useEffect`的第二個參數
+## 什麼是dependencies array？  
+是 `useEffect`的第二個參數  
 告訴 React：只有在這些變數變動時才需要重新執行副作用
 
 例如：

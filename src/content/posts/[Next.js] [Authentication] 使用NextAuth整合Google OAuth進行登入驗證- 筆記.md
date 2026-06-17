@@ -69,16 +69,16 @@ export const authOptions: NextAuthOptions = {
 const handler = NextAuth(authOptions)
 export { handler as GET, handler as POST }
 ```
-說明:
-1. 提供nextauth GoogleProvider，NextAuth就會將使用者導向至 Google OAuth consent screen，獲得使用者同意授權後，依據Google回傳的資料(scope: profile, email)，再由GoogleProvider 驗證授權碼 → 換取 access_token & 使用者資訊(id, email, name, image等)
+說明:  
+1. 提供nextauth GoogleProvider，NextAuth就會將使用者導向至 Google OAuth consent screen，獲得使用者同意授權後，依據Google回傳的資料(scope: profile, email)，再由GoogleProvider 驗證授權碼 → 換取 access_token & 使用者資訊(id, email, name, image等)  
 2. callback中可以寫入希望資料存取的邏輯，例如這裡:
 * **name欄位的問題**：Google provider 預設會提供 `profile.name`，如果沒有公開姓名，就用`profile.email.split('@')[0]` 當 fallback。
-* **email 已存在時要合併**:在 Prisma schema 已經設定 `User.email @unique`，所以不會建立重複的 `User`，只會建立新的 `Account` 記錄。
-→ 意思是：如果同一個 email 先用 credentials 註冊，之後 Google 登入時會自動連到同一筆 `User`。
+* **email 已存在時要合併**:在 Prisma schema 已經設定 `User.email @unique`，所以不會建立重複的 `User`，只會建立新的 `Account` 記錄。  
+→ 意思是：如果同一個 email 先用 credentials 註冊，之後 Google 登入時會自動連到同一筆 `User`。  
 3. 取得Google API client id&secret可參考[官方說明](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid?hl=zh-tw#get_your_google_api_client_id)。NextAuth 預設的 Google redirect URI (Google 把授權碼送回來的 API endpoint) 是：`http://localhost:3000/api/auth/callback/google`
 
 
-## 前端呼叫API
+## 前端呼叫API  
 之前已經把登入驗證相關的邏輯寫在`useAuth` hook中，這裡只要補上：
 ```tsx
 import { useSession, signIn, signOut } from 'next-auth/react'

@@ -9,26 +9,26 @@ hackmd_id: "Hy9rKyAE3"
 
 ## Table of contents
 
-## :memo: Nodemailer安裝與設定
+## :memo: Nodemailer安裝與設定  
 首先參閱[Nodemailer的文件](https://nodemailer.com/about/)。
-### 安裝
-`npm install --save nodemailer`
-安裝完成後到package.json確認，沒問題就來進行接下來的設定，看一下文件的說明：
-![](/images/By9ijyRV2.png)
-其實就是3個重點：
-1. 先做一個transporter，可以使用[SMTP](https://www.geeksforgeeks.org/simple-mail-transfer-protocol-smtp/)或[其他傳輸機制](https://nodemailer.com/transports/)
-2. 設定寄信的內容，包含寄件人、收件人、信件內容、主旨、附件等
+### 安裝  
+`npm install --save nodemailer`  
+安裝完成後到package.json確認，沒問題就來進行接下來的設定，看一下文件的說明：  
+![](/images/By9ijyRV2.png)  
+其實就是3個重點：  
+1. 先做一個transporter，可以使用[SMTP](https://www.geeksforgeeks.org/simple-mail-transfer-protocol-smtp/)或[其他傳輸機制](https://nodemailer.com/transports/)  
+2. 設定寄信的內容，包含寄件人、收件人、信件內容、主旨、附件等  
 3. 使用Nodemailer的`sendMail()`方法，透過先前產生的transporter將信件寄出
 
-### 引入nodemailer
+### 引入nodemailer  
 `const nodemailer = require('nodemailer')`
 
-### 製作transporter
-官方文件範例:
-`let transporter = nodemailer.createTransport(options[, defaults])`
-因為預設使用SMTP，所以如果使用SMTP機制的話，以下兩種寫法皆可：
-`let  transporter = nodemailer.createTransport("SMTP", {smtpOptions});`
-`let  transporter = nodemailer.createTransport({smtpOptions});`
+### 製作transporter  
+官方文件範例:  
+`let transporter = nodemailer.createTransport(options[, defaults])`  
+因為預設使用SMTP，所以如果使用SMTP機制的話，以下兩種寫法皆可：  
+`let  transporter = nodemailer.createTransport("SMTP", {smtpOptions});`  
+`let  transporter = nodemailer.createTransport({smtpOptions});`  
 完整範例如下，**帳號密碼可以用環境變數的方式**引入：
 
 ```nodejs
@@ -44,7 +44,7 @@ hackmd_id: "Hy9rKyAE3"
 ```
 <blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
 
-#### 如果使用Gmail做為transporter
+#### 如果使用Gmail做為transporter  
 nodemailer已經知道知名的信件服務提供者的SMTP連線資訊，所以若使用[這些信件服務](https://community.nodemailer.com/2-0-0-beta/setup-smtp/well-known-services/)做為transporter，不需提供host、port等資訊，以下以gmail為例：
 ```nodejs
 let transporter = nodemailer.createTransport({
@@ -52,22 +52,22 @@ let transporter = nodemailer.createTransport({
      auth: {...}
 })
 ```
-但是由於gmail對安全性的限制，這裡無法直接使用gmail帳號密碼做為驗證，必須設定**App password**：
-1. 首先進入Google account頁面，點選左側**Security**
-![](/images/Bk-Z9gRVh.png)
+但是由於gmail對安全性的限制，這裡無法直接使用gmail帳號密碼做為驗證，必須設定**App password**：  
+1. 首先進入Google account頁面，點選左側**Security**  
+![](/images/Bk-Z9gRVh.png)  
 2. 找到 How you sign in to Google的區塊，確認 2-Step Verification已經開啟
- ![](/images/BJMUcxANh.png)
+ ![](/images/BJMUcxANh.png)  
 3. 進入 2-Step Verification頁面，拉到最下面，找到App passwords
- ![](/images/HyHjqgRN2.png)
-4. 點進App passwords，選擇app：Mail、device:(你的裝置)，按Generate。
+ ![](/images/HyHjqgRN2.png)  
+4. 點進App passwords，選擇app：Mail、device:(你的裝置)，按Generate。  
 5. 這時會產生一組password，這組密碼可以做為transporter中auth的密碼，**記得複製下來貼到.env裡面，視窗關了就看不到了**，必須重新產生一組。
-#### 如果不想使用密碼
+#### 如果不想使用密碼  
 如果不想使用App password，又想利用gmail做為transporter，可以使用**Gmail API + OAuth2**的方式驗證，詳細作法參考:
 * [Node.js - SEND Emails Using Nodemailer | Gmail | OAuth2](https://youtu.be/18qA61bpfUs)
 * [How to Use Nodemailer to Send Emails from Your Node.js Server](https://www.freecodecamp.org/news/use-nodemailer-to-send-emails-from-your-node-js-server/)
 
 </blockquote>
-### 設定mail options
+### 設定mail options  
 接著設定寄件內容，直接看範例：
 ```nodejs
 let mailOptions = {
@@ -96,9 +96,9 @@ let mailOptions = {
 ```
 更多進階設定，參考文件[Message Configuration](https://nodemailer.com/message/)。
 
-### 寄出信件
-transporter和mail options都設定完之後，就可以用nodemailer提供的`sendMail()`方法寄出信件：
-`transporter.sendMail(mailOptions)`
+### 寄出信件  
+transporter和mail options都設定完之後，就可以用nodemailer提供的`sendMail()`方法寄出信件：  
+`transporter.sendMail(mailOptions)`  
 也可以加上callback回傳error和result，更多選項詳見[文件](https://nodemailer.com/usage/)：
 ```
 transport.sendMail(mailOptions, (error, info) => {
@@ -110,7 +110,7 @@ transport.sendMail(mailOptions, (error, info) => {
 })
 ```
 ## :memo: 實際操作 - 聯絡表單 Contact form
-### 想法
+### 想法  
 製作一個聯絡表單，類似客服信箱的概念，使用者留言後按送出，表單內容會寄到客服信箱。
 
 ### 表單HTML
@@ -165,7 +165,7 @@ EMAIL=XXXX@gmail.com
 APP_PASSWORD=your_password
 ```
 ### Route - POST /contact
-* 首先利用Express架一個伺服器，專案入口設定為`app.js`(詳細步驟[點我](/posts/利用指令建立express專案的步驟---筆記/))，接著到`app.js`引入email-helpers
+* 首先利用Express架一個伺服器，專案入口設定為`app.js`(詳細步驟[點我](/posts/利用指令建立express專案的步驟---筆記/))，接著到`app.js`引入email-helpers  
 `const contactFormSend = require('./helpers/email-helpers')`
 * 傳送表單資料的路由
 ```nodejs
@@ -198,8 +198,8 @@ app.listen(port, () => {
   console.log(`App is listening at http://localhost:${port}`)
 })
 ```
-### 寄信功能試用
-都設定完畢後，來試用看看：
+### 寄信功能試用  
+都設定完畢後，來試用看看：  
 1. 填寫表單並送出
 
 ![](/images/S1-vJQCV3.gif)

@@ -9,7 +9,7 @@ hackmd_id: "SylIMO1feg"
 
 ## Table of contents
 
-## 為什麼要優化 Google Fonts？
+## 為什麼要優化 Google Fonts？  
 之前引入Google Fonts的方法，是在`<head>` 中以 `<link>` 方式載入字型，這會造成瀏覽器額外的request，影響頁面首次渲染時間（FCP）和最大內容繪製時間（LCP）。Next.js 13 提供內建的 Google Fonts 載入方案，可以減少請求次數、提升性能，甚至支援字型子集與自訂字型變數。
 
 ## 使用方法
@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
 }
 ```
 
-如果只要設定局部字體(例如標題用不同字體):
+如果只要設定局部字體(例如標題用不同字體):  
 先設定變數，再到CSS中使用
 ```css
 // global.css
@@ -49,17 +49,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 ```
 
-### inter.className
-內容：一個類似 font-inter_abc123 的隨機 class 名稱。
-用途：直接套用整體字體樣式。
+### inter.className  
+內容：一個類似 font-inter_abc123 的隨機 class 名稱。  
+用途：直接套用整體字體樣式。  
 用法：可以把這個 `className` 加到 `<body>` 或 `<main>`，整個區域會套用 Inter 字體。
 ```tsx
 <body className={inter.className}>
 ```
 
-### inter.variable
-內容：在設定中指定的 CSS 變數名（這裡是 `--font-inter`）。
-用途：在 Tailwind 或自定義 CSS 中用 CSS 變數控制字體。
+### inter.variable  
+內容：在設定中指定的 CSS 變數名（這裡是 `--font-inter`）。  
+用途：在 Tailwind 或自定義 CSS 中用 CSS 變數控制字體。  
 搭配 Tailwind config 使用範例：
 ```js
 // tailwind.config.js
@@ -93,10 +93,10 @@ module.exports = {
 
 
 ## 好處
-* 減少外部請求
+* 減少外部請求  
 Google Fonts 會被 Next.js 伺服器側預先加載並內嵌到 CSS 中。
-* 改善 SEO 與性能
+* 改善 SEO 與性能  
 字型渲染更快，減少 FOIT（Flash of Invisible Text）。
-* 整合 Tailwind
+* 整合 Tailwind  
 利用 variable 屬性可直接設定 Tailwind CSS 的 font-family。
 * 若需要使用客製字型（自訂字型檔），可使用 `next/font/local`

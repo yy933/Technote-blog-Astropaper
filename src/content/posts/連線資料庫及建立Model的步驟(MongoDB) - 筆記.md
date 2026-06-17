@@ -37,7 +37,7 @@ hackmd_id: "HJu5lkwYo"
   接下來，為了方便管理環境變數，將透過套件 `dotenv` 來設定環境變數。
   + **安裝dotenv**:　`npm i dotenv -D`
   加上 -D 的意思：將套件安裝到 `package.json` 的 devDependencies 上面，表示 production 環境不使用，僅 development 環境使用的套件。
-  + **建立.env文件**: 在專案中建立 `.env` 文件，並在上面定義環境變數，把資料庫的連線字串複製上去。
+  + **建立.env文件**: 在專案中建立 `.env` 文件，並在上面定義環境變數，把資料庫的連線字串複製上去。  
 ` MONGODB_URI=mongodb+srv://<username>:<password>@<host>/<database>?retryWrites=true&w=majority`
  + **把`.env`文件加入`.gitignore`中**: 
   ```javascript=1
@@ -90,7 +90,7 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
 回到終端機看到 `mongodb connected！`並且警告訊息消失代表調整完成。
 ## 建立Model
   * 在專案中建立models資料夾，並且新增存放model結構的js檔案(如:data.js)
-  * 定義資料結構：設定data.js中的schema(資料庫綱要)。
+  * 定義資料結構：設定data.js中的schema(資料庫綱要)。  
 例如：
 ```javascript
 const mongoose = require('mongoose')

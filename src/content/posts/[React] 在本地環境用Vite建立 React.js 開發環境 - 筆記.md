@@ -15,7 +15,7 @@ hackmd_id: "ByKBPQLyxe"
 ### 1. 準備 Node.js 環境
 * 用nvm安裝Node.js，確認Node版本:`node -v`
 * 同時也確認npm安裝: `npm -v`
-### 2. 用 Vite 快速建置專案
+### 2. 用 Vite 快速建置專案  
 用 [Vite](https://vite.dev/guide/) 來建立 React 專案
 ```bash
 npm create vite@latest my-chat-app --template react
@@ -26,8 +26,8 @@ npm create vite@latest my-chat-app --template react
 * 選擇框架：React
 * 選擇語言：JavaScript
 
-超快速建立完成，終端機顯示：
-![螢幕擷取畫面 2025-04-23 170751](/images/SJLdTX8kge.png)
+超快速建立完成，終端機顯示：  
+![螢幕擷取畫面 2025-04-23 170751](/images/SJLdTX8kge.png)  
 照做就是了。
 
 * 安裝dependencies
@@ -54,12 +54,12 @@ v18.20.8
 ```bash
 npm run dev
 ```
-![螢幕擷取畫面 2025-04-23 171448](/images/S1XZyNUJxe.png)
-打開瀏覽器，到`http://localhost:5173/`確認，出現以下畫面就成功了：
+![螢幕擷取畫面 2025-04-23 171448](/images/S1XZyNUJxe.png)  
+打開瀏覽器，到`http://localhost:5173/`確認，出現以下畫面就成功了：  
 ![螢幕擷取畫面 2025-04-23 171543](/images/Hk8EkV8Jll.png)
 
-### 4. 專案架構
-開啟VScode看一下專案架構：
+### 4. 專案架構  
+開啟VScode看一下專案架構：  
 ![螢幕擷取畫面 2025-04-23 171756](/images/SyAygNLJle.png)
 
 * 打開 `src/App.jsx`，先改成這樣，建立一個 Hello Component：
@@ -75,14 +75,14 @@ function App() {
 
 export default App;
 ```
-看一下瀏覽器畫面:
+看一下瀏覽器畫面:  
 ![螢幕擷取畫面 2025-04-23 172121](/images/rk9tlVL1gl.png)
 
 
-### :toolbox: React Developer Tools
+### :toolbox: React Developer Tools  
 下載[React Developer Tools](https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en&pli=1)這個瀏覽器套件幫助除錯
 
-![螢幕擷取畫面 2025-04-23 174125](/images/ByxrBNUkxl.png)
+![螢幕擷取畫面 2025-04-23 174125](/images/ByxrBNUkxl.png)  
 當 React Developer Tools 感應到網頁是用 React 打造時，icon 會自動亮起來，這時候可以看到DevTools面板上多了兩個有 React 圖示的區塊：Components & Profiler，Components 區塊會看到元件的 state 和方法，Profiler 區塊是評估渲染效能時會用到的工具。
 
 

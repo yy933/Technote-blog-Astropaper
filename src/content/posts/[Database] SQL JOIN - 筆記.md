@@ -8,37 +8,37 @@ hackmd_id: "Sy14Jzheze"
 
 ## Table of contents
 
-## :memo: 簡介
+## :memo: 簡介  
 在設計關聯式資料庫（RDBMS）時，為了避免資料重複性過高、造成維護困難，我們通常會遵循 **正規化（Normalization）** 的原則，將資料拆分到不同的資料表中儲存。例如：將「汽車的基本車籍」與「車子的銷售紀錄」分別存在兩張獨立的表。
 
 然而，當我們需要產生一份完整的商業報表（如：看哪一款車賣了多少錢）時，就必須將這些被拆散的表格重新串聯起來。這時候，**`JOIN`** 就是 SQL 中不可或缺的核心功能。透過 `JOIN`，我們能建立表格之間的橋樑，將片段的資訊拼湊成完整的數據。
 
 
-## :memo: 情境
+## :memo: 情境  
 本篇筆記將使用「汽車銷售系統」作為範例，介紹四種最常見的 `JOIN` 應用。
 
 我們手邊有以下兩張關聯式資料表，它們透過 `cars_id` 與 `id` 相互對應：
 
-### 1. 左表：`sold_cars`（銷售紀錄表）
+### 1. 左表：`sold_cars`（銷售紀錄表）  
 記錄已經賣掉的車子與成交價。*（注意：第三筆 `cars_id = 999` 為無效的車牌代號，在車籍資料中並不存在）*
 
-| id | cars_id | sold_price |
-| :--- | :--- | :--- |
-| 1 | 101 | 70 萬 |
-| 2 | 102 | 90 萬 |
+| id | cars_id | sold_price |  
+| :--- | :--- | :--- |  
+| 1 | 101 | 70 萬 |  
+| 2 | 102 | 90 萬 |  
 | 3 | **999** | 50 萬 |
 
-### 2. 右表：`cars`（車籍資料表）
+### 2. 右表：`cars`（車籍資料表）  
 所有在庫車輛的明細。*（注意：第三筆 `id = 103` 的法拉利目前尚未售出，因此銷售紀錄表裡沒有它）*
 
-| id | brand | model | price |
-| :--- | :--- | :--- | :--- |
-| 101 | Toyota | Altis | 75 萬 |
-| 102 | Ford | Focus | 95 萬 |
+| id | brand | model | price |  
+| :--- | :--- | :--- | :--- |  
+| 101 | Toyota | Altis | 75 萬 |  
+| 102 | Ford | Focus | 95 萬 |  
 | **103** | Ferrari| Roma | 1200 萬|
 
 
-## :memo: 四種不同的 JOIN 實際範例
+## :memo: 四種不同的 JOIN 實際範例  
 在開始之前，我們要先釐清「左表」與「右表」的定義：
 * 寫在 `JOIN` 關鍵字 **左邊** 的叫 **左表** （本範例中為 `sold_cars`）。
 * 寫在 `JOIN` 關鍵字 **右邊** 的叫 **右表** （本範例中為 `cars`）。
@@ -57,9 +57,9 @@ INNER JOIN cars C ON SC.cars_id = C.id;
 
 #### 💡 產出結果：
 
-| brand | model | sold_price |
-| :--- | :--- | :--- |
-| Toyota | Altis | 70 萬 |
+| brand | model | sold_price |  
+| :--- | :--- | :--- |  
+| Toyota | Altis | 70 萬 |  
 | Ford | Focus | 90 萬 |
 
 * **解析**：因為 999 找不到車籍、103 找不到銷售紀錄，兩者皆不符合「同時存在」的條件，所以最終結果只會有完美的 2 筆匹配資料。
@@ -77,10 +77,10 @@ LEFT JOIN cars C ON SC.cars_id = C.id;
 
 #### 💡 產出結果：
 
-| brand | model | sold_price |
-| :--- | :--- | :--- |
-| Toyota | Altis | 70 萬 |
-| Ford | Focus | 90 萬 |
+| brand | model | sold_price |  
+| :--- | :--- | :--- |  
+| Toyota | Altis | 70 萬 |  
+| Ford | Focus | 90 萬 |  
 | NULL | NULL | 50 萬 |
 
 
@@ -99,10 +99,10 @@ RIGHT JOIN cars C ON SC.cars_id = C.id;
 
 #### 💡 產出結果：
 
-| brand | model | sold_price |
-| :--- | :--- | :--- |
-| Toyota | Altis | 70 萬 |
-| Ford | Focus | 90 萬 |
+| brand | model | sold_price |  
+| :--- | :--- | :--- |  
+| Toyota | Altis | 70 萬 |  
+| Ford | Focus | 90 萬 |  
 | Ferrari | Roma | NULL |
 
 
@@ -123,11 +123,11 @@ FULL JOIN cars C ON SC.cars_id = C.id;
 
 #### 💡 產出結果：
 
-| brand | model | sold_price |
-| :--- | :--- | :--- |
-| Toyota | Altis | 70 萬 |
-| Ford | Focus | 90 萬 |
-| NULL | NULL | 50 萬 |
+| brand | model | sold_price |  
+| :--- | :--- | :--- |  
+| Toyota | Altis | 70 萬 |  
+| Ford | Focus | 90 萬 |  
+| NULL | NULL | 50 萬 |  
 | Ferrari | Roma | NULL |
 
 <blockquote class="my-6 p-4 bg-sky-50 dark:bg-sky-950/30 border-l-4 border-sky-500 rounded-r-md text-sky-900 dark:text-sky-200 blocknoted-fix">
@@ -141,7 +141,7 @@ FULL JOIN cars C ON SC.cars_id = C.id;
 
 * **解析**：包含了錯填的 999 銷售紀錄，也包含了未售出的法拉利車籍，所有可能出現的狀況一次呈現。
 
-## 小結
+## 小結  
 綜合以上的實務應用：
 * 想看完美匹配的精準報表 --> 用 `INNER JOIN`
 * 想看完整銷售紀錄（包含異常數據） --> 用 `LEFT JOIN`

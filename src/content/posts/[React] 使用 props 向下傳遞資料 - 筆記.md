@@ -32,26 +32,26 @@ function Welcome({ name }) {
   return <h1>Hello, {name}!</h1>;
 }
 ```
-## 常見props型別
-| 類型 | 範例 | 說明 |
-|------|------|------|
-| **字串（String）** | `title="Hello"` | 用在文字顯示、標題等 |
-| **數字（Number）** | `count={5}` | 注意要用 `{}` 包住非字串型別 |
-| **布林（Boolean）** | `disabled={true}` | 可控制元件狀態，例如按鈕是否可按 |
-| **陣列（Array）** | `items={['a', 'b']}` | 常用於列出清單項目 |
-| **物件（Object）** | `user={{ name: 'Tom', age: 30 }}` | 可傳整包資料給元件處理 |
-| **函數（Function）** | `onClick={handleClick}` | 事件處理、回呼函數等 |
-| **JSX 元素** | `children={<p>Hello</p>}` | 用於組合元件、Slot 概念 |
+## 常見props型別  
+| 類型 | 範例 | 說明 |  
+|------|------|------|  
+| **字串（String）** | `title="Hello"` | 用在文字顯示、標題等 |  
+| **數字（Number）** | `count={5}` | 注意要用 `{}` 包住非字串型別 |  
+| **布林（Boolean）** | `disabled={true}` | 可控制元件狀態，例如按鈕是否可按 |  
+| **陣列（Array）** | `items={['a', 'b']}` | 常用於列出清單項目 |  
+| **物件（Object）** | `user={{ name: 'Tom', age: 30 }}` | 可傳整包資料給元件處理 |  
+| **函數（Function）** | `onClick={handleClick}` | 事件處理、回呼函數等 |  
+| **JSX 元素** | `children={<p>Hello</p>}` | 用於組合元件、Slot 概念 |  
 | **null / undefined** | `value={null}` | 可作為控制元件的清空狀態等 |
 <blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
 
-:bulb: **除了字串，其他型別的props都要用 `{}` 包住**
-JSX 裡 props 只接受「JS 表達式」的話，要用 `{}`，
+:bulb: **除了字串，其他型別的props都要用 `{}` 包住**  
+JSX 裡 props 只接受「JS 表達式」的話，要用 `{}`，  
 而「字串常值」可以直接寫成 HTML 字串格式。
 
 </blockquote>
 
-## 如何傳遞與讀取 props？
+## 如何傳遞與讀取 props？  
 例如有一個沒有傳遞任何props給子元件的元件Profile:
 ```jsx
 export default function Profile() {
@@ -60,7 +60,7 @@ export default function Profile() {
   );
 }
 ```
-### 步驟一: 傳遞props給子元件
+### 步驟一: 傳遞props給子元件  
 這裡的props: `person` (物件), `size` (數字):
 ```jsx
 export default function Profile() {
@@ -81,7 +81,7 @@ function Avatar({ person, size }) {
   // person and size are available here
 }
 ```
-加入一些邏輯到Avatar中:
+加入一些邏輯到Avatar中:  
 `App.js`
 ```jsx
 import { getImageUrl } from './utils.js';
@@ -150,7 +150,7 @@ function Avatar(props) {
 ```
 
 
-## 給予props預設值（default props）
+## 給予props預設值（default props）  
 有時會遇到某些資料缺少的情況，為了避免fallback，可以給予props預設值：
 ```jsx
 function Avatar({ person, size = 100 }) {
@@ -159,7 +159,7 @@ function Avatar({ person, size = 100 }) {
 ```
 :bulb: 只有在 size 是 undefined 時才會套用預設值，null 或 0 不會。
 
-## 使用 JSX Spread 語法傳遞 props
+## 使用 JSX Spread 語法傳遞 props  
 有時候傳遞props使得code看起來重複性很高：
 ```jsx
 function Profile({ person, size, isSepia, thickBorder }) {
@@ -192,14 +192,14 @@ function Profile(props) {
 
 </blockquote>
 
-## 將JSX作為子元件(children)傳遞
+## 將JSX作為子元件(children)傳遞  
 這樣寫的時候:
 ```jsx
 <Card>
   <Avatar />
 </Card>
 ```
-JSX 會自動把 `<Avatar /> `當作 `Card` 的 children prop 傳進去。
+JSX 會自動把 `<Avatar /> `當作 `Card` 的 children prop 傳進去。  
 相當於:
 ```jsx
 <Card children={<Avatar ... />} />
@@ -216,7 +216,7 @@ function Card({ children }) {
 }
 ```
 
-📌 用途：打造可重複使用的容器元件
+📌 用途：打造可重複使用的容器元件  
 這樣的設計可以讓 Card 元件不管裡面是 Avatar、文字、還是圖片都能通用，非常有彈性。適合用來做排版或視覺容器（像是 Panel、Grid）。
 
 也就是：
@@ -225,7 +225,7 @@ function Card({ children }) {
 ```
 <blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
 
-**也就是說!**
+**也就是說!**  
 例如這樣定義 Card 元件：
 ```jsx
 function Card({ children }) {
@@ -257,7 +257,7 @@ function Card({ children }) {
 </blockquote>
 
 
-### 不定量或大量 props 要傳給子元件
+### 不定量或大量 props 要傳給子元件  
 使用 展開運算子（spread operator）`...`，它可以乾淨且有彈性地傳遞所有 props。
 ```jsx
 function ProfileCard(props) {
@@ -323,7 +323,7 @@ function Navbar(props) {
 </blockquote>
 
 ##  比較兩種 props 結構設計的寫法
-### 寫法一
+### 寫法一  
 假設有一個Entry元件：
 ```jsx
 // Entry.jsx

@@ -10,13 +10,13 @@ hackmd_id: "rk9RErlbeg"
 ## Table of contents
 
 
-## state結構設計五大原則
-| 原則                    | 說明                                                  |
-| --------------------- | --------------------------------------------------- |
-| 1️⃣ 群組相關的 state       | 若兩個變數總是一起改動，就該合併為一個物件（例如：x, y 改為 position）          |
-| 2️⃣ 避免互相矛盾的 state     | 不要讓多個 state 可能彼此矛盾，例如：isSending 和 isSent 同時為 true   |
-| 3️⃣ 避免多餘 state        | 若資料能從現有的 props 或 state 計算出來，就不用存進 state，例如 fullName |
-| 4️⃣ 避免 state 重複儲存同樣資訊 | 例如 selectedItem 重複於 items 中出現，容易造成不同步               |
+## state結構設計五大原則  
+| 原則                    | 說明                                                  |  
+| --------------------- | --------------------------------------------------- |  
+| 1️⃣ 群組相關的 state       | 若兩個變數總是一起改動，就該合併為一個物件（例如：x, y 改為 position）          |  
+| 2️⃣ 避免互相矛盾的 state     | 不要讓多個 state 可能彼此矛盾，例如：isSending 和 isSent 同時為 true   |  
+| 3️⃣ 避免多餘 state        | 若資料能從現有的 props 或 state 計算出來，就不用存進 state，例如 fullName |  
+| 4️⃣ 避免 state 重複儲存同樣資訊 | 例如 selectedItem 重複於 items 中出現，容易造成不同步               |  
 | 5️⃣ 避免巢狀太深的 state 結構  | 巢狀資料不易更新，儘量讓結構扁平化                                   |
 
 ## 範例
@@ -228,7 +228,7 @@ const selectedItem = items.find(item => item.id === selectedId);
 * 當 items 更新時，selectedItem 會正確反映最新內容
 * 程式更簡潔，避免不必要的狀態管理與記憶體浪費
 
-### 5. 避免巢狀太深的 state 結構
+### 5. 避免巢狀太深的 state 結構  
 巢狀太深的 state 結構（如：object 中包 object 再包 array）會造成更新某個子節點變得複雜，需一路複製父節點鏈，以及程式碼冗長、容易出錯，難以追蹤資料流動與關係等問題。
 * 常見錯誤結構:
 ```jsx
@@ -262,7 +262,7 @@ const selectedItem = items.find(item => item.id === selectedId);
 
 扁平化後，只需更新兩層資料：
 * parent.childIds 移除該 id
-* 更新 state 中該 parent 的資料
+* 更新 state 中該 parent 的資料  
 範例:
 ```jsx
 function handleComplete(parentId, childId) {
@@ -280,31 +280,31 @@ function handleComplete(parentId, childId) {
 
 * 概念說明
 
-| 概念         | 說明                                                  |
-| ---------- | --------------------------------------------------- |
-| 扁平化 (flat) | 讓每個資料用 id 鍵對應，彼此以 id 參照，不再層層嵌套                      |
-| Normalized | 模仿資料庫 table 概念，每筆資料為獨立單元，關聯由 id 建立                  |
+| 概念         | 說明                                                  |  
+| ---------- | --------------------------------------------------- |  
+| 扁平化 (flat) | 讓每個資料用 id 鍵對應，彼此以 id 參照，不再層層嵌套                      |  
+| Normalized | 模仿資料庫 table 概念，每筆資料為獨立單元，關聯由 id 建立                  |  
 | 類似工具       | Redux Toolkit 中的 `createEntityAdapter` 即用此方法自動化扁平管理 |
 
 
-## Recap
-1. 合併總是一起更新的狀態:
+## Recap  
+1. 合併總是一起更新的狀態:  
 如果兩個 state 總是一起變動，應該合併為一個，以避免錯誤或同步問題。
 
-1. 避免創造「不可能的狀態」:
+1. 避免創造「不可能的狀態」:  
 設計 state 時要避免出現邏輯上無法成立的組合（例如：loading=true 但 data=null 的情況）。
 
-1. 結構設計應降低錯誤機率
+1. 結構設計應降低錯誤機率  
 用清晰、單一責任的方式設計 state 結構，減少更新時的錯誤發生。
 
-1. 避免冗餘與重複資料
+1. 避免冗餘與重複資料  
 若資料可以從 props 或其他 state 計算出來，就不需要另外存一份。
 
-1. 除非特別需求，不要把 props 放進 state
+1. 除非特別需求，不要把 props 放進 state  
 props 會隨父元件變動，不應放入 state，除非想忽略它後續更新。
 
-1. UI 狀態（如選擇項目）建議只存 ID 或 index
+1. UI 狀態（如選擇項目）建議只存 ID 或 index  
 儲存資料的識別碼即可，避免物件不一致或更新不易。
 
-1. 扁平化巢狀狀態，方便更新
+1. 扁平化巢狀狀態，方便更新  
 將巢狀資料轉為扁平結構，提升更新效能與可讀性。

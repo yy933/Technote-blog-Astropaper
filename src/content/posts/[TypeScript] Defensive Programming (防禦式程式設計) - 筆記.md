@@ -9,7 +9,7 @@ hackmd_id: "r1brKlQMgl"
 
 ## Table of contents
 
-## Defensive Programming 是什麼？
+## Defensive Programming 是什麼？  
 相信大家都聽過防禦式駕駛，其實寫程式也有防禦式程式設計！
 
 簡單來說，Defensive Programming　就是 **「預先假設會出錯，並在程式中做好防範措施」** 的寫法。它的重點在先想最壞的情況，並讓程式依然能正常工作或適當回應。
@@ -18,7 +18,7 @@ hackmd_id: "r1brKlQMgl"
 
 搭配 TypeScript 的靜態型別檢查，可以大幅提升開發時期就發現錯誤的機率，再加上防禦式邏輯處理，讓我們在執行階段也有後盾。
 
-## 基本範例
+## 基本範例  
 JavaScript
 ```javascript
 function getFirstItem(arr) {
@@ -35,7 +35,7 @@ function getFirstItem(arr) {
 }
 ```
 
-## TypeScript 靜態型別檢查
+## TypeScript 靜態型別檢查  
 TypeScript 在「開發階段」就會提醒我們哪些變數可能是 undefined、哪些函式參數型別不符，這樣可以更早防止error。
 
 範例：
@@ -47,7 +47,7 @@ getFirstItem(undefined); // ❌ 編譯時就報錯，根本不能執行
 ```
 
 ## 防禦式程式設計 5 大實作原則
-### 1. Input Validation（輸入驗證）
+### 1. Input Validation（輸入驗證）  
 確保輸入資料是合理的，避免處理錯誤或惡意資料。
 ```typescript
 function greet(name: string): string {
@@ -63,7 +63,7 @@ function greet(name: string): string {
 
 </blockquote>
 
-### 2. Error Handling（錯誤處理）
+### 2. Error Handling（錯誤處理）  
 遇到例外情況時，適當處理錯誤並提供有意義的訊息或備案。
 ```typescript
 function divide(a: number, b: number): number {
@@ -86,7 +86,7 @@ function getResult(a: number, b: number): number | null {
 ```
 好的錯誤處理能避免整個 app 崩潰，並協助 debug。
 
-### 3. Boundary Checks（邊界檢查）
+### 3. Boundary Checks（邊界檢查）  
 檢查 array、字串等索引值是否在合理範圍內，避免越界錯誤。
 ```typescript
 function getArrayElement<T>(arr: T[], index: number): T | null {
@@ -99,7 +99,7 @@ function getArrayElement<T>(arr: T[], index: number): T | null {
 ```
 特別適合處理 API 資料或動態 index 的情境。
 
-### 4. Invariants & Assertions
+### 4. Invariants & Assertions  
 用 assert 強化某些邏輯應該「永遠成立」的假設，違反時即刻報錯。
 
 ```typescript
@@ -112,7 +112,7 @@ function squareRoot(x: number): number {
 ```
 用來防止邏輯錯誤，常見於數值運算、資料狀態切換等場合。
 
-### 5. Fail-safe Defaults（安全預設值）
+### 5. Fail-safe Defaults（安全預設值）  
 當輸入不完整、資料缺失時，提供合理預設值，避免應用中斷。
 
 ```typescript
@@ -129,11 +129,11 @@ const user = createUser('Benny'); // age 預設為 0
 ```
 通常搭配 optional parameters 或 fallback 機制一起使用。
 
-## TypeScript 在 Defensive Programming 中的角色
-| 功能         | 類型檢查（TypeScript） | 運行期防錯（Defensive Coding）             |
-| ---------- | ---------------- | ----------------------------------- |
-| 發現潛在錯誤     | 編譯階段             | 執行階段                                |
-| 檢查資料結構是否正確 |  例如型別 interface |  搭配 `typeof`、`Array.isArray` 等手動檢查 |
+## TypeScript 在 Defensive Programming 中的角色  
+| 功能         | 類型檢查（TypeScript） | 運行期防錯（Defensive Coding）             |  
+| ---------- | ---------------- | ----------------------------------- |  
+| 發現潛在錯誤     | 編譯階段             | 執行階段                                |  
+| 檢查資料結構是否正確 |  例如型別 interface |  搭配 `typeof`、`Array.isArray` 等手動檢查 |  
 | 保證函式回傳安全結果 |  回傳型別定義         |  加入錯誤處理與預設值邏輯                      |
 
 ## Recap：設計心法

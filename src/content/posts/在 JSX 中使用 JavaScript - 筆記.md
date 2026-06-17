@@ -13,8 +13,8 @@ JSX 讓我們可以在 JavaScript 中寫 HTML 樣式的標記語法，並透過 
 
 ## 如何在 JSX 中撰寫表達式。
 
-### 傳遞字串：用引號`" "` 包起來
-`<img src="url" alt="文字說明" />`
+### 傳遞字串：用引號`" "` 包起來  
+`<img src="url" alt="文字說明" />`  
 使用引號：會被當成「字串」
 
 ### 傳遞變數，要用 `{}` 包起來：
@@ -57,8 +57,8 @@ const person = { name: 'Gregorio' };
 <h1>{person.name}'s List</h1>
 ```
 
-## 如何在 JSX 使用 `{}`
-只能在 兩個地方 使用 {}：
+## 如何在 JSX 使用 `{}`  
+只能在 兩個地方 使用 {}：  
 1. 標籤中的文字內容：
 ```jsx
 <h1>{name}'s To Do List</h1> // OK!
@@ -70,8 +70,8 @@ src={avatar}       // OK，插入變數
 src="{avatar}"     // ❌ 變成字串 "{avatar}" 而不是變數
 ```
 
-## 如何在 JSX 中傳入物件 / 使用 inline CSS styles。
-使用物件：雙層大括號` {{ }}`
+## 如何在 JSX 中傳入物件 / 使用 inline CSS styles。  
+使用物件：雙層大括號` {{ }}`  
 因為 JSX 中的 {} 是 JS 表達式，若要插入 JS 物件，就會是：
 ```jsx
 <div style={{ backgroundColor: 'black', color: 'pink' }}></div>
@@ -112,10 +112,10 @@ export default function TodoList() {
 * style 屬性要用 camelCase，例如 backgroundColor
 * 不能這樣寫：`src="{avatar}"`（這樣是傳字串，而不是變數）
 
-## Recap
-| 類型                     | 正確範例                                       | 錯誤範例                     |
-|--------------------------|------------------------------------------------|------------------------------|
-| 插入變數到內容           | `<h1>{name}'s List</h1>`                       | `<h1>"{name}"</h1>`          |
-| 插入變數到屬性值         | `src={avatar}`                                | `src="{avatar}"`             |
-| 插入 JS 物件（如 style） | `style={{ color: 'red' }}`                    | `style="{ color: 'red' }"`   |
+## Recap  
+| 類型                     | 正確範例                                       | 錯誤範例                     |  
+|--------------------------|------------------------------------------------|------------------------------|  
+| 插入變數到內容           | `<h1>{name}'s List</h1>`                       | `<h1>"{name}"</h1>`          |  
+| 插入變數到屬性值         | `src={avatar}`                                | `src="{avatar}"`             |  
+| 插入 JS 物件（如 style） | `style={{ color: 'red' }}`                    | `style="{ color: 'red' }"`   |  
 | 標籤名稱                 | ✘ 不可寫成 `<{tag}>`                          | —                            |

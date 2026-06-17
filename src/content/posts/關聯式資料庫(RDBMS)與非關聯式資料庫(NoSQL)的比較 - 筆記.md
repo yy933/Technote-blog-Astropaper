@@ -11,7 +11,7 @@ hackmd_id: "BJvQBPUf2"
 
 ## :memo: 關聯式資料庫(RDBMS, Relational Database Management System)
 
-### RDBMS是什麼
+### RDBMS是什麼  
 資料以資料表(table)的形式存在資料庫中，資料表之間有事先定義的關係，資料表中的一欄(column)代表某項屬性、一列(row)代表一個實體相關屬性的數值，每個資料表都具有主鍵(primary key)方便查詢，並且資料表間的關係可以透過外鍵(foreign key)建立。
 ### RDBMS的優點
 * 資料完整性(Data Integrity)：RDBMS具有ACID的特性，ACID代表（參考[AWS關於RDBMS的介紹](https://aws.amazon.com/tw/relational-database/)）：
@@ -35,7 +35,7 @@ hackmd_id: "BJvQBPUf2"
 ## :memo: 非關聯式資料庫(NoSQL, Not only SQL)
 
 
-### NoSQL是什麼
+### NoSQL是什麼  
 不同於SQL系統，NoSQL中的資料儲存不需要定義schema、也沒有固定架構，不保證ACID的特性，常用於分散式雲端系統。
 ### NoSQL的優點
 * 橫向擴展能力佳 (Scalability):不必增加伺服器來擴大規模，可以透過分散式架構提供服務，以橫向擴展(Horizontal Scaling)的方式增加效能。
@@ -47,12 +47,12 @@ hackmd_id: "BJvQBPUf2"
 * 語言標準化:不像關聯式資料庫大多可以使用SQL語言操作，NoSQL不同的資料庫有各自獨特的語言來管理資料。
 * 查詢複雜性：NoSQL針對單一表格的查詢效果佳，但當資料複雜度增加，使用RDBMS的效果會更好。
 
-### 常見的NoSQL類型
+### 常見的NoSQL類型  
 1. **Key-Value** 
   * 以key-value pair的形式儲存資料，key和value可以是任何形式(數字、字串、物件...)
   * key必須是獨一無二的，也就是說這種類型的資料庫最適合存放有獨一無二的key的資料，例如ID。 
   * 每筆資料各自獨立
-  * [Amazon DynamoDB](https://aws.amazon.com/tw/dynamodb/)和[Redis](https://redis.com/)都是這類型的資料庫
+  * [Amazon DynamoDB](https://aws.amazon.com/tw/dynamodb/)和[Redis](https://redis.com/)都是這類型的資料庫  
 2. **文件資料庫 (Document)**
   * 文件資料庫的資料，將資料儲存在分層結構(hierarchical structures)的文件中
   * 適合儲存非結構化資料，如HTML
@@ -84,47 +84,47 @@ hackmd_id: "BJvQBPUf2"
     }
 ]
 ```
-* [MongoDB](https://www.mongodb.com/?utm_campaign=academia_partners&utm_source=codecademy&utm_medium=referral)是一種受歡迎的文件資料庫
+* [MongoDB](https://www.mongodb.com/?utm_campaign=academia_partners&utm_source=codecademy&utm_medium=referral)是一種受歡迎的文件資料庫  
 4. **圖形資料庫 (Graph)**
 * 顧名思義，運用圖形結構儲存資料，在圖形結構中，資料存在節點(node/verticle)中，並且透過邊(edge)或線(line/links)進行連結、建立關係。
 * 相較於關聯式資料庫，圖形資料庫的好處是建立、管理、查詢上都相對簡便
-* [Neo4j](https://neo4j.com/)是一種熱門的圖形資料庫
+* [Neo4j](https://neo4j.com/)是一種熱門的圖形資料庫  
 5. **單欄式資料庫 (Column Oriented)**
 * 儲存資料的方式和關聯式資料庫類似，但是在單欄式資料庫中，資料是以欄(column)的方式儲存，如下表：
 
   **Row-Oriented(關聯式資料庫)**
 
-| ID | Product | Amount | Price |
-|----|---------|--------|-------|
-| 1  | Coffee  | 20     | 50    |
-| 2  | Coke    | 3      | 20    |
+| ID | Product | Amount | Price |  
+|----|---------|--------|-------|  
+| 1  | Coffee  | 20     | 50    |  
+| 2  | Coke    | 3      | 20    |  
 | 3  | Milk    | 11     | 35    |
 
   **Column-Oriented(單欄式資料庫)**
 
-| ID | Product |
-|----|---------|
-| 1  | Coffee  |
-| 2  | Coke    |
+| ID | Product |  
+|----|---------|  
+| 1  | Coffee  |  
+| 2  | Coke    |  
 | 3  | Milk    |
 
-| ID | Amount |
-|----|--------|
-| 1  | 20     |
-| 2  | 3      |
+| ID | Amount |  
+|----|--------|  
+| 1  | 20     |  
+| 2  | 3      |  
 | 3  | 11     |
 
-| ID | Price |
-|----|-------|
-| 1  | 50    |
-| 2  | 20    |
+| ID | Price |  
+|----|-------|  
+| 1  | 50    |  
+| 2  | 20    |  
 | 3  | 35    |
 
 * 例如上表中我們要取得產品價格的資料，在關聯式資料庫中必須將資料從各列拉出來，而在單欄式資料庫中，只需要加總價格資料表即可。單欄式資料庫的好處是可以快速擷取資料，可以減少需要載入的資料量，進行橫向擴展(Horizontal Scaling)提高傳輸量。
 * [Amazon Redshift](https://aws.amazon.com/tw/redshift/)是一種熱門的單欄式資料庫。
 
 
-## 小結
+## 小結  
 RDBMS與NoSQL並沒有絕對的好壞，端看使用的時機與需求
 
 

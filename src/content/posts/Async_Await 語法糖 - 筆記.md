@@ -8,12 +8,12 @@ description: "Table of contents Prerequisite ✨ Async/await 的底層仍然是 
 
 ## Table of contents
 
-## Prerequisite
+## Prerequisite  
 ✨ `Async/await` 的底層仍然是 `Promise`，針對 promise-based 函式再次進行語法包裝，讓程式碼讀起來更接近同步處理。因此需要先了解 `Promise`:
 * 關於`Promise`，參考[這篇筆記](https://hackmd.io/l_Tx5Tg7SqaPw4o6vHIzKA)。
 * 關於`Promise.all`，參考[這篇筆記](https://hackmd.io/9l_LMhZcQC66OtC3S8HYtg)。
 
-## Async/Await 語法
+## Async/Await 語法  
 ![ExportedContentImage_00 (5)](/images/rkZ5U6nygx.png)
 
 ## 使用原則
@@ -24,7 +24,7 @@ description: "Table of contents Prerequisite ✨ Async/await 的底層仍然是 
   - 設定好 async function 之後，在要運用非同步處理的地方加上 await 關鍵字
 * `async/await` 和 `then` 不可以混搭使用
 
-### 範例一:await 等待多個 Promise
+### 範例一:await 等待多個 Promise  
 ![ExportedContentImage_01 (6)](/images/SkZiD6h1xl.png)
 
 <blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
@@ -69,10 +69,10 @@ async function asyncChain() {
 asyncChain();
 ```
 
-## 錯誤處理: try/catch
+## 錯誤處理: try/catch  
 原本 Promise 寫法，會在 then 串鏈的最後加 catch，去對應 reject 情境。
 
-而 await/async 改寫後不會有 then 串鏈，因此也不會用到 Promise 語法中的 catch，需要進行錯誤處理時，會採用 [try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) ，在更外層包一層 try {}，這是同步處理中延續已久的作法。
+而 await/async 改寫後不會有 then 串鏈，因此也不會用到 Promise 語法中的 catch，需要進行錯誤處理時，會採用 [try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) ，在更外層包一層 try {}，這是同步處理中延續已久的作法。  
 ![ExportedContentImage_02 (5)](/images/Bk-FuphJeg.png)
 
 ### 範例

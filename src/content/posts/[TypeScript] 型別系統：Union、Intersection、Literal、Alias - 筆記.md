@@ -9,7 +9,7 @@ hackmd_id: "SJCzMcrfxg"
 
 ## Table of contents
 
-## 1. Union Type（聯集型別）
+## 1. Union Type（聯集型別）  
 讓一個變數同時接受多種型別，只要符合其中之一即可。
 ### 基本語法：
 ```ts
@@ -20,7 +20,7 @@ value = 123;     // ✅
 value = true;    // ❌ 錯！boolean 不是 string 或 number
 ```
 
-### 使用場景範例
+### 使用場景範例  
 1. 表單輸入值可能是字串或數字：
 ```ts
 function handleInput(input: string | number) {
@@ -53,7 +53,7 @@ move("top");   // ❌ 錯！不是指定的字面值
 * number | null：可能是數字，也可能是空值
 * boolean | "yes" | "no"：可以是布林值，也可以是 "yes"/"no" 字串
 
-## 2. Intersection Type（交集型別）
+## 2. Intersection Type（交集型別）  
 合併多個型別，同時滿足所有條件。
 ```ts
 type A = { name: string };
@@ -67,7 +67,7 @@ const p: Person = {
 ```
 --> 用途：組合多個介面，例如物件擴充。
 
-## 3. Literal Type（字面值型別）
+## 3. Literal Type（字面值型別）  
 指定值只能是某個特定字串或數字。
 
 ```ts
@@ -79,7 +79,7 @@ move = "jump";    // ❌
 ```
 --> 用途：限制選項、模擬 enum。
 
-## 4. Type Alias（型別別名）
+## 4. Type Alias（型別別名）  
 為一個型別取個名字，讓重複使用更方便。
 
 ```ts

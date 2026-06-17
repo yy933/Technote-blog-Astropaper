@@ -14,8 +14,8 @@ hackmd_id: "S1MEpA2kex"
 * 元件（Component）：把 HTML、CSS 和 JavaScript 合在一起，做成「可以重複使用」的 UI 元素。
 * 例如：可以把目錄區塊做成 `<TableOfContents /> `元件，每一頁都用。
 
-## 組合元件（Component Composition）
-元件可以像積木一樣「組合」、「排序」、「巢狀」成整個頁面。
+## 組合元件（Component Composition）  
+元件可以像積木一樣「組合」、「排序」、「巢狀」成整個頁面。  
 範例：
 ```jsx
 <PageLayout>
@@ -51,7 +51,7 @@ hackmd_id: "S1MEpA2kex"
 
 JSX 語法：在 JavaScript 裡寫類似 HTML 的語法。
 
-* 簡單寫法（單行）：
+* 簡單寫法（單行）：  
 `return <img src="..." alt="..." />;`
 
 * 多行寫法 **（要加括號）**：
@@ -125,7 +125,7 @@ export default function Gallery() { ... }
 </blockquote>
 
 ## Recap
-### 核心觀念
+### 核心觀念  
 1. 元件 = 函式 + JSX
 * 一個元件就是一個 JavaScript 函式，回傳一段 JSX 標記。
 

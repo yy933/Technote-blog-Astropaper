@@ -7,7 +7,7 @@ description: "Q1. <script 在HTML中的位置放在<body最底部，請問：在
 hackmd_id: "rJXHQJ4f3"
 ---
 
-## Q1.` <script>` 在HTML中的位置放在`<body>`最底部，請問：在瀏覽器渲染流程中，會在什麼時機點載入JavaScript 程式碼？為什麼需要這樣做？
+## Q1.` <script>` 在HTML中的位置放在`<body>`最底部，請問：在瀏覽器渲染流程中，會在什麼時機點載入JavaScript 程式碼？為什麼需要這樣做？  
 A1. 瀏覽器解析HTML的順序是由上而下，當遇到一個`<script>` 需載入外部的JavaScript檔案時，此時瀏覽器會暫停解析下方的HTML內容，直到JS檔案解析完成，這種情況會導致頁面停滯，造成不好的使用者體驗。因此，將`<script>` 放在`</body>`之前可以讓所有靜態HTML內容解析完畢後，再載入JS檔案，避免頁面阻塞，帶來良好的使用者體驗。
 
 ## Q2. 若要在 DOM 生成的同時，一併載入 JavaScript，針對`<script>`還有什麼處理方式？
@@ -34,7 +34,7 @@ note: 目前[98.09%的瀏覽器](https://caniuse.com/script-async)都支援async
 <script src="script2.js" defer></script>
 ```
 
-defer屬性同樣會告訴瀏覽器解析HTML內容，不用等腳本載入。
+defer屬性同樣會告訴瀏覽器解析HTML內容，不用等腳本載入。  
 與async不同處：
 * 帶有defer屬性的腳本，會等待HTML內容解析完成才會執行。
 * 若有其他也帶有defer屬性的腳本，則會依序執行，上述的例子中，會先執行script1再執行script2，因此若有相依的腳本，則可以使用defer。

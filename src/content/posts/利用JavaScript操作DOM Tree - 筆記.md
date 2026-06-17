@@ -12,7 +12,7 @@ hackmd_id: "S1O0CfjK1g"
 ## :memo: 選取節點
 
 
-### querySelector & querySelectorAll
+### querySelector & querySelectorAll  
 1. querySelector：只回傳第一個匹配的元素
 
 ```javascript
@@ -44,7 +44,7 @@ let allParagraphs = document.querySelectorAll("p");
 * 遍歷內容 forEach
 * 使用 index 來存取特定項目
 
-### 早期語法：getElementBy* 家族
+### 早期語法：getElementBy* 家族  
 目前比較常使用的是`document.getElementById`：
 ```
 document.getElementById('my-recipe')
@@ -103,8 +103,8 @@ NODE.innerText = "textContent"
 // 上面的範例，在newDiv插入內容
 newDiv.textContent = "這是一個新的區塊";
 ```
-### 將節點插入 DOM Tree：appendChild、insertBefore、replaceChild
-![pasted_image_0__11_](/images/Sycs-IjF1x.png)
+### 將節點插入 DOM Tree：appendChild、insertBefore、replaceChild  
+![pasted_image_0__11_](/images/Sycs-IjF1x.png)  
 例如以下HTML：
 ```html
 <div class="container">
@@ -123,9 +123,9 @@ container.appendChild(h1)
 
 <blockquote class="my-6 p-4 bg-orange-50 dark:bg-orange-950/30 border-l-4 border-orange-500 rounded-r-md text-orange-900 dark:text-orange-200 blocknoted-fix">
 
-📌 Modern Style：
-現代的 JavaScript 有推出一套新的語法，試圖簡化選取節點的流程，如以下所示：
-![image_1](/images/BJbKfLsKJg.png)
+📌 Modern Style：  
+現代的 JavaScript 有推出一套新的語法，試圖簡化選取節點的流程，如以下所示：  
+![image_1](/images/BJbKfLsKJg.png)  
 這套語法的撰寫風格比較簡潔，而且同時可以插入節點或文字。可惜**在 IE 瀏覽器上尚未支援，目前仍不普及。**
 
 </blockquote>
@@ -152,9 +152,9 @@ img.setAttribute("alt", "新的描述");
 #### Style 
 * `NODE.style.backgroundColor`
 * `NODE.style.borderStyle`
-* ....
+* ....  
 JS也可以修改DOM節點的style，但為了避免code太亂，還是先寫好CSS再透過`classList`操作是比較好的方式。
-## 小結
+## 小結  
 JavaScript 可以操作 DOM：
 * `document.querySelector()` 選取元素
 * `.textContent` 修改內容

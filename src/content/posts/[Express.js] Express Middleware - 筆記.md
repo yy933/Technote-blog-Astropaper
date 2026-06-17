@@ -8,7 +8,7 @@ hackmd_id: "ByaP1dSbMg"
 
 ## Table of contents
 
-## :memo: 什麼是 Middleware？
+## :memo: 什麼是 Middleware？  
 Middleware（中介軟體） 是 Express 的核心靈魂。
 
 簡單來說，它就像是從「請求發出（Request）」到「回應回傳（Response）」之間的一道道關卡或加工站。當一個請求進來時，它會像流水線上的產品一樣，依序經過你設定的各個中介軟體。
@@ -20,14 +20,14 @@ Middleware（中介軟體） 是 Express 的核心靈魂。
 * 攔截並終結這個請求（如：權限不足直接回傳錯誤，不讓它過關）。
 * 呼叫 `next()`，把請求傳遞給下一個加工站。
 
-## :memo: Middleware 的三大要素
+## :memo: Middleware 的三大要素  
 一個標準的 Express 中介軟體函式會接收三個參數：
 
-1. `req` (Request)：請求物件，包含了前端傳來的資料（Headers, Query, Body 等）。
-1. `res` (Response)：回應物件，用來回傳資料給前端。
+1. `req` (Request)：請求物件，包含了前端傳來的資料（Headers, Query, Body 等）。  
+1. `res` (Response)：回應物件，用來回傳資料給前端。  
 1. `nex`t：這是一個回呼函式（Callback function），也是中介軟體的靈魂。**如果不呼叫 `next()`，請求就會像卡在傳送帶上一樣，前端會一直處於「轉圈圈」等不到回應的狀態。**
 
-## :memo: 實際範例
+## :memo: 實際範例  
 以下面這段簡單的 Express 程式碼為例：
 
 ```javascript
@@ -46,7 +46,7 @@ app.get('/', (req, res) => {
 app.listen(8000, () => console.log('listening 8000'))
 ```
 
-### 幕後運作流程
+### 幕後運作流程  
 當使用者在瀏覽器輸入網址並發送請求時，Express 會由上而下依序檢查經過的傳送帶：
 
 1. 第一站：`express.static('public')`
@@ -54,13 +54,13 @@ app.listen(8000, () => console.log('listening 8000'))
     - 情境 A（找到了）：如果網址是 `/logo.png` 且資料夾內確實有這張圖，它會直接回傳圖片（終結週期），請求到此結束，不會再往下走。
    - 情境 B（沒找到）：如果網址是 `/`，它在 `public` 找不到對應檔案，就會在底層默默呼叫 `next()`，把請求放行到下一站。
 
-1. 第二站：`app.get('/', ...)`
+1. 第二站：`app.get('/', ...)`  
 請求來到這裡，Express 比對路徑符合 `/`，於是執行裡面的邏輯，呼叫 `res.send()` 回傳 HTML 碼（終結週期）。
 
-## :memo: 什麼時候使用 Middleware？（常見場景）
+## :memo: 什麼時候使用 Middleware？（常見場景）  
 中介軟體依據來源主要分為三種：內建（Built-in）、第三方（Third-party） 以及 自定義（Custom）。
 
-### 1. 解析前端資料（內建）
+### 1. 解析前端資料（內建）  
 當前端發送 JSON 資料過來時，Node.js 預設只看得懂字串。我們需要加工站幫忙解析：
 
 ```javascript
@@ -68,7 +68,7 @@ app.listen(8000, () => console.log('listening 8000'))
 app.use(express.json()) 
 ```
 
-### 2. 處理跨域問題與安全性（第三方）
+### 2. 處理跨域問題與安全性（第三方）  
 像是我們常用的 cors 套件，本質上就是一個第三方中介軟體，它會在請求進來時，自動在 Header 補上允許跨域的標籤：
 
 
@@ -77,7 +77,7 @@ import cors from 'cors'
 app.use(cors()) // 幫所有請求自動加工 Header
 ```
 
-### 3. 權限驗證與保全（自定義）
+### 3. 權限驗證與保全（自定義）  
 假設網站有些秘密頁面（如後台 /dashboard）必須登入才能看，可以自己寫一個「保全中介軟體」：
 
 

@@ -79,8 +79,8 @@ console.log("這行會在請求完成前就執行！");
 * 需要 回調函式（callback）、`Promise` 或 `async/await` 來處理非同步邏輯，比同步請求稍微複雜。
 * 如果沒有處理好 錯誤處理（如 `.catch()` 或 `try...catch`），可能會導致程式無法正確執行。
 
-# 實現非同步請求 (Asynchronous Request)
-Ajax 技術的出現，讓瀏覽器可以向 Server 請求資料而不需費時等待。當瀏覽器接收到 response 之後，新的內容就會即時地添入原本網頁。
+# 實現非同步請求 (Asynchronous Request)  
+Ajax 技術的出現，讓瀏覽器可以向 Server 請求資料而不需費時等待。當瀏覽器接收到 response 之後，新的內容就會即時地添入原本網頁。  
 早期的Ajax:
 ```
 function reqListener () {
@@ -122,8 +122,8 @@ axios.get('www.example.com/api/')
   })
 ```
 
-1. 第一個 `then()` 函式負責處理成功接收到的 response。其中 `response` 參數就是接收到的回應，而你所需的資訊則放置在 `response.data` 裡面。
-1. `catch()` 函式負責處理發生錯誤的狀況，也就是 error。
+1. 第一個 `then()` 函式負責處理成功接收到的 response。其中 `response` 參數就是接收到的回應，而你所需的資訊則放置在 `response.data` 裡面。  
+1. `catch()` 函式負責處理發生錯誤的狀況，也就是 error。  
 1. 第二個 `then()` 則是一個選擇性的元件，無論 request 成功與否，它都將被執行。
 
 ### 2. 使用 `async/await`

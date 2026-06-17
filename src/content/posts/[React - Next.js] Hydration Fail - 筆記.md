@@ -9,8 +9,8 @@ hackmd_id: "rJsfgzVXeg"
 
 ## Table of contents
 
-## 問題
-利用Next.js做Memory Game專案時，有翻牌配對的環節，相關的程式碼如下：
+## 問題  
+利用Next.js做Memory Game專案時，有翻牌配對的環節，相關的程式碼如下：  
 `// MemoryCardList.tsx`
 ```ts
 "use client";
@@ -141,10 +141,10 @@ It can also happen if the client has a browser extension installed which messes 
 ### Memory Game的流程
 
 
-* Next.js server render 時：
+* Next.js server render 時：  
 `selectedCards` 是空的 → `MemoryCardItem` 可能渲染 `?`。
 
-* React client 接管後：
+* React client 接管後：  
 點了一張卡，`selectedCards` 更新 → `MemoryCardItem` 突然變成 emoji。
 
 * 這時 React hydration 發現：
@@ -154,13 +154,13 @@ It can also happen if the client has a browser extension installed which messes 
 
 👉 所以 Next.js 只要有 UI 會根據「client state」改變，server 端又事先 render 過 → 很容易 hydration failed。
 
-## 拆解問題
+## 拆解問題  
 在`EmojiButton.tsx`中這段：
 ```ts
 const btnContent = selectedCardEntry || matchedCardEntry ? content : "?";
 ```
-這個 `btnContent` 是根據「狀態」變化的 → 
-可是 Next.js 預設會先做 SSR，server render 的時候 `selectedCardEntry / matchedCardEntry` 可能是空的，結果畫面是 `?` → 
+這個 `btnContent` 是根據「狀態」變化的 →   
+可是 Next.js 預設會先做 SSR，server render 的時候 `selectedCardEntry / matchedCardEntry` 可能是空的，結果畫面是 `?` →   
 但 client render 的時候狀態更新了，畫面變成 emoji → 不一致 → hydration failed 。
 
 ## 常見解法
@@ -190,7 +190,7 @@ export default function MemoryCardItem(...) {
 ```
 這樣一來，第一次 server render 的時候不會 render 卡片，等 client mount 完再開始出現卡片（保證 hydration 不會 fail）。
 
-### 2. 更好的方式 → 整個 MemoryCardList 直接 use client + 在 MemoryCardItem 裡用 isMounted 技巧。
+### 2. 更好的方式 → 整個 MemoryCardList 直接 use client + 在 MemoryCardItem 裡用 isMounted 技巧。  
 目前 MemoryCardList 是：
 ```tsx
 export default function MemoryCard({ handleClickAction, data }: MemoryCardListProps) {
@@ -203,10 +203,10 @@ export default function MemoryCard({ handleClickAction, data }: MemoryCardListPr
 ```
 MemoryCardItem 本來就 use client → 可以在裡面加 isMounted 更保險。
 
-### 3. EmojiButton 部分 
+### 3. EmojiButton 部分   
 不要動態改 `btnContent`，用「front/back 兩層 div 翻轉」，這樣 class 不會改變 dom structure，可以避免 hydration fail。
 
-👉 為什麼？ 
+👉 為什麼？   
 直接改 innerText 內容 React 會因為 server/client mismatch 出錯；用 CSS flip，html 結構固定，只是 transform，React hydration 不會 fail。
 
 例如把MemoryCardItem改成以下結構，CSS控制翻牌動畫：
