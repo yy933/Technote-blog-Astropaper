@@ -1,6 +1,6 @@
 ---
-title: "useState的Cleanup function - 筆記"
-pubDatetime: 2026-06-29T04:44:01.781Z
+title: "[React.js] useEffect的Cleanup function - 筆記"
+pubDatetime: 2026-06-29T04:49:59.059Z
 tags: ["JavaScript","React.js","Frontend","React Hook"]
 description: "Table of contents 什麼是 Cleanup Function（清除函式）？ 在 React 的 use..."
 hackmd_id: "B1gqfukXMx"
