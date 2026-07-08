@@ -1,16 +1,11 @@
 ---
 title: "[Testing] TDD (Test-Driven Development) 測試驅動開發 - 筆記"
-pubDatetime: 2026-07-07T08:02:16.437Z
+pubDatetime: 2026-07-08T11:12:32.835Z
 tags: ["Testing","TDD","Development-Methodology","Best-Practices"]
-description: "<blockquote class=\"my6 p4 bggreen50 dark:bggreen950/30 borde..."
+description: "Table of contents 核心觀念 TDD 是一種「開發流程與節奏」。傳統開發是先寫程式碼再補測試，而 TD..."
 hackmd_id: "HyWYJV9mMe"
 ---
 
-<blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
-
-:bulb: 本站筆記已同步更新到我的[個人網站](https://simplydevs.netlify.app/)囉! 歡迎參觀與閱讀，體驗不同的視覺感受!
-
-</blockquote>
 ## Table of contents
 
 
