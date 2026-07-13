@@ -1,7 +1,8 @@
 ---
 title: "[React.js - Concept] React re-rendering究竟發生什麼事？從 State 改變到畫面渲染的四大階段 - 筆記"
 pubDatetime: 2026-07-13T03:49:40.362Z
-tags: ["React.js","Reconciliation","Diffing Algorithm","Virtual DOM","Advanced React","Frontend","Concepts","React18"]
+modDatetime: 2026-07-13T07:51:22.928Z
+tags: ["React.js","Reconciliation","Diffing Algorithm","Virtual DOM","Advanced React","Frontend","Concepts","React18","Performance"]
 description: "Table of contents React 渲染流水線 在 React 的世界裡，畫面的更新並不是「一有變化就立刻..."
 hackmd_id: "r1irnR-4Gg"
 ---

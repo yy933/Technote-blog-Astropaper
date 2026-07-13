@@ -1,7 +1,8 @@
 ---
 title: "[React.js - Concept] React Strict Mode - 筆記"
 pubDatetime: 2026-07-13T07:49:14.723Z
-tags: ["React.js","Strict Mode","Pure Function","Side Effects","useEffect","Advanced React","Frontend","Concepts"]
+modDatetime: 2026-07-13T07:51:32.919Z
+tags: ["React.js","Strict Mode","Pure Function","Side Effects","useEffect","Advanced React","Frontend","Concepts","Performance"]
 description: "Table of contents React Strict Mode 核心觀念 React Strict Mode（..."
 hackmd_id: "HkTrSGMEGx"
 ---
