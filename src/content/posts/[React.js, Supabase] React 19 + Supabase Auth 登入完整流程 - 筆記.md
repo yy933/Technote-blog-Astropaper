@@ -106,16 +106,32 @@ Supabase SDK 具備事件驅動（Event-driven）特性，不需要在登入成�
 ```javascript
 // context/AuthContextProvider.jsx
 useEffect(() => {
-  // 註冊全域認證狀態監聽器
+  let isMounted = true;
+
+  // 1. 網頁開啟/重新整理時，檢查初始 Session
+  async function getInitialSession() {
+    try {
+      const { data, error } = await supabase.auth.getSession();
+      if (error) throw error;
+      if (isMounted) setSession(data.session);
+    } catch (error) {
+      if (isMounted) setSession(null);
+    } finally {
+      if (isMounted) setLoading(false);
+    }
+  }
+  getInitialSession();
+
+  // 2. 註冊全域認證狀態監聽器 (登入/登出時自動觸發)
   const { data: { subscription } } = supabase.auth.onAuthStateChange(
     (_event, session) => {
-      // 只要發生 SIGNED_IN 或 SIGNED_OUT，此處都會自動觸發
       setSession(session);
       setLoading(false);
     }
   );
 
   return () => {
+    isMounted = false;
     // 元件卸載時取消訂閱，防止記憶體洩漏
     subscription?.unsubscribe();
   };
