@@ -81,6 +81,30 @@ description: "Table of contents 1. 為什麼需要 RLS？ 在前端雖然可以�
 
 >💡 組合技：這些輔助函式可以結合 SQL 查詢條件（如檢查寫入的資料內容是否符合規定），提供非常強大且靈活的防護網。
 
+
+### Supabase RLS設定範例
+
+以前面提到的`sales_deals` 資料表為例，開啟RLS（進入 Supabase Dashboard 點擊 Authentication ➔ Policies ➔ Enable RLS，並點擊 Create policy）：
+
+```sql
+-- 建立僅限已驗證使用者存取的 Policy
+CREATE policy "Authenticated users only"
+ON "public"."sales_deals"
+as PERMISSIVE
+FOR ALL  -- 這裡也可視需要修改成 for SELECT，使用者只能讀取無法修改資料表
+TO public
+using (
+  (auth.role() = 'authenticated')
+);
+```
+
+#### 細節解析：
+
+* `FOR ALL`：代表同時套用至 `SELECT`, `INSERT`, `UPDATE`, `DELETE` 操作（若僅用於 Dashboard 讀取，亦可改為 `FOR SELECT`）。
+* `TO public`：Supabase會對所有進來的請求進行檢查。也可改成`TO authenticated`直接指定此 Policy 僅套用至具備 JWT 已驗證角色的請求，直接在引擎層級過濾掉 `anon`（匿名）請求，效能更好。
+
+如此一來，只有通過驗證、攜帶 `authenticated` 角色 JWT 的使用者，才能對 `sales_deals` 資料表進行資料操作，徹底防止未登入者透過 URL 或 API 直接撈取資料！
+
 <blockquote class="my-6 p-4 bg-green-50 dark:bg-green-950/30 border-l-4 border-green-500 rounded-r-md text-green-900 dark:text-green-200 blocknoted-fix">
 
 :crescent_moon: 本站內容僅為個人學習記錄，如有錯誤歡迎留言告知、交流討論！
