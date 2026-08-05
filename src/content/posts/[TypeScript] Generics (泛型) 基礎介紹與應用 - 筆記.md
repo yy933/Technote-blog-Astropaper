@@ -1,7 +1,7 @@
 ---
 title: "[TypeScript] Generics (泛型) 基礎介紹與應用 - 筆記"
 pubDatetime: 2026-08-04T10:48:54.796Z
-tags: ["others"]
+tags: ["TypeScript","cheatsheet","Type system","Concepts"]
 description: "為什麼需要 Generics（泛型）？ 在開發工具函式（Utility Funct..."
 hackmd_id: "Bk2rgS18Gx"
 ---
