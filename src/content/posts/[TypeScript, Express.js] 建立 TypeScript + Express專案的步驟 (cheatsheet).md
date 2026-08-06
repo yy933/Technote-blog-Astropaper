@@ -27,7 +27,7 @@ npm init -y
 npm install express dotenv
 
 # 安裝 TypeScript、型別定義檔與開發監控工具
-npm install -D typescript @types/node @types/express ts-node nodemon @tsconfig/node20
+npm install -D typescript @types/node @types/express tsx @tsconfig/node20
 ```
 
 ## 3.產生並配置 `tsconfig.json`  
@@ -104,7 +104,7 @@ app.listen(port, () => {
 
 ```json
 "scripts": {
-  "dev": "nodemon --exec ts-node src/index.ts",
+  "dev": "tsx watch src/index.ts",
   "build": "tsc",
   "start": "node dist/index.js"
 }
