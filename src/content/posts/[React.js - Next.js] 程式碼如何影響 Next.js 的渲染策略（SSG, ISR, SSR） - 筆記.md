@@ -1,8 +1,9 @@
 ---
 title: "[React.js - Next.js] 程式碼如何影響 Next.js 的渲染策略（SSG, ISR, SSR） - 筆記"
-pubDatetime: 2026-08-12T04:49:27.625Z
+pubDatetime: 2026-08-12T04:59:29.262Z
 tags: ["React.js","Next.js","App Router","Rendering Strategies","Frontend","Concepts"]
 description: "Table of contents 核心概念：Code drives Rendering Strategy 在 Nex..."
+hackmd_id: "HyQb_OtIzg"
 ---
 
 ## Table of contents
@@ -33,7 +34,7 @@ description: "Table of contents 核心概念：Code drives Rendering Strategy �
    export const revalidate = 60; // 此頁面每 60 秒重新驗證快取一次
 
    export default async function NewArrivalsPage() {
-     const data = await fetch('[https://api.example.com/models](https://api.example.com/models)');
+     const data = await fetch('https://api.example.com/models');
      // ...
    }
 ```
@@ -43,7 +44,7 @@ description: "Table of contents 核心概念：Code drives Rendering Strategy �
 
 ```typescript
 export default async function NewArrivalsPage() {
-  const res = await fetch('[https://api.example.com/models](https://api.example.com/models)', {
+  const res = await fetch('https://api.example.com/models', {
     next: { revalidate: 60 }, // 設定此 API 請求的快取生命週期為 60 秒
   });
   const data = await res.json();
@@ -60,7 +61,7 @@ export default async function NewArrivalsPage() {
 
 ```typescript
 export default async function RealTimeDashboard() {
-  const res = await fetch('[https://api.example.com/live-data](https://api.example.com/live-data)', {
+  const res = await fetch('https://api.example.com/live-data', {
     cache: 'no-store', // 不進行快取，每次請求重新 Fetch
   });
   const data = await res.json();
@@ -98,7 +99,7 @@ export const dynamic = 'force-dynamic'; // 強制整個 Route 採用動態 SSR �
 
 ```typescript
 export default async function AboutPage() {
-  const res = await fetch('[https://api.example.com/company-info](https://api.example.com/company-info)', {
+  const res = await fetch('https://api.example.com/company-info', {
     cache: 'force-cache', // 建置時抓取一次並凍結快取
   });
   const data = await res.json();
