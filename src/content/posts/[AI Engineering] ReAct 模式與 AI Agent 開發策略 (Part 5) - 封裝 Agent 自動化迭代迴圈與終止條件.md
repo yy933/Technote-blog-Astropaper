@@ -1,7 +1,7 @@
 ---
 title: "[AI Engineering] ReAct 模式與 AI Agent 開發策略 (Part 5) - 封裝 Agent 自動化迭代迴圈與終止條件"
 pubDatetime: 2026-09-02T11:30:27.440Z
-tags: ["others"]
+tags: ["AI Engineering","Prompt Engineering","Concepts","AI Agent","LLM","ReAct(AI Agent)"]
 description: "Table of contents 前言與目標 本篇作為手動實作 ReAct Agent 系列文的最後一篇文，將著重於..."
 hackmd_id: "HkN_nuHOfl"
 ---
